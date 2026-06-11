@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
-:root {
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-mute: var(--ink-mute);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-accent-2: var(--accent-2);
+  --color-hairline: var(--hairline);
+  --font-heading: var(--font-heading);
+}
+
+/* ---------- PAPER: serif headings, hairlines, warm surfaces ---------- */
+:root,
+[data-theme="paper"][data-palette="cream"] {
   --paper: #f6eee3;
   --paper-2: #fffdf9;
   --ink: #2a1a14;
@@ -10,9 +24,227 @@
   --accent-2: #1a7a4a;
   --hairline: #2a1a141f;
   --radius: 0.75rem;
+  --font-heading: var(--font-lora);
 }
 
+[data-theme="paper"][data-palette="sage"] {
+  --paper: #eef1e7;
+  --paper-2: #fbfcf8;
+  --ink: #1a2010;
+  --ink-mute: #4f5b3f;
+  --primary: #54712c;
+  --primary-ink: #ffffff;
+  --accent-2: #54712c;
+  --hairline: #1a20101a;
+  --radius: 0.75rem;
+  --font-heading: var(--font-lora);
+}
+
+[data-theme="paper"][data-palette="rose"] {
+  --paper: #f1eaee;
+  --paper-2: #fdfafc;
+  --ink: #200815;
+  --ink-mute: #5c3d4d;
+  --primary: #8d3b5f;
+  --primary-ink: #ffffff;
+  --accent-2: #8d3b5f;
+  --hairline: #2008151a;
+  --radius: 0.75rem;
+  --font-heading: var(--font-lora);
+}
+
+/* ---------- DARK: slate surfaces, mono details ---------- */
+[data-theme="dark"][data-palette="teal"] {
+  --paper: #0f172a;
+  --paper-2: #1e293b;
+  --ink: #f1f5f9;
+  --ink-mute: #94a3b8;
+  --primary: #5eead4;
+  --primary-ink: #0f172a;
+  --accent-2: #5eead4;
+  --hairline: #334155;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="dark"][data-palette="violet"] {
+  --paper: #13111c;
+  --paper-2: #201c2e;
+  --ink: #ede9fe;
+  --ink-mute: #a094c4;
+  --primary: #a78bfa;
+  --primary-ink: #13111c;
+  --accent-2: #a78bfa;
+  --hairline: #353046;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="dark"][data-palette="amber"] {
+  --paper: #1a1612;
+  --paper-2: #29231c;
+  --ink: #faf3e8;
+  --ink-mute: #b3a48e;
+  --primary: #fbbf24;
+  --primary-ink: #1a1612;
+  --accent-2: #fbbf24;
+  --hairline: #463d30;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+/* ---------- GRADIENT: dark canvas, glass cards, two-color accents ---------- */
+[data-theme="gradient"][data-palette="violetpink"] {
+  --paper: #0c0a1d;
+  --paper-2: #ffffff0d;
+  --ink: #ede9fe;
+  --ink-mute: #c4b5fd;
+  --primary: #a78bfa;
+  --primary-ink: #ffffff;
+  --accent-2: #ec4899;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="gradient"][data-palette="bluecyan"] {
+  --paper: #0a1120;
+  --paper-2: #ffffff0d;
+  --ink: #e0f2fe;
+  --ink-mute: #93c5fd;
+  --primary: #60a5fa;
+  --primary-ink: #ffffff;
+  --accent-2: #22d3ee;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="gradient"][data-palette="orangerose"] {
+  --paper: #1c0f0a;
+  --paper-2: #ffffff0d;
+  --ink: #ffedd5;
+  --ink-mute: #fdba74;
+  --primary: #fb923c;
+  --primary-ink: #ffffff;
+  --accent-2: #f43f5e;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+/* ---------- SWISS: white ground, square corners, single accent ---------- */
+[data-theme="swiss"][data-palette="orange"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #f97316;
+  --primary-ink: #ffffff;
+  --accent-2: #f97316;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="swiss"][data-palette="blue"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #2563eb;
+  --primary-ink: #ffffff;
+  --accent-2: #2563eb;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="swiss"][data-palette="red"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #dc2626;
+  --primary-ink: #ffffff;
+  --accent-2: #dc2626;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+/* ---------- base ---------- */
 body {
   background: var(--paper);
   color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+[data-theme="swiss"] h1,
+[data-theme="swiss"] h2,
+[data-theme="swiss"] h3 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* shared card treatment — themes reshape it via the variables */
+.card {
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+
+[data-theme="gradient"] .card {
+  backdrop-filter: blur(10px);
+}
+
+/* gradient text helper (accent → accent-2) */
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mono-label {
+  font-family: var(--font-jbmono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+}
+
+/* tech marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* chat typing dots */
+@keyframes bounce-dot {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--primary);
+  display: inline-block;
+  animation: bounce-dot 0.9s ease-in-out infinite;
 }
