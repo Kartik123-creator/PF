@@ -19,7 +19,7 @@ Replace the current static Bootstrap portfolio (`index.html`, 2023-era content) 
 | Structure | Multi-page: `/`, `/about`, `/projects`, `/blog`, `/blog/[slug]`, `/contact` |
 | Headline | "Software Engineer · End-to-End Product Builder" |
 | Chatbot | "Ask Kartik" — fully client-side scripted keyword-matching bot (same architecture as reference, verified by reverse-engineering) |
-| Themes | 4 switchable themes: Paper (default) / Dark / Gradient / Swiss |
+| Themes | 4 switchable themes: Paper (default) / Dark / Gradient / Swiss — each with 3 color palettes (12 combinations) |
 | Stats | 30+ clients · 5+ yrs · 50+ projects · 20+ technologies |
 | Projects shown | CASSA ERP, THAT TIME, AI Image Gallery, Tax Natives, Duped.au, Fabric.js canvas editor (6). Sugar Elite and Escorts JP excluded. |
 | Contact form | Formspree free tier (no backend) |
@@ -67,13 +67,13 @@ All content edits happen in `src/data/*` and `content/blog/*` — pages render f
 
 ### 3.3 Theme system
 
-- `data-theme` attribute on `<html>` selects one of 4 CSS-variable sets using the token names `--paper`, `--paper-2`, `--ink`, `--ink-mute`, `--primary`, `--primary-ink`, `--hairline`.
-- Themes:
-  - **Paper (default):** cream `#f6eee3` paper, espresso `#2a1a14` ink, forest-green `#1a7a4a` primary; serif headings (e.g., Lora/Georgia) + monospace labels.
-  - **Dark:** navy slate `#0f172a` / `#1e293b`, ink `#f1f5f9`, teal `#5eead4` primary; sans (Inter) + mono details.
-  - **Gradient:** deep violet `#0c0a1d`→`#1a1040`, glassmorphism cards (`bg-white/5`, blur, hairline borders), violet→pink gradient accents (`#a78bfa`→`#ec4899`).
-  - **Swiss:** `#fafafa` ground, black `#0a0a0a` 900-weight type, square corners, orange `#f97316` accent.
-- ThemeSwitcher in navbar cycles themes; choice persisted in `localStorage`; first visit respects `prefers-color-scheme` (dark OS → Dark theme). Inline script in `<head>` applies the stored theme before paint (no flash).
+- `data-theme` + `data-palette` attributes on `<html>` select a CSS-variable set using the token names `--paper`, `--paper-2`, `--ink`, `--ink-mute`, `--primary`, `--primary-ink`, `--hairline`.
+- **Two-level system: 4 themes × 3 palettes each (12 combinations).** The theme sets the style (typography, surfaces, corner radius, card treatment); the palette varies the colorway within that style (like the reference site's 6 paper variants):
+  - **Paper (default):** serif headings (e.g., Lora/Georgia) + monospace labels, hairline borders. Palettes: *Cream* (`#f6eee3` paper / espresso `#2a1a14` ink / forest-green `#1a7a4a` primary), *Sage* (`#eef1e7` / `#1a2010` / olive-green), *Rose* (`#f1eaee` / `#200815` / plum).
+  - **Dark:** sans (Inter) + mono details, elevated slate cards. Palettes: *Teal* (`#0f172a` ground / `#5eead4` primary), *Violet* (`#13111c` / `#a78bfa`), *Amber* (`#1a1612` / `#fbbf24`).
+  - **Gradient:** glassmorphism cards (`bg-white/5`, blur, hairline borders) on deep dark canvas. Palettes: *Violet→Pink* (`#0c0a1d` canvas, `#a78bfa`→`#ec4899` accents), *Blue→Cyan* (`#0a1120`, `#60a5fa`→`#22d3ee`), *Orange→Rose* (`#1c0f0a`, `#fb923c`→`#f43f5e`).
+  - **Swiss:** 900-weight black type, square corners, grid hairlines, `#fafafa` ground. Palettes: *Orange* (`#f97316` accent), *Blue* (`#2563eb`), *Red* (`#dc2626`).
+- ThemeSwitcher in navbar: picks theme, then palette swatches within it (popover with 4 theme rows × 3 swatch dots, or equivalent compact UI). Both choices persisted in `localStorage`; first visit respects `prefers-color-scheme` (dark OS → Dark theme). Inline script in `<head>` applies stored theme+palette before paint (no flash).
 - Tailwind utilities reference the CSS variables so every component themes automatically; per-theme font switching via variables too.
 
 ### 3.4 "Ask Kartik" chatbot
@@ -117,7 +117,7 @@ Formspree free tier (50 submissions/month): client-side POST to the form endpoin
 - Chatbot: every input path returns an answer (fallback guarantees no dead end); engine is a pure function — no network, nothing to fail.
 - Contact form: client validation + Formspree error state with mailto fallback link.
 - 404: themed `not-found.tsx` suggesting the chatbot/nav.
-- Theme: unknown/missing localStorage value falls back to Paper; pre-paint script avoids theme flash.
+- Theme: unknown/missing localStorage value falls back to Paper/Cream; invalid palette for a theme falls back to that theme's first palette; pre-paint script avoids theme flash.
 
 ## 5. SEO & performance
 
@@ -127,7 +127,7 @@ Formspree free tier (50 submissions/month): client-side POST to the form endpoin
 ## 6. Testing & verification
 
 - **Unit tests (Vitest):** `matchPrompt` — exact match beats substring, multilingual keywords, tie-break, fallback, empty input; ~25-topic coverage smoke test (every topic reachable by at least one of its keywords).
-- **Manual pass:** all 4 themes × mobile + desktop; bot conversation flows; form submit; blog rendering; 404.
+- **Manual pass:** all 4 themes (spot-check each palette) × mobile + desktop; bot conversation flows; form submit; blog rendering; 404.
 - **Build check:** `next build` green; Lighthouse run on deployed preview.
 
 ## 7. Deployment & migration
