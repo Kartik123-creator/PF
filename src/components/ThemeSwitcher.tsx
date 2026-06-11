@@ -20,8 +20,15 @@ export default function ThemeSwitcher() {
     function onClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
     document.addEventListener("mousedown", onClickOutside);
-    return () => document.removeEventListener("mousedown", onClickOutside);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("keydown", onKey);
+    };
   }, []);
 
   function apply(themeId: string, paletteId: string) {
@@ -32,6 +39,7 @@ export default function ThemeSwitcher() {
     localStorage.setItem("kb-palette", paletteId);
     setTheme(themeId);
     setPalette(paletteId);
+    setOpen(false);
   }
 
   return (
@@ -39,6 +47,8 @@ export default function ThemeSwitcher() {
       <button
         type="button"
         aria-label="Switch theme"
+        aria-expanded={open}
+        aria-haspopup="true"
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 text-ink-mute hover:text-primary hover:border-primary transition-colors"
       >

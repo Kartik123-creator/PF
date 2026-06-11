@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { THEMES } from "@/data/themes";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
     "Software Engineer · End-to-End Product Builder. 5+ years building web, mobile and AI products.",
 };
 
-const themeInit = `(function(){try{var V={paper:["cream","sage","rose"],dark:["teal","violet","amber"],gradient:["violetpink","bluecyan","orangerose"],swiss:["orange","blue","red"]};var t=localStorage.getItem("kb-theme"),p=localStorage.getItem("kb-palette");if(!V[t]){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"paper";p=null}if(V[t].indexOf(p)<0){p=V[t][0]}var d=document.documentElement;d.dataset.theme=t;d.dataset.palette=p}catch(e){}})();`;
+const validMap = Object.fromEntries(THEMES.map((t) => [t.id, t.palettes.map((p) => p.id)]));
+
+const themeInit = `(function(){try{var V=${JSON.stringify(validMap)};var t=localStorage.getItem("kb-theme"),p=localStorage.getItem("kb-palette");if(!V[t]){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"paper";p=null}if(V[t].indexOf(p)<0){p=V[t][0]}var d=document.documentElement;d.dataset.theme=t;d.dataset.palette=p}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
