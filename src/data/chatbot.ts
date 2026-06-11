@@ -21,7 +21,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
   },
   {
     id: "experience",
-    keywords: ["experience", "years", "background", "career", "anubhav", "अनुभव", "અनुભવ"],
+    keywords: ["experience", "years", "background", "career", "anubhav", "अनुभव", "અનુભવ"],
     answer:
       "Kartik has 5+ years of experience building web, mobile and AI-powered products. Currently a Full Stack Developer at Tec Sense Innovations (since Nov 2023); before that he built SPAs for agency clients at Websture Digital (2020–2022).",
   },
@@ -153,13 +153,13 @@ export const CHAT_TOPICS: ChatTopic[] = [
   },
   {
     id: "education",
-    keywords: ["education", "degree", "university", "college", "study", "shiksha", "शिक्षा", "ભણतर"],
+    keywords: ["education", "degree", "university", "college", "study", "shiksha", "शिक्षा", "ભણતર"],
     answer:
       "Kartik holds a Diploma in Computer Engineering and is completing his Bachelor of Computer Engineering at L.J. University, Ahmedabad.",
   },
   {
     id: "rates",
-    keywords: ["salary", "rate", "rates", "compensation", "ctc", "pay", "pagar", "पगार", "પगार"],
+    keywords: ["salary", "rate", "rates", "compensation", "ctc", "pay", "pagar", "पगार", "પગાર"],
     answer:
       "Compensation depends on the role and scope — that conversation is best had directly. Email kartikbosmiya2003@gmail.com with the details and you'll get a straight answer within 24 hours.",
   },
@@ -189,7 +189,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
   },
   {
     id: "languages",
-    keywords: ["languages", "speak", "english", "hindi", "gujarati", "भाषा", "ભाષા"],
+    keywords: ["languages", "speak", "english", "hindi", "gujarati", "भाषा", "ભાષા"],
     answer:
       "Kartik speaks English, Hindi and Gujarati — and ships clean code in all three. 😄",
   },
