@@ -58,7 +58,7 @@ All content edits happen in `src/data/*` and `content/blog/*` — pages render f
 
 ### 3.2 Pages
 
-- **Home (`/`):** sticky navbar (links + theme switcher) → hero (OPEN_TO_WORK badge with location/timezone, name, headline, CTAs: View Projects / Download Resume) → animated stat counters (count up on scroll into view) → "What I do" 6 capability cards (Web Apps · Mobile · AI Integrations · DevOps & AWS · Real-time Systems · Client Consulting) → featured projects (top 3 → /projects) → experience timeline → scrolling tech marquee → latest 2 blog posts → CTA banner → footer.
+- **Home (`/`):** sticky navbar (links + theme switcher) → hero (OPEN_TO_WORK badge with location/timezone, name, headline, CTAs: View Projects / Download Resume) → animated stat counters (count up on scroll into view) → "What I do" 9 capability cards (B2B & B2C Products · Enterprise & ERP · Mobile Applications · AI Integrations · DevOps, AWS & Migrations · Real-time Systems · SEO & Performance · Design & Branding · Client Consulting) → featured projects (top 3 → /projects) → experience timeline → scrolling tech marquee → latest 2 blog posts → CTA banner → footer.
 - **About:** story/intro, photo, detailed experience (per-company bullets), education (B.E. Computer Engineering, L.J. University; Diploma, L.J. University), grouped skills grid, beyond-code section.
 - **Projects:** filterable grid (All / Web / Mobile / AI); each card: category label, name, role, description, outcome bullets, tech chips.
 - **Blog:** post list (title, date, tags, reading time) → article page with code syntax highlighting.
@@ -82,7 +82,7 @@ Architecture verified against the reference implementation (its bot is 100% clie
 
 - **UI:** floating pill button (bottom-right, sparkles icon, "Ask Kartik") → opens a panel (Radix Dialog or equivalent, non-modal): header with avatar + "🟢 Online · replies quickly", message list, suggested-question chips, free-form input. Spring animations; respects `prefers-reduced-motion`.
 - **Engine (`lib/matchPrompt.ts`):**
-  1. **Topics (25+)** — each `{ id, answer, keywords[] }`, plus chip prompts `{ id, prompt, answer }`. Coverage: greeting, experience (overall + per company), each of the 6 projects individually, skills overall, frontend, backend, mobile/React Native, AI, DevOps/AWS/gRPC/load balancers, databases (MongoDB/MySQL/PostgreSQL), availability/hiring, notice period, remote/hybrid, location/timezone, contact, education, rates/salary, work process, team/leadership, client handling, code quality, languages spoken, hobbies/personal, why-hire-him, are-you-real easter egg.
+  1. **Topics (30+)** — each `{ id, answer, keywords[] }`, plus chip prompts `{ id, prompt, answer }`. Coverage: greeting, experience (overall + per company), each of the 6 projects individually, skills overall, frontend, backend, mobile/React Native, AI, DevOps/AWS/gRPC/load balancers, databases (MongoDB/MySQL/PostgreSQL), B2B/B2C products, enterprise/ERP, SEO, migrations, branding/brochures/design assets, availability/hiring, notice period, remote/hybrid, location/timezone, contact, education, rates/salary, work process, team/leadership, client handling, code quality, languages spoken, hobbies/personal, why-hire-him, are-you-real easter egg.
   2. **Scoring** — tokenize on whitespace/punctuation; exact keyword match +2; if zero exact hits, substring match +1; highest score wins; tie → first.
   3. **Multilingual** — keyword lists include English, Hindi (transliterated + Devanagari), Gujarati words; where a topic has a translated answer it replies in kind, else English.
   4. **Typing illusion** — bouncing-dots message, ~800ms delay (250ms under reduced motion).
@@ -100,7 +100,7 @@ Architecture verified against the reference implementation (its bot is 100% clie
   4. Tax Natives — *draft from user's brief mention; user fact-checks*
   5. Duped.au — *draft from user's brief mention; user fact-checks*
   6. Fabric.js canvas editor — *draft showcasing Fabric.js design-tool work; user fact-checks*
-- **skills.ts:** grouped — Frontend (Next.js, React, Angular, Vue, Fabric.js, Tailwind, MUI, Ant Design); Backend (Node, Laravel, REST, Socket.IO, gRPC); Mobile (Ionic, Capacitor, React Native); AI & Automation (LLM API integration, AI-assisted workflows); DevOps & Cloud (AWS, CI/CD, load balancers, cron); Databases (MongoDB, MySQL, PostgreSQL).
+- **skills.ts:** grouped — Frontend (Next.js, React, Angular, Vue, Fabric.js, Tailwind, MUI, Ant Design); Backend (Node, Laravel, REST, Socket.IO, gRPC); Mobile (Ionic, Capacitor, React Native); AI & Automation (LLM API integration, AI-assisted workflows); DevOps & Cloud (AWS, CI/CD, load balancers, cron); Databases (MongoDB, MySQL, PostgreSQL); SEO & Marketing (technical SEO, Core Web Vitals, marketing brochures, landing pages); Delivery & Practices (B2B & B2C products, enterprise systems, platform migrations, Agile/Scrum, client handling).
 - **Draft-content rule:** anything not in the resume (Tax Natives, Duped.au, Fabric.js editor details, React Native, gRPC, load balancers, PostgreSQL, stat numbers) is marked for user fact-check before launch; nothing fabricated beyond what the user supplied or approves.
 
 ### 3.6 Blog
