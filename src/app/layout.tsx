@@ -4,6 +4,7 @@ import "./globals.css";
 import { THEMES } from "@/data/themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AskKartik from "@/components/AskKartik";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <AskKartik />
       </body>
     </html>
   );
