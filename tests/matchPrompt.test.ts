@@ -49,4 +49,10 @@ describe("matchPrompt", () => {
     ];
     expect(matchPrompt("shared", tied, FALLBACK)).toBe("first");
   });
+
+  it("does not substring-match across word boundaries", () => {
+    const t: ChatTopic[] = [{ id: "work", keywords: ["work"], answer: "work-answer" }];
+    expect(matchPrompt("network", t, FALLBACK)).toBe(FALLBACK);
+    expect(matchPrompt("working late", t, FALLBACK)).toBe("work-answer"); // prefix still matches
+  });
 });
