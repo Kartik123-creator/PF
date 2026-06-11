@@ -19,6 +19,15 @@ describe("chatbot data", () => {
     expect(new Set(firsts).size).toBe(firsts.length);
   });
 
+  it("no keyword mixes Devanagari and Gujarati scripts", () => {
+    for (const topic of CHAT_TOPICS) {
+      for (const kw of topic.keywords) {
+        const mixed = /[઀-૿]/.test(kw) && /[ऀ-ॿ]/.test(kw);
+        expect(mixed, `topic "${topic.id}" keyword "${kw}" mixes scripts`).toBe(false);
+      }
+    }
+  });
+
   it("answers realistic recruiter questions", () => {
     expect(matchPrompt("How many years of experience does he have?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("5+");
     expect(matchPrompt("Is Kartik available for hire?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("open to work");
