@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
-
-const BASE = "https://kartikbosmiya.vercel.app"; // update after deploy / custom domain
+import { SITE_URL as BASE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/about", "/projects", "/blog", "/contact"].map((p) => ({

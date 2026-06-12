@@ -13,7 +13,7 @@ export interface PostMeta {
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-export function readingTimeMinutes(text: string): number {
+function readingTimeMinutes(text: string): number {
   const words = text.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 200));
 }

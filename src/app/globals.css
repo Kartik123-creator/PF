@@ -13,6 +13,12 @@
   --color-danger: var(--danger);
 }
 
+/* --font-heading lives on the theme selectors (outside @theme), so Tailwind
+   never generates a font-heading utility — register it explicitly. */
+@utility font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
 /* ---------- PAPER: serif headings, hairlines, warm surfaces ---------- */
 :root,
 [data-theme="paper"][data-palette="cream"] {

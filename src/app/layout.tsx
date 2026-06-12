@@ -3,6 +3,7 @@ import { Inter, Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { THEMES } from "@/data/themes";
 import { PROFILE } from "@/data/profile";
+import { SITE_URL } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AskKartik from "@/components/AskKartik";
@@ -12,7 +13,7 @@ const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
 const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kartikbosmiya.vercel.app"), // update after deploy
+  metadataBase: new URL(SITE_URL),
   title: "Kartik Bosmiya — Software Engineer",
   description:
     "Software Engineer · End-to-End Product Builder. 5+ years building web, mobile and AI products.",
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: PROFILE.name,
               jobTitle: "Software Engineer",
               email: PROFILE.email,
-              url: "https://kartikbosmiya.vercel.app",
+              url: SITE_URL,
               address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressCountry: "IN" },
               sameAs: [PROFILE.linkedin, PROFILE.github],
             }),
