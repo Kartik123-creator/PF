@@ -1,43 +1,38 @@
 export interface Experience {
   id: string;
-  company: string;
+  phase: string;
   role: string;
   period: string;
-  location: string;
-  type: string;
+  focus: string;
   bullets: string[];
 }
 
 export const EXPERIENCE: Experience[] = [
   {
-    id: "tecsense",
-    company: "Tec Sense Innovations Pvt. Ltd.",
+    id: "product-era",
+    phase: "Owning products end-to-end",
     role: "Full Stack Developer",
     period: "Nov 2023 – Present",
-    location: "Ahmedabad, India",
-    type: "Full-time",
+    focus: "ERP systems, booking SaaS, AI-powered platforms — B2B & B2C",
     bullets: [
-      "Developed scalable applications using React.js, Next.js and Angular.",
-      "Built backend services with Laravel and Node.js REST APIs; real-time features with Socket.IO.",
-      "Designed optimized MongoDB and PostgreSQL schemas for high-performance systems.", // FACT-CHECK: PostgreSQL added per Kartik's request
-      "Integrated AI capabilities (LLM APIs, AI-assisted features) into production products.", // FACT-CHECK
-      "Deployed on AWS with CI/CD pipelines; exposure to gRPC services and load balancing.", // FACT-CHECK: gRPC / load balancers added per Kartik's request
-      "Improved performance via lazy loading, code splitting and caching.",
-      "Collaborated in cross-functional Agile teams; ran code reviews.",
+      "Architecture: designing systems that grow — multi-role access, multi-tenant data models, and module boundaries that survive new requirements.",
+      "Data: optimized MongoDB, MySQL and PostgreSQL schemas; indexing, caching and pagination strategies for high-traffic listings.", // FACT-CHECK: PostgreSQL added per Kartik's request
+      "Real-time: Socket.IO rooms, presence and delivery guarantees at production scale, with Redis when one server stops being enough.",
+      "AI: integrating LLM APIs into real features — prompt pipelines, streaming responses and graceful fallbacks, not just demos.", // FACT-CHECK
+      "Infrastructure: AWS deployments with CI/CD pipelines; exposure to gRPC services and Nginx load balancing.", // FACT-CHECK: gRPC / load balancers added per Kartik's request
+      "Performance: lazy loading, code splitting, Core Web Vitals and technical SEO baked in from the start.",
     ],
   },
   {
-    id: "websture",
-    company: "Websture Digital Agency",
+    id: "agency-era",
+    phase: "Agency years — breadth and client handling",
     role: "Software Developer",
     period: "Jul 2020 – Jan 2022",
-    location: "Ahmedabad, India",
-    type: "Full-time",
+    focus: "Client SPAs across industries — from brief to launch",
     bullets: [
-      "Built responsive SPAs using Angular and React for agency clients.",
-      "Worked directly with clients to gather requirements and ship iterations — end-to-end ownership.",
-      "Implemented form validation, CRUD flows and API integrations.",
-      "Used Git for version control and team collaboration.",
+      "Frontend depth: responsive SPAs in Angular and React, pixel-faithful to design while staying maintainable.",
+      "Client skills: gathering requirements directly, demoing iterations weekly, and learning that shipping the right thing beats shipping the clever thing.",
+      "Fundamentals: form validation, CRUD flows, API integrations and Git collaboration — the muscle memory everything since is built on.",
     ],
   },
 ];

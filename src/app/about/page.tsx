@@ -28,14 +28,26 @@ export default function AboutPage() {
             className="card aspect-square w-full object-cover"
             priority
           />
-          <div className="card mt-4 space-y-2 p-4 text-sm">
-            <p><span className="mono-label text-ink-mute">Location · </span>{PROFILE.location}</p>
-            <p><span className="mono-label text-ink-mute">Timezone · </span>{PROFILE.timezone}</p>
-            <p><span className="mono-label text-ink-mute">Email · </span>
-              <a className="text-primary hover:underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
-            </p>
-            <p><span className="mono-label text-ink-mute">Responds · </span>{PROFILE.responseSla}</p>
-          </div>
+          <dl className="card mt-4 space-y-3 p-4 text-sm">
+            <div>
+              <dt className="mono-label text-ink-mute">Location</dt>
+              <dd className="mt-0.5">{PROFILE.location}</dd>
+            </div>
+            <div>
+              <dt className="mono-label text-ink-mute">Timezone</dt>
+              <dd className="mt-0.5">{PROFILE.timezone}</dd>
+            </div>
+            <div>
+              <dt className="mono-label text-ink-mute">Email</dt>
+              <dd className="mt-0.5">
+                <a className="break-all text-primary hover:underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+              </dd>
+            </div>
+            <div>
+              <dt className="mono-label text-ink-mute">Responds</dt>
+              <dd className="mt-0.5">{PROFILE.responseSla}</dd>
+            </div>
+          </dl>
         </div>
 
         <div className="space-y-5 text-[0.95rem] leading-relaxed">
@@ -66,7 +78,7 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-20">
-        <SectionHeading label="Experience" title="Full history" />
+        <SectionHeading label="Experience" title="The journey in depth" />
         {EXPERIENCE.map((e) => (
           <TimelineItem key={e.id} exp={e} detailed />
         ))}

@@ -1,0 +1,70 @@
+---
+title: "Technical SEO for Next.js: what actually moves rankings"
+date: "2026-01-25"
+tags: ["SEO", "Next.js", "Performance"]
+summary: "Most SEO advice is content advice. Here's the engineering half — rendering strategy, Core Web Vitals, structured data and the boring metadata that compounds."
+---
+
+{/* FACT-CHECK: draft post written for Kartik's review — verify the techniques match his real experience */}
+
+I've built marketing sites and listing platforms where organic traffic was the
+whole business model. The lesson: content teams can't out-write a slow,
+badly-rendered site. The engineering half of SEO is unglamorous, measurable,
+and almost always neglected.
+
+## Rendering strategy is decision #1
+
+Google can execute JavaScript, but rendering budget is real and crawl-to-index
+delays on client-rendered pages are noticeable. My defaults in Next.js:
+
+- **Static generation** for anything whose content doesn't depend on the viewer —
+  landing pages, listings, blog posts. It's the fastest thing you can serve and
+  crawlers love it.
+- **Server rendering** only when the page genuinely varies per request.
+- **Client rendering** for what's behind a login, where SEO is irrelevant anyway.
+
+If a page matters for search and ships as a client-side spinner, that's the bug
+to fix before anything else.
+
+## Core Web Vitals: fix the usual three suspects
+
+Every site I've audited had the same culprits:
+
+1. **LCP** — the hero image. Use `next/image` with `priority`, size it properly,
+   and serve modern formats. Nothing else matters until this is right.
+2. **CLS** — anything that loads without reserved space. Set explicit dimensions
+   on images, embeds and ad slots. Fonts: `font-display: swap` plus a matched
+   fallback metric.
+3. **INP** — third-party scripts. Audit what marketing added two years ago.
+   Half of it is usually dead weight.
+
+## Structured data is free real estate
+
+Search engines reward pages that explain themselves:
+
+```tsx
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: listing.title,
+    offers: { "@type": "Offer", price: listing.price },
+  })}
+</script>
+```
+
+On listing-heavy sites, valid structured data is the difference between a plain
+blue link and a rich result. It's an afternoon of work per page type.
+
+## The boring checklist that compounds
+
+None of these are exciting; all of them are why two equally good sites rank differently:
+
+- One `h1` per page, with a heading tree that doesn't skip levels
+- Canonical URLs on every page — duplicate-content penalties are self-inflicted
+- An accurate `sitemap.xml` with real `lastModified` dates
+- Descriptive, unique titles and meta descriptions per route
+- Internal links with meaningful anchor text, not "click here"
+
+Rankings move slowly, which is exactly why teams skip this work — and exactly
+why doing it puts you ahead of the ones who did.

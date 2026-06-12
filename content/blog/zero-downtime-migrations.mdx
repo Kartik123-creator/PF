@@ -1,0 +1,66 @@
+---
+title: "Migrating live systems without downtime: a practical playbook"
+date: "2026-03-08"
+tags: ["Migrations", "Architecture", "Databases"]
+summary: "The business can't stop while you modernize. How I plan migrations that run old and new side by side — with validation, rollback plans, and no 2am cutover heroics."
+---
+
+{/* FACT-CHECK: draft post written for Kartik's review — verify the approach and anecdotes match his real experience */}
+
+The scariest sentence in software is "we'll switch everything over this weekend."
+I've been part of enough migrations — platform rewrites, database moves, framework
+upgrades — to know that big-bang cutovers fail not because the new system is bad,
+but because nobody can rehearse them properly.
+
+Here's the playbook I actually use.
+
+## Run old and new side by side
+
+The strangler pattern sounds fancy; in practice it means one thing: the legacy
+system keeps serving traffic while you move one module at a time behind it.
+
+- Pick the module with the **fewest dependencies**, not the most painful one.
+- Route a slice of traffic to the new implementation and compare outputs.
+- Only delete legacy code after the replacement has survived real load.
+
+The first module takes the longest because you're building the routing and
+comparison machinery. Every module after it gets cheaper.
+
+## Treat data migration as a product feature
+
+Schema moves deserve the same rigor as user-facing work:
+
+```sql
+-- Never migrate in one transaction. Batch, checkpoint, resume.
+UPDATE orders SET status_v2 = map_status(status)
+WHERE id BETWEEN :start AND :start + 5000
+  AND status_v2 IS NULL;
+```
+
+Three rules that have saved me repeatedly:
+
+1. **Write the rollback before the migration.** If you can't write it, the
+   migration isn't ready.
+2. **Validate with counts and checksums**, not spot checks. "It looks right"
+   is how silent data loss happens.
+3. **Keep the old columns** until the new ones have been read in production
+   for a full business cycle — month-end reports find bugs that daily traffic never will.
+
+## Dual-write is a trap (mostly)
+
+Writing to both systems sounds safe but doubles your failure modes: now a bug
+in either side corrupts your comparison. I prefer **single-write with change
+capture** — the old system stays the source of truth, and a sync job replays
+changes into the new one. When the new side has been consistent for weeks,
+flip the source of truth in one small, reversible step.
+
+## The cutover should be boring
+
+If the actual switch is exciting, the plan failed. By cutover day you want:
+
+- Traffic already flowing through the new path for a meaningful percentage of users
+- Dashboards comparing old vs new error rates side by side
+- A documented rollback that one person can execute alone
+
+The best migration I've shipped was the one where the client asked
+"so when does the migration happen?" — a week after it had finished.

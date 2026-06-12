@@ -124,7 +124,7 @@ export default function Home() {
 
       {/* experience */}
       <section className="pb-20">
-        <SectionHeading label="Experience" title="Where I've worked" />
+        <SectionHeading label="Experience" title="How the experience compounds" />
         <div>
           {EXPERIENCE.map((e) => (
             <TimelineItem key={e.id} exp={e} />

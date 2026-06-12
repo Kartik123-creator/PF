@@ -23,19 +23,19 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "experience",
     keywords: ["experience", "years", "background", "career", "anubhav", "अनुभव", "અનુભવ"],
     answer:
-      "Kartik has 5+ years of experience building web, mobile and AI-powered products. Currently a Full Stack Developer at Tec Sense Innovations (since Nov 2023); before that he built SPAs for agency clients at Websture Digital (2020–2022).",
+      "Kartik has 5+ years of experience building web, mobile and AI-powered products. Currently a Full Stack Developer owning products end-to-end (since Nov 2023); before that he spent his agency years (2020–2022) shipping SPAs for clients across industries.",
   },
   {
-    id: "tecsense",
-    keywords: ["tecsense", "tec", "sense", "current", "company", "job"],
+    id: "currentrole",
+    keywords: ["currently", "role", "current", "company", "job"],
     answer:
-      "At Tec Sense Innovations (Nov 2023 – present, Ahmedabad) Kartik builds scalable apps with React, Next.js and Angular, backend services in Laravel and Node.js, real-time features with Socket.IO, and deploys on AWS with CI/CD.",
+      "In his current role (Nov 2023 – present, Ahmedabad) Kartik builds scalable apps with React, Next.js and Angular, backend services in Laravel and Node.js, real-time features with Socket.IO, and deploys on AWS with CI/CD.",
   },
   {
-    id: "websture",
-    keywords: ["websture", "agency", "previous", "first"],
+    id: "agencyyears",
+    keywords: ["agency", "previous", "first", "started"],
     answer:
-      "At Websture Digital Agency (Jul 2020 – Jan 2022) Kartik built responsive SPAs in Angular and React and worked directly with clients to gather requirements — that's where his client-handling skills come from.",
+      "Kartik's agency years (Jul 2020 – Jan 2022) were all about breadth: responsive SPAs in Angular and React for clients across industries, working directly with them to gather requirements — that's where his client-handling skills come from.",
   },
   {
     id: "projects",

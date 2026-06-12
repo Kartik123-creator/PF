@@ -1,0 +1,64 @@
+---
+title: "Shipping LLM features users actually trust"
+date: "2025-12-18"
+tags: ["AI", "LLM", "Product"]
+summary: "The demo takes a day; the trustworthy feature takes the rest of the quarter. Grounding, fallbacks, streaming and the UX details that separate AI features people use from ones they try once."
+---
+
+{/* FACT-CHECK: draft post written for Kartik's review — verify the approach matches his real experience */}
+
+Adding an LLM call to a product takes an afternoon. Making users trust the
+result enough to come back is the actual project. After integrating AI features
+into production apps, my mental model has settled: **treat the model as a
+brilliant intern — never let it answer unsupervised about things it didn't read.**
+
+## Ground every answer in your own content
+
+The single biggest trust-killer is the model confidently inventing details about
+*your* product. The fix isn't a smarter model; it's narrower input:
+
+```js
+const answer = await llm.complete({
+  system: `Answer ONLY from the provided context.
+           If the context doesn't cover it, say so and offer the human channel.`,
+  context: await retrieveRelevantDocs(userQuestion),
+  question: userQuestion,
+});
+```
+
+"I don't know, but here's how to reach a human" reads as honest.
+A fabricated refund policy reads as a lawsuit.
+
+## Design the failure path first
+
+LLM calls fail in ways normal APIs don't: timeouts, rate limits, and the special
+one — a response that arrives fine but is *wrong-shaped*. Before shipping, decide:
+
+- What renders when the call times out? (A retry button, not a spinner forever.)
+- What happens when output fails validation? Re-ask once with the error included,
+  then fall back to a non-AI path.
+- Where's the human handoff? Every AI conversation needs an exit that
+  doesn't feel like a dead end.
+
+## Stream, because perceived speed is speed
+
+A four-second wait followed by a wall of text feels broken. The same four seconds
+spent watching the answer type itself feels alive. Streaming is mostly plumbing —
+server-sent events or a socket — and it's the cheapest UX upgrade in the whole stack.
+
+The detail people forget: **make streamed output interruptible.** Users who can
+see the answer going wrong want a stop button, not a forced wait.
+
+## Log prompts like you log payments
+
+When a user reports "the AI said something weird," you need the exact prompt,
+context, model version and response — or you're debugging fog. Structured logs
+of every AI interaction turned vague complaints into reproducible bugs, and
+they doubled as the dataset for improving prompts later.
+
+## The quiet conclusion
+
+Users don't want "AI features." They want their problem solved with less effort,
+and they'll forgive a lot if the feature is honest about its limits. Ground it,
+plan the failures, stream the output, log everything — that's the unglamorous
+80% that the demo never shows.
