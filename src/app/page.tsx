@@ -107,6 +107,9 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <Link href="/services" className="mono-label mt-6 inline-flex items-center gap-2 text-primary hover:underline">
+          All services in detail <ArrowRight size={14} />
+        </Link>
       </section>
 
       {/* featured projects */}

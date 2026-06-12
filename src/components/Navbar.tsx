@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FolderKanban, Home, Mail, Menu, Newspaper, User, X } from "lucide-react";
+import { FolderKanban, Home, Layers, Mail, Menu, Newspaper, User, X } from "lucide-react";
 import { NAV_LINKS, PROFILE } from "@/data/profile";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const NAV_ICONS: Record<string, typeof Home> = {
   "/": Home,
   "/about": User,
+  "/services": Layers,
   "/projects": FolderKanban,
   "/blog": Newspaper,
   "/contact": Mail,

@@ -104,6 +104,12 @@ export const CHAT_TOPICS: ChatTopic[] = [
       "Kartik ships mobile apps with Ionic + Capacitor (THAT TIME is live on Android & iOS) and also works with React Native.",
   },
   {
+    id: "services",
+    keywords: ["services", "offer", "modes", "engagement", "provide"],
+    answer:
+      "Kartik owns eight areas end-to-end: full-stack web apps, ERP & enterprise systems, e-commerce & marketplaces, mobile apps, real-time features, AI/LLM integration, DevOps & migrations, and SEO/performance/design. Three ways to engage: full-time role, contract build, or consult & audit. Full list on the Services page!",
+  },
+  {
     id: "ai",
     keywords: ["ai", "llm", "ml", "intelligence", "gpt", "automation"],
     answer:
