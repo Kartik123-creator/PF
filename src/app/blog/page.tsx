@@ -6,6 +6,7 @@ import BlogCard from "@/components/BlogCard";
 export const metadata: Metadata = {
   title: "Blog — Kartik Bosmiya",
   description: "Notes on building web, mobile and AI products in production.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

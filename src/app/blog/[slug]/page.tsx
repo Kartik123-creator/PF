@@ -15,7 +15,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  return { title: `${post.meta.title} — Kartik Bosmiya`, description: post.meta.summary };
+  return {
+    title: `${post.meta.title} — Kartik Bosmiya`,
+    description: post.meta.summary,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      publishedTime: post.meta.date,
+      authors: ["Kartik Bosmiya"],
+    },
+  };
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {

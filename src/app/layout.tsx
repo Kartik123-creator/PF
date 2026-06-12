@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   title: "Kartik Bosmiya — Software Engineer",
   description:
     "Software Engineer · End-to-End Product Builder. 5+ years building web, mobile and AI products.",
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: "Kartik Bosmiya", locale: "en_US" },
 };
 
 const validMap = Object.fromEntries(THEMES.map((t) => [t.id, t.palettes.map((p) => p.id)]));

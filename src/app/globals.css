@@ -107,7 +107,7 @@
   --ink: #ede9fe;
   --ink-mute: #c4b5fd;
   --primary: #a78bfa;
-  --primary-ink: #ffffff;
+  --primary-ink: #0c0a1d;
   --accent-2: #ec4899;
   --hairline: #ffffff21;
   --radius: 1rem;
@@ -120,7 +120,7 @@
   --ink: #e0f2fe;
   --ink-mute: #93c5fd;
   --primary: #60a5fa;
-  --primary-ink: #ffffff;
+  --primary-ink: #0a1120;
   --accent-2: #22d3ee;
   --hairline: #ffffff21;
   --radius: 1rem;
@@ -133,7 +133,7 @@
   --ink: #ffedd5;
   --ink-mute: #fdba74;
   --primary: #fb923c;
-  --primary-ink: #ffffff;
+  --primary-ink: #1c0f0a;
   --accent-2: #f43f5e;
   --hairline: #ffffff21;
   --radius: 1rem;
@@ -146,9 +146,9 @@
   --paper-2: #ffffff;
   --ink: #0a0a0a;
   --ink-mute: #525252;
-  --primary: #f97316;
+  --primary: #c2410c;
   --primary-ink: #ffffff;
-  --accent-2: #f97316;
+  --accent-2: #c2410c;
   --hairline: #d4d4d4;
   --radius: 0;
   --font-heading: var(--font-inter);
@@ -244,6 +244,20 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.7rem;
+}
+
+/* hero entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up { animation: none; }
 }
 
 /* tech marquee */

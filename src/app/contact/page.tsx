@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Kartik Bosmiya",
   description: "Get in touch — replies within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 const CARDS = [

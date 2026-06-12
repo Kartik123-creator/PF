@@ -55,18 +55,24 @@ export default function Home() {
     <main className="mx-auto max-w-5xl px-4">
       {/* hero */}
       <section className="py-20 text-center sm:py-28">
-        <p className="mono-label inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-hairline px-3 py-1.5 text-ink-mute">
+        <p className="mono-label animate-fade-up inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-hairline px-3 py-1.5 text-ink-mute">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
           Open to work
           <span className="hidden sm:inline">· {PROFILE.location} · {PROFILE.timezone}</span>
         </p>
-        <p className="mono-label mt-2 text-ink-mute sm:hidden">
+        <p className="mono-label animate-fade-up mt-2 text-ink-mute sm:hidden">
           {PROFILE.location} · {PROFILE.timezone}
         </p>
-        <h1 className="mt-6 text-5xl font-bold sm:text-6xl">{PROFILE.name}</h1>
-        <p className="text-gradient mt-3 text-xl font-semibold sm:text-2xl">{PROFILE.headline}</p>
-        <p className="mx-auto mt-4 max-w-xl text-ink-mute">{PROFILE.tagline}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <h1 className="animate-fade-up mt-6 text-5xl font-bold sm:text-6xl" style={{ animationDelay: "80ms" }}>
+          {PROFILE.name}
+        </h1>
+        <p className="text-gradient animate-fade-up mt-3 text-xl font-semibold sm:text-2xl" style={{ animationDelay: "160ms" }}>
+          {PROFILE.headline}
+        </p>
+        <p className="animate-fade-up mx-auto mt-4 max-w-xl text-ink-mute" style={{ animationDelay: "240ms" }}>
+          {PROFILE.tagline}
+        </p>
+        <div className="animate-fade-up mt-8 flex flex-wrap items-center justify-center gap-3" style={{ animationDelay: "320ms" }}>
           <Link
             href="/projects"
             className="mono-label inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-primary-ink transition-transform hover:scale-105"

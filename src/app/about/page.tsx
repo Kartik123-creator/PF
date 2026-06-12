@@ -9,6 +9,7 @@ import SkillGrid from "@/components/SkillGrid";
 export const metadata: Metadata = {
   title: "About — Kartik Bosmiya",
   description: "Software engineer with 5+ years building web, mobile and AI products end-to-end.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

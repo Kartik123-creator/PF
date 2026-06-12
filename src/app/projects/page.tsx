@@ -5,6 +5,7 @@ import ProjectsGrid from "./ProjectsGrid";
 export const metadata: Metadata = {
   title: "Projects — Kartik Bosmiya",
   description: "ERP systems, booking SaaS, AI platforms and design tools — selected work by Kartik Bosmiya.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
