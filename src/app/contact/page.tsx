@@ -19,7 +19,7 @@ const CARDS = [
 export default function ContactPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-16">
-      <SectionHeading label="Contact" title="Let's talk" />
+      <SectionHeading as="h1" label="Contact" title="Let's talk" />
       <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr]">
         <div className="space-y-4">
           {CARDS.map((c) => (

@@ -12,7 +12,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
   return (
     <main className="mx-auto max-w-5xl px-4 py-16">
-      <SectionHeading label="Blog" title="Notes from the field" />
+      <SectionHeading as="h1" label="Blog" title="Notes from the field" />
       {posts.length === 0 ? (
         <p className="text-ink-mute">Posts coming soon.</p>
       ) : (

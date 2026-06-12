@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-16">
-      <SectionHeading label="About" title="The story so far" />
+      <SectionHeading as="h1" label="About" title="The story so far" />
 
       <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
         <div>

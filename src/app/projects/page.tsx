@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-16">
-      <SectionHeading label="Projects" title="Things I've shipped" />
+      <SectionHeading as="h1" label="Projects" title="Things I've shipped" />
       <ProjectsGrid />
     </main>
   );
