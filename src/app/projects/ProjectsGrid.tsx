@@ -22,6 +22,7 @@ export default function ProjectsGrid() {
           <button
             key={f.id}
             type="button"
+            aria-pressed={filter === f.id}
             onClick={() => setFilter(f.id)}
             className={`mono-label rounded-full border px-4 py-2 transition-colors ${
               filter === f.id
