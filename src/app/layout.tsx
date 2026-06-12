@@ -11,6 +11,7 @@ const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
 const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kartikbosmiya.vercel.app"), // update after deploy
   title: "Kartik Bosmiya — Software Engineer",
   description:
     "Software Engineer · End-to-End Product Builder. 5+ years building web, mobile and AI products.",
@@ -33,6 +34,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Kartik Bosmiya",
+              jobTitle: "Software Engineer",
+              email: "mailto:kartikbosmiya2003@gmail.com",
+              url: "https://kartikbosmiya.vercel.app",
+              address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressCountry: "IN" },
+              sameAs: [
+                "https://linkedin.com/in/kartik-bosmiya-1277a8212",
+                "https://github.com/Kartik123-creator",
+              ],
+            }),
+          }}
+        />
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
