@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const posts = getAllPosts().map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
+    lastModified: p.date ? new Date(p.date) : new Date(),
   }));
   return [...pages, ...posts];
 }

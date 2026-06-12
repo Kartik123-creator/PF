@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { THEMES } from "@/data/themes";
+import { PROFILE } from "@/data/profile";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AskKartik from "@/components/AskKartik";
@@ -40,15 +41,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Kartik Bosmiya",
+              name: PROFILE.name,
               jobTitle: "Software Engineer",
-              email: "mailto:kartikbosmiya2003@gmail.com",
+              email: PROFILE.email,
               url: "https://kartikbosmiya.vercel.app",
               address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressCountry: "IN" },
-              sameAs: [
-                "https://linkedin.com/in/kartik-bosmiya-1277a8212",
-                "https://github.com/Kartik123-creator",
-              ],
+              sameAs: [PROFILE.linkedin, PROFILE.github],
             }),
           }}
         />
