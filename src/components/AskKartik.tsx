@@ -118,6 +118,9 @@ export default function AskKartik() {
 
       {/* chips + input */}
       <div className="border-t border-hairline p-3">
+        <p className="mono-label mb-1.5 text-ink-mute">
+          Quick prompts · English, हिन्दी or ગુજરાતી all work
+        </p>
         <div className="mb-2 flex flex-wrap gap-1.5">
           {CHATBOT_PROMPTS.map((p) => (
             <button

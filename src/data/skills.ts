@@ -18,7 +18,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     label: "AI & Automation",
-    items: ["LLM API integration", "AI-assisted workflows", "Prompt engineering"], // FACT-CHECK
+    items: ["LLM API integration", "Claude / ChatGPT", "GitHub Copilot", "AI-assisted workflows", "Prompt engineering"], // FACT-CHECK: tools added — confirm which Kartik actually uses
   },
   {
     label: "DevOps & Cloud",

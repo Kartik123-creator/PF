@@ -26,7 +26,8 @@ export const PROJECTS: Project[] = [
       "Implemented role-based pricing and inventory tracking.",
       "Developed HRMS and payroll modules.",
     ],
-    tech: ["React", "Node.js", "MongoDB", "MUI"],
+    /* FACT-CHECK: Express/REST/AWS added to stack — confirm they were used on CASSA */
+    tech: ["React", "Node.js", "Express", "MongoDB", "MUI", "REST APIs", "AWS"],
     featured: true,
   },
   {
@@ -42,7 +43,8 @@ export const PROJECTS: Project[] = [
       "Integrated Klarna, Clearpay, Visa and Mastercard payments.",
       "Shipped Android & iOS apps using Ionic.",
     ],
-    tech: ["Angular", "Node.js", "Ionic", "MySQL"],
+    /* FACT-CHECK: Express/Capacitor/Payment APIs added to stack — confirm */
+    tech: ["Angular", "Node.js", "Express", "MySQL", "Ionic", "Capacitor", "Payment APIs"],
     featured: true,
   },
   {
@@ -58,7 +60,8 @@ export const PROJECTS: Project[] = [
       "Multiple styles (anime, 3D, realistic, cartoon) with dark/light mode.",
       "Image preview and multi-resolution downloads.",
     ],
-    tech: ["Next.js", "Tailwind CSS", "REST API"],
+    /* FACT-CHECK: TypeScript added to stack — confirm */
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     featured: true,
   },
   {
@@ -75,7 +78,7 @@ export const PROJECTS: Project[] = [
       "Implemented content-driven pages with SEO-friendly rendering.",
       "Integrated forms, notifications and admin tooling.",
     ],
-    tech: ["React", "Node.js", "MySQL"],
+    tech: ["React", "Node.js", "Express", "MySQL", "Technical SEO"],
   },
   {
     /* FACT-CHECK: drafted from Kartik's brief mention — verify description, role and tech */
@@ -91,7 +94,7 @@ export const PROJECTS: Project[] = [
       "Optimized listing performance with caching and pagination.",
       "Responsive UI across mobile and desktop.",
     ],
-    tech: ["Next.js", "Node.js", "MongoDB"],
+    tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
   },
   {
     /* FACT-CHECK: drafted to showcase Fabric.js skills — verify against the real project */
@@ -107,6 +110,86 @@ export const PROJECTS: Project[] = [
       "Template system with custom fonts, colors and alignment guides.",
       "High-resolution PNG export and project save/load.",
     ],
-    tech: ["Fabric.js", "React", "Node.js"],
+    tech: ["Fabric.js", "React", "TypeScript", "Node.js", "Canvas API"],
+  },
+  {
+    /* FACT-CHECK: NEW — drafted from Kartik's Socket.IO experience (matches the blog post). Verify everything. */
+    id: "realtime-chat",
+    name: "Real-time Chat & Notifications",
+    category: "web",
+    categoryLabel: "Real-time · SaaS",
+    role: "Full Stack Developer",
+    description:
+      "Production chat system with rooms, presence and notifications serving thousands of concurrent users.",
+    bullets: [
+      "Rooms, presence, typing indicators and read receipts over Socket.IO.",
+      "Delivery acknowledgements with offline push notification fallback.",
+      "Scaled across instances with the Redis adapter behind a load balancer.",
+    ],
+    tech: ["Socket.IO", "Node.js", "Redis", "React", "MongoDB", "Nginx"],
+  },
+  {
+    /* FACT-CHECK: NEW — drafted to showcase React Native. Replace with the real app's name/domain or remove. */
+    id: "rn-services-app",
+    name: "On-Demand Services App",
+    category: "mobile",
+    categoryLabel: "Mobile · React Native",
+    role: "Mobile Developer",
+    description:
+      "Cross-platform service-booking app for iOS and Android with live job tracking and payments.",
+    bullets: [
+      "Single React Native codebase shipped to both app stores.",
+      "Booking flow with live status tracking and push notifications.",
+      "Secure payments and provider/customer role separation.",
+    ],
+    tech: ["React Native", "Node.js", "PostgreSQL", "Firebase", "REST APIs"],
+  },
+  {
+    /* FACT-CHECK: NEW — drafted to showcase migrations/DevOps/gRPC/load balancing. Verify against real work. */
+    id: "platform-migration",
+    name: "Legacy Platform Migration",
+    category: "web",
+    categoryLabel: "Migration · DevOps",
+    role: "Full Stack Developer",
+    description:
+      "Incremental migration of a legacy PHP monolith to Node.js services with zero business downtime.",
+    bullets: [
+      "Strangler-pattern migration from a Laravel monolith to Node.js services.",
+      "Data migration to PostgreSQL with validation and rollback plans.",
+      "gRPC between services, Nginx load balancing and AWS CI/CD pipelines.",
+    ],
+    tech: ["Node.js", "gRPC", "PostgreSQL", "Nginx", "AWS", "Laravel (PHP)"],
+  },
+  {
+    /* FACT-CHECK: NEW — drafted from Kartik's AI/LLM integration claims. Verify everything. */
+    id: "ai-support-assistant",
+    name: "AI Support Assistant",
+    category: "ai",
+    categoryLabel: "AI · LLM Integration",
+    role: "Full Stack Developer",
+    description:
+      "LLM-powered support assistant embedded in a product, answering from business content with human handoff.",
+    bullets: [
+      "Prompt pipelines grounded in the product's own help content.",
+      "Intent routing with graceful escalation to human agents.",
+      "Streaming responses over WebSockets with usage analytics.",
+    ],
+    tech: ["LLM APIs", "Node.js", "React", "WebSockets", "Prompt engineering"],
+  },
+  {
+    /* FACT-CHECK: NEW — drafted from Kartik's SEO/marketing/design claims. Verify everything. */
+    id: "marketing-sites",
+    name: "Marketing Sites & Brand Collateral",
+    category: "web",
+    categoryLabel: "SEO · Design",
+    role: "Developer & Designer",
+    description:
+      "High-converting landing pages plus brochures, templates and logos for client launches.",
+    bullets: [
+      "Landing pages with technical SEO and 95+ Core Web Vitals scores.",
+      "Marketing brochures, social templates and logo design.",
+      "Analytics, A/B-ready sections and lead-capture integrations.",
+    ],
+    tech: ["Next.js", "Tailwind CSS", "Technical SEO", "Figma", "Analytics"],
   },
 ];

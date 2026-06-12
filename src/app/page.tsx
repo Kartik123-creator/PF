@@ -1,5 +1,6 @@
+import { Fragment } from "react";
 import Link from "next/link";
-import { ArrowRight, Bot, Building2, Cloud, Download, Globe, PenTool, Search, Smartphone, Users, Zap } from "lucide-react";
+import { ArrowRight, BadgeCheck, Bot, Building2, Cloud, Download, Globe, PenTool, Rocket, Search, Smartphone, Sparkles, Users, Zap } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 import { EXPERIENCE } from "@/data/experience";
 import { PROJECTS } from "@/data/projects";
@@ -21,6 +22,28 @@ const CAPABILITIES = [
   { icon: Search, title: "SEO & Performance", desc: "Technical SEO, Core Web Vitals, lazy loading and code splitting that move rankings." },
   { icon: PenTool, title: "Design & Branding", desc: "Marketing brochures, templates, logos and canvas design tools built on Fabric.js." },
   { icon: Users, title: "Client Consulting", desc: "Direct client collaboration — requirements to demos to delivery." },
+];
+
+/* FACT-CHECK: "Now" items drafted from Kartik's AI claims — verify tools and current work */
+const NOW_ITEMS = [
+  {
+    icon: Sparkles,
+    tag: "USING",
+    title: "AI-first development workflow",
+    desc: "Claude, ChatGPT and Copilot in the daily loop — faster delivery without losing code quality.",
+  },
+  {
+    icon: Rocket,
+    tag: "BUILDING",
+    title: "LLM features in client products",
+    desc: "Chat assistants, prompt pipelines and AI-powered automation shipped into production apps.",
+  },
+  {
+    icon: BadgeCheck,
+    tag: "AVAILABLE",
+    title: "Full-time roles",
+    desc: "Open to remote or hybrid software engineering roles — replies within 24 hours.",
+  },
 ];
 
 export default function Home() {
@@ -99,13 +122,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* now / AI focus */}
+      <section className="pb-20">
+        <SectionHeading label="Now" title="What I'm working with right now" />
+        <div className="grid gap-4 sm:grid-cols-3">
+          {NOW_ITEMS.map((n) => (
+            <div key={n.tag} className="card p-5">
+              <div className="flex items-center justify-between">
+                <n.icon className="text-primary" size={22} />
+                <span className="mono-label rounded-full border border-hairline px-2 py-0.5 text-ink-mute">{n.tag}</span>
+              </div>
+              <h3 className="mt-3 text-base font-semibold">{n.title}</h3>
+              <p className="mt-1.5 text-sm text-ink-mute">{n.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* tech marquee */}
       <section className="overflow-hidden border-y border-hairline py-6" aria-hidden>
-        <div className="marquee-track gap-8">
+        <div className="marquee-track items-center gap-6">
           {[...marqueeItems, ...marqueeItems].map((t, i) => (
-            <span key={`${t}-${i}`} className="mono-label whitespace-nowrap text-ink-mute">
-              {t} <span className="text-primary">·</span>
-            </span>
+            <Fragment key={`${t}-${i}`}>
+              <span className="mono-label whitespace-nowrap text-ink-mute">{t}</span>
+              <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+            </Fragment>
           ))}
         </div>
       </section>

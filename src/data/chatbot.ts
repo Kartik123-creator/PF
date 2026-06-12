@@ -41,7 +41,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "projects",
     keywords: ["projects", "portfolio", "work", "built", "showcase", "प्रोजेक्ट", "પ્રોજેક્ટ"],
     answer:
-      "Highlights: CASSA Group ERP (e-commerce → full ERP), THAT TIME (UK booking SaaS with payments + mobile apps), an AI Image Gallery, Tax Natives (tax-advice marketplace), Duped.au (product discovery) and a Fabric.js canvas design editor. Details on the Projects page!",
+      "Highlights: CASSA Group ERP (e-commerce → full ERP), THAT TIME (UK booking SaaS with payments + mobile apps), an AI Image Gallery, Tax Natives (tax-advice marketplace), Duped.au (product discovery), a Fabric.js canvas design editor, real-time chat at scale, a React Native services app, an AI support assistant, a legacy platform migration and more. Details on the Projects page!",
   },
   {
     id: "cassa",
@@ -107,7 +107,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "ai",
     keywords: ["ai", "llm", "ml", "intelligence", "gpt", "automation"],
     answer:
-      "Kartik integrates AI into real products: an AI image search & generation platform, LLM API integrations and AI-assisted workflows. He builds with AI tooling daily — it's a core part of how he works.",
+      "Kartik integrates AI into real products: an AI image search & generation platform, an LLM-powered support assistant, and prompt pipelines in client apps. His daily toolkit includes Claude, ChatGPT and Copilot — AI is a core part of how he works.",
   },
   {
     id: "devops",

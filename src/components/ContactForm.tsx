@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Send } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error" | "mailto";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -21,6 +21,7 @@ export default function ContactForm() {
         `From: ${data.get("name")} <${data.get("email")}>\n\n${data.get("message")}`
       );
       window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
+      setStatus("mailto");
       return;
     }
 
@@ -63,6 +64,13 @@ export default function ContactForm() {
       <div aria-live="polite">
         {status === "sent" && (
           <p className="text-sm text-success">Message sent — Kartik replies within 24 hours. ✓</p>
+        )}
+        {status === "mailto" && (
+          <p className="text-sm text-ink-mute">
+            Your email app should have opened with the message ready. If nothing happened, write to{" "}
+            <a className="text-primary underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>{" "}
+            directly.
+          </p>
         )}
         {status === "error" && (
           <p className="text-sm text-danger">

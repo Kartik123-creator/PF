@@ -196,6 +196,12 @@
 }
 
 /* ---------- base ---------- */
+/* Tailwind v4 preflight leaves buttons with cursor: default */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -249,7 +255,11 @@ h1, h2, h3 {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 75s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
