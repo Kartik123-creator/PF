@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <ul className="mt-3 flex-1 space-y-1.5 text-sm">
         {project.bullets.map((b) => (
           <li key={b} className="flex gap-2">
-            <span className="text-primary">▸</span>
+            <span aria-hidden="true" className="text-primary">▸</span>
             <span>{b}</span>
           </li>
         ))}

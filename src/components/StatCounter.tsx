@@ -6,10 +6,15 @@ export default function StatCounter({ value, suffix, label }: { value: number; s
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
+  const raf = useRef(0);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (started.current) {
+      setDisplay(value);
+      return;
+    }
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started.current) return;
@@ -23,14 +28,17 @@ export default function StatCounter({ value, suffix, label }: { value: number; s
         const tick = (t: number) => {
           const p = Math.min((t - t0) / dur, 1);
           setDisplay(Math.round(value * (1 - Math.pow(1 - p, 3)))); // ease-out cubic
-          if (p < 1) requestAnimationFrame(tick);
+          if (p < 1) raf.current = requestAnimationFrame(tick);
         };
-        requestAnimationFrame(tick);
+        raf.current = requestAnimationFrame(tick);
       },
       { threshold: 0.4 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      cancelAnimationFrame(raf.current);
+    };
   }, [value]);
 
   return (

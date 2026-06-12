@@ -12,7 +12,7 @@ export default function TimelineItem({ exp, detailed = false }: { exp: Experienc
       <ul className="mt-2 space-y-1.5 text-sm">
         {(detailed ? exp.bullets : exp.bullets.slice(0, 3)).map((b) => (
           <li key={b} className="flex gap-2">
-            <span className="text-primary">▸</span>
+            <span aria-hidden="true" className="text-primary">▸</span>
             <span>{b}</span>
           </li>
         ))}
