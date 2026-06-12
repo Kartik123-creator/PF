@@ -60,15 +60,17 @@ export default function ContactForm() {
         <textarea id="message" name="message" rows={6} required className="mt-1 w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary" />
       </div>
 
-      {status === "sent" && (
-        <p className="text-sm text-green-600">Message sent — Kartik replies within 24 hours. ✓</p>
-      )}
-      {status === "error" && (
-        <p className="text-sm text-red-500">
-          Something went wrong. Email directly:{" "}
-          <a className="text-primary underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
-        </p>
-      )}
+      <div aria-live="polite">
+        {status === "sent" && (
+          <p className="text-sm text-success">Message sent — Kartik replies within 24 hours. ✓</p>
+        )}
+        {status === "error" && (
+          <p className="text-sm text-danger">
+            Something went wrong. Email directly:{" "}
+            <a className="text-primary underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+          </p>
+        )}
+      </div>
 
       <button
         type="submit"

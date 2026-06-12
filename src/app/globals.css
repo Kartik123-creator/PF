@@ -9,6 +9,8 @@
   --color-primary-ink: var(--primary-ink);
   --color-accent-2: var(--accent-2);
   --color-hairline: var(--hairline);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
 }
 
 /* ---------- PAPER: serif headings, hairlines, warm surfaces ---------- */
@@ -176,11 +178,15 @@
 [data-theme="paper"],
 [data-theme="swiss"] {
   color-scheme: light;
+  --success: #15803d;
+  --danger: #dc2626;
 }
 
 [data-theme="dark"],
 [data-theme="gradient"] {
   color-scheme: dark;
+  --success: #4ade80;
+  --danger: #f87171;
 }
 
 /* ---------- base ---------- */
