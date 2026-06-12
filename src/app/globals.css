@@ -258,3 +258,50 @@ h1, h2, h3 {
   display: inline-block;
   animation: bounce-dot 0.9s ease-in-out infinite;
 }
+
+/* blog article typography */
+.prose-blog {
+  line-height: 1.75;
+}
+
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+}
+
+.prose-blog p {
+  margin: 0.9rem 0;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin: 0.9rem 0;
+  padding-left: 1.4rem;
+  list-style: disc;
+}
+
+.prose-blog li {
+  margin: 0.35rem 0;
+}
+
+.prose-blog code {
+  font-family: var(--font-jbmono), monospace;
+  font-size: 0.85em;
+}
+
+.prose-blog :not(pre) > code {
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.prose-blog pre {
+  background: #0d1117;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}

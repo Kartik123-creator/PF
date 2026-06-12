@@ -15,7 +15,7 @@ const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 export function readingTimeMinutes(text: string): number {
   const words = text.trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
+  return Math.max(1, Math.ceil(words / 200));
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -23,20 +23,27 @@ export function getAllPosts(): PostMeta[] {
   return fs
     .readdirSync(BLOG_DIR)
     .filter((f) => f.endsWith(".mdx"))
-    .map((file) => {
+    .flatMap((file) => {
       const slug = file.replace(/\.mdx$/, "");
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf8");
-      const { data, content } = matter(raw);
-      return {
-        slug,
-        title: String(data.title ?? slug),
-        date: String(data.date ?? ""),
-        tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-        summary: String(data.summary ?? ""),
-        readingTime: readingTimeMinutes(content),
-      };
+      try {
+        const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf8");
+        const { data, content } = matter(raw);
+        return [
+          {
+            slug,
+            title: String(data.title ?? slug),
+            date: String(data.date ?? ""),
+            tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+            summary: String(data.summary ?? ""),
+            readingTime: readingTimeMinutes(content),
+          },
+        ];
+      } catch (err) {
+        console.warn(`Skipping blog post with unparseable frontmatter: ${file}`, err);
+        return [];
+      }
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getPost(slug: string): { meta: PostMeta; content: string } | null {

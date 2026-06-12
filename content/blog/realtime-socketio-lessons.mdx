@@ -1,0 +1,57 @@
+---
+title: "Real-time features with Socket.IO: lessons from production"
+date: "2026-05-20"
+tags: ["Socket.IO", "Node.js", "Real-time"]
+summary: "What actually matters when your chat, notifications and presence features meet real users — rooms, reconnects, and the bugs nobody warns you about."
+---
+
+{/* FACT-CHECK: draft post written for Kartik's review — verify anecdotes match his real experience */}
+
+Real-time features look easy in the demo and humbling in production. I've shipped
+Socket.IO-powered chat, notifications and live updates in production apps, and the
+gap between "works on my machine" and "works for users on hotel Wi-Fi" taught me more
+than any tutorial.
+
+## Rooms are your unit of scale
+
+The first instinct is to broadcast everything and filter on the client. It works until
+it doesn't. Model your domain as rooms early — a conversation, an order, a dashboard —
+and join/leave deliberately:
+
+```js
+io.on("connection", (socket) => {
+  socket.on("conversation:join", (conversationId) => {
+    socket.join(`conversation:${conversationId}`);
+  });
+});
+
+// emitting to exactly the right people
+io.to(`conversation:${id}`).emit("message:new", message);
+```
+
+## Design for the reconnect, not the connect
+
+Mobile users change networks constantly. Every real-time feature needs an answer to
+"what happens when the socket comes back?" Two rules that saved me:
+
+1. **Server is the source of truth.** On reconnect, the client asks for everything it
+   missed (`since: lastMessageId`) instead of trusting its local state.
+2. **Make events idempotent.** Receiving `message:new` twice must not show the message
+   twice. Deduplicate by ID at the boundary.
+
+## Don't send what you can't afford
+
+Socket payloads bypass most of the caching you rely on for REST. Sending a full object
+graph on every keystroke melts both your server and your user's data plan. Send deltas,
+debounce aggressively, and measure payload sizes like you measure bundle sizes.
+
+## The checklist I use now
+
+- Rooms mapped to domain objects, never "one big channel"
+- Reconnect flow tested by literally toggling Wi-Fi
+- Idempotent event handlers with IDs on every event
+- Heartbeat/presence timeouts tuned for mobile (generous, not aggressive)
+- A REST fallback for anything that must not be lost
+
+Real-time is a feature multiplier — chat, live dashboards, presence all feel magical
+when they work. The magic is in the failure handling.
