@@ -20,10 +20,11 @@ export default function AboutPage() {
         <div>
           <Image
             src="/img/profile.jpg"
-            alt={PROFILE.name}
+            alt={`Portrait of ${PROFILE.name}`}
             width={280}
             height={280}
-            className="card w-full object-cover"
+            sizes="(min-width: 1024px) 280px, 100vw"
+            className="card aspect-square w-full object-cover"
             priority
           />
           <div className="card mt-4 space-y-2 p-4 text-sm">
