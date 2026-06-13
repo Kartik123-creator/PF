@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { SITE_URL as BASE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/about", "/services", "/projects", "/blog", "/contact"].map((p) => ({
+  const pages = ["", "/about", "/services", "/projects", "/blog", "/contact", "/resume"].map((p) => ({
     url: `${BASE}${p}`,
     lastModified: new Date(),
   }));

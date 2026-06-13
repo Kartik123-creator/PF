@@ -10,7 +10,7 @@ export const PROFILE = {
   phoneHref: "+919328717164",
   linkedin: "https://linkedin.com/in/kartik-bosmiya-1277a8212",
   github: "https://github.com/Kartik123-creator",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/resume",
   status: "OPEN_TO_WORK",
   responseSla: "≤ 24 hours",
   /** Formspree form id, e.g. "mqkrbyzw". Empty string = form falls back to mailto. */

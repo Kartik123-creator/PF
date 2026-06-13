@@ -1,0 +1,338 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "KB." [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - button "Switch theme" [ref=e7] [cursor=pointer]:
+          - img [ref=e8]
+          - generic [ref=e14]: paper
+        - button "Open menu" [ref=e484] [cursor=pointer]:
+          - img [ref=e485]
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - paragraph [ref=e20]: Open to work · Ahmedabad, India · UTC+05:30
+      - heading "Kartik Bosmiya" [level=1] [ref=e22]
+      - paragraph [ref=e23]: Software Engineer · End-to-End Product Builder
+      - paragraph [ref=e24]: 5+ years building web, mobile and AI-powered products for clients worldwide — from first wireframe to AWS deployment.
+      - generic [ref=e25]:
+        - link "View projects" [ref=e26] [cursor=pointer]:
+          - /url: /projects
+          - text: View projects
+          - img [ref=e27]
+        - link "Resume" [ref=e29] [cursor=pointer]:
+          - /url: /resume.pdf
+          - img [ref=e30]
+          - text: Resume
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - paragraph [ref=e35]: 30+
+        - paragraph [ref=e36]: Happy clients
+      - generic [ref=e37]:
+        - paragraph [ref=e38]: 5+
+        - paragraph [ref=e39]: Years experience
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: 0+
+        - paragraph [ref=e42]: Projects shipped
+      - generic [ref=e43]:
+        - paragraph [ref=e44]: 0+
+        - paragraph [ref=e45]: Technologies
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: What I do
+        - heading "End-to-end product engineering" [level=2] [ref=e49]
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - heading "B2B & B2C Products" [level=3] [ref=e55]
+          - paragraph [ref=e56]: SaaS platforms, e-commerce and consumer apps — from marketplace flows to checkout.
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - heading "Enterprise & ERP" [level=3] [ref=e62]
+          - paragraph [ref=e63]: "Large-scale systems: ERP, HRMS, payroll, role-based access and multi-tenant architectures."
+        - generic [ref=e64]:
+          - img [ref=e65]
+          - heading "Mobile Applications" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Android & iOS apps with Ionic, Capacitor and React Native.
+        - generic [ref=e69]:
+          - img [ref=e70]
+          - heading "AI Integrations" [level=3] [ref=e73]
+          - paragraph [ref=e74]: LLM APIs, AI-powered features and automation woven into real products.
+        - generic [ref=e75]:
+          - img [ref=e76]
+          - heading "DevOps, AWS & Migrations" [level=3] [ref=e78]
+          - paragraph [ref=e79]: CI/CD pipelines, cloud deployments, load balancing, and platform/data migrations.
+        - generic [ref=e80]:
+          - img [ref=e81]
+          - heading "Real-time Systems" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Live chat, notifications and presence with Socket.IO at scale.
+        - generic [ref=e85]:
+          - img [ref=e86]
+          - heading "SEO & Performance" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Technical SEO, Core Web Vitals, lazy loading and code splitting that move rankings.
+        - generic [ref=e91]:
+          - img [ref=e92]
+          - heading "Design & Branding" [level=3] [ref=e97]
+          - paragraph [ref=e98]: Marketing brochures, templates, logos and canvas design tools built on Fabric.js.
+        - generic [ref=e99]:
+          - img [ref=e100]
+          - heading "Client Consulting" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Direct client collaboration — requirements to demos to delivery.
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: Selected work
+        - heading "Featured projects" [level=2] [ref=e110]
+      - generic [ref=e111]:
+        - article [ref=e112]:
+          - paragraph [ref=e113]: ERP · E-commerce
+          - heading "CASSA Group ERP" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Full Stack Developer
+          - paragraph [ref=e116]: Transformed a basic e-commerce site into a full ERP platform with inventory, HR and payroll.
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - generic [ref=e119]: ▸
+              - generic [ref=e120]: Converted basic e-commerce into a complete ERP system.
+            - listitem [ref=e121]:
+              - generic [ref=e122]: ▸
+              - generic [ref=e123]: Implemented role-based pricing and inventory tracking.
+            - listitem [ref=e124]:
+              - generic [ref=e125]: ▸
+              - generic [ref=e126]: Developed HRMS and payroll modules.
+          - generic [ref=e127]:
+            - generic [ref=e128]: React
+            - generic [ref=e129]: Node.js
+            - generic [ref=e130]: Express
+            - generic [ref=e131]: MongoDB
+            - generic [ref=e132]: MUI
+            - generic [ref=e133]: REST APIs
+            - generic [ref=e134]: AWS
+        - article [ref=e135]:
+          - paragraph [ref=e136]: SaaS · Booking · UK Market
+          - heading "THAT TIME" [level=3] [ref=e137]
+          - paragraph [ref=e138]: Full Stack & Mobile Developer
+          - paragraph [ref=e139]: Multi-role appointment booking SaaS for the UK market with payments and native mobile apps.
+          - list [ref=e140]:
+            - listitem [ref=e141]:
+              - generic [ref=e142]: ▸
+              - generic [ref=e143]: Built a multi-role booking system (Customer, Vendor, Admin).
+            - listitem [ref=e144]:
+              - generic [ref=e145]: ▸
+              - generic [ref=e146]: Integrated Klarna, Clearpay, Visa and Mastercard payments.
+            - listitem [ref=e147]:
+              - generic [ref=e148]: ▸
+              - generic [ref=e149]: Shipped Android & iOS apps using Ionic.
+          - generic [ref=e150]:
+            - generic [ref=e151]: Angular
+            - generic [ref=e152]: Node.js
+            - generic [ref=e153]: Express
+            - generic [ref=e154]: MySQL
+            - generic [ref=e155]: Ionic
+            - generic [ref=e156]: Capacitor
+            - generic [ref=e157]: Payment APIs
+        - article [ref=e158]:
+          - paragraph [ref=e159]: AI · Image Generation
+          - heading "AI Image Gallery" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Frontend Developer
+          - paragraph [ref=e162]: AI-powered image search and generation platform with multiple art styles.
+          - list [ref=e163]:
+            - listitem [ref=e164]:
+              - generic [ref=e165]: ▸
+              - generic [ref=e166]: Created AI-powered image search and generation flows.
+            - listitem [ref=e167]:
+              - generic [ref=e168]: ▸
+              - generic [ref=e169]: Multiple styles (anime, 3D, realistic, cartoon) with dark/light mode.
+            - listitem [ref=e170]:
+              - generic [ref=e171]: ▸
+              - generic [ref=e172]: Image preview and multi-resolution downloads.
+          - generic [ref=e173]:
+            - generic [ref=e174]: Next.js
+            - generic [ref=e175]: TypeScript
+            - generic [ref=e176]: Tailwind CSS
+            - generic [ref=e177]: REST APIs
+      - link "All projects" [ref=e178] [cursor=pointer]:
+        - /url: /projects
+        - text: All projects
+        - img [ref=e179]
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - paragraph [ref=e183]: Experience
+        - heading "Where I've worked" [level=2] [ref=e184]
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - paragraph [ref=e188]: Nov 2023 – Present
+          - heading "Full Stack Developer" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Tec Sense Innovations Pvt. Ltd. · Ahmedabad, India · Full-time
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - generic [ref=e193]: ▸
+              - generic [ref=e194]: Developed scalable applications using React.js, Next.js and Angular.
+            - listitem [ref=e195]:
+              - generic [ref=e196]: ▸
+              - generic [ref=e197]: Built backend services with Laravel and Node.js REST APIs; real-time features with Socket.IO.
+            - listitem [ref=e198]:
+              - generic [ref=e199]: ▸
+              - generic [ref=e200]: Designed optimized MongoDB and PostgreSQL schemas for high-performance systems.
+        - generic [ref=e201]:
+          - paragraph [ref=e203]: Jul 2020 – Jan 2022
+          - heading "Software Developer" [level=3] [ref=e204]
+          - paragraph [ref=e205]: Websture Digital Agency · Ahmedabad, India · Full-time
+          - list [ref=e206]:
+            - listitem [ref=e207]:
+              - generic [ref=e208]: ▸
+              - generic [ref=e209]: Built responsive SPAs using Angular and React for agency clients.
+            - listitem [ref=e210]:
+              - generic [ref=e211]: ▸
+              - generic [ref=e212]: Worked directly with clients to gather requirements and ship iterations — end-to-end ownership.
+            - listitem [ref=e213]:
+              - generic [ref=e214]: ▸
+              - generic [ref=e215]: Implemented form validation, CRUD flows and API integrations.
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - paragraph [ref=e218]: Now
+        - heading "What I'm working with right now" [level=2] [ref=e219]
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - img [ref=e223]
+            - generic [ref=e225]: USING
+          - heading "AI-first development workflow" [level=3] [ref=e226]
+          - paragraph [ref=e227]: Claude, ChatGPT and Copilot in the daily loop — faster delivery without losing code quality.
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - img [ref=e230]
+            - generic [ref=e235]: BUILDING
+          - heading "LLM features in client products" [level=3] [ref=e236]
+          - paragraph [ref=e237]: Chat assistants, prompt pipelines and AI-powered automation shipped into production apps.
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - img [ref=e240]
+            - generic [ref=e243]: AVAILABLE
+          - heading "Full-time roles" [level=3] [ref=e244]
+          - paragraph [ref=e245]: Open to remote or hybrid software engineering roles — replies within 24 hours.
+    - generic [ref=e247]:
+      - generic [ref=e248]: Next.js
+      - generic [ref=e250]: React
+      - generic [ref=e252]: Angular
+      - generic [ref=e254]: Vue.js
+      - generic [ref=e256]: Fabric.js
+      - generic [ref=e258]: Tailwind CSS
+      - generic [ref=e260]: MUI
+      - generic [ref=e262]: Ant Design
+      - generic [ref=e264]: Node.js
+      - generic [ref=e266]: Laravel (PHP)
+      - generic [ref=e268]: REST APIs
+      - generic [ref=e270]: Socket.IO
+      - generic [ref=e272]: gRPC
+      - generic [ref=e274]: Ionic
+      - generic [ref=e276]: Capacitor
+      - generic [ref=e278]: React Native
+      - generic [ref=e280]: LLM API integration
+      - generic [ref=e282]: Claude / ChatGPT
+      - generic [ref=e284]: GitHub Copilot
+      - generic [ref=e286]: AI-assisted workflows
+      - generic [ref=e288]: Prompt engineering
+      - generic [ref=e290]: AWS
+      - generic [ref=e292]: CI/CD pipelines
+      - generic [ref=e294]: Load balancers
+      - generic [ref=e296]: Cron jobs
+      - generic [ref=e298]: MongoDB
+      - generic [ref=e300]: MySQL
+      - generic [ref=e302]: PostgreSQL
+      - generic [ref=e304]: Technical SEO
+      - generic [ref=e306]: Core Web Vitals
+      - generic [ref=e308]: Marketing brochures
+      - generic [ref=e310]: Landing pages
+      - generic [ref=e312]: B2B & B2C products
+      - generic [ref=e314]: Enterprise systems
+      - generic [ref=e316]: Platform migrations
+      - generic [ref=e318]: Agile/Scrum
+      - generic [ref=e320]: Client handling
+      - generic [ref=e322]: Next.js
+      - generic [ref=e324]: React
+      - generic [ref=e326]: Angular
+      - generic [ref=e328]: Vue.js
+      - generic [ref=e330]: Fabric.js
+      - generic [ref=e332]: Tailwind CSS
+      - generic [ref=e334]: MUI
+      - generic [ref=e336]: Ant Design
+      - generic [ref=e338]: Node.js
+      - generic [ref=e340]: Laravel (PHP)
+      - generic [ref=e342]: REST APIs
+      - generic [ref=e344]: Socket.IO
+      - generic [ref=e346]: gRPC
+      - generic [ref=e348]: Ionic
+      - generic [ref=e350]: Capacitor
+      - generic [ref=e352]: React Native
+      - generic [ref=e354]: LLM API integration
+      - generic [ref=e356]: Claude / ChatGPT
+      - generic [ref=e358]: GitHub Copilot
+      - generic [ref=e360]: AI-assisted workflows
+      - generic [ref=e362]: Prompt engineering
+      - generic [ref=e364]: AWS
+      - generic [ref=e366]: CI/CD pipelines
+      - generic [ref=e368]: Load balancers
+      - generic [ref=e370]: Cron jobs
+      - generic [ref=e372]: MongoDB
+      - generic [ref=e374]: MySQL
+      - generic [ref=e376]: PostgreSQL
+      - generic [ref=e378]: Technical SEO
+      - generic [ref=e380]: Core Web Vitals
+      - generic [ref=e382]: Marketing brochures
+      - generic [ref=e384]: Landing pages
+      - generic [ref=e386]: B2B & B2C products
+      - generic [ref=e388]: Enterprise systems
+      - generic [ref=e390]: Platform migrations
+      - generic [ref=e392]: Agile/Scrum
+      - generic [ref=e394]: Client handling
+    - generic [ref=e396]:
+      - generic [ref=e397]:
+        - paragraph [ref=e398]: Writing
+        - heading "Latest from the blog" [level=2] [ref=e399]
+      - generic [ref=e400]:
+        - 'link "2026-05-20 · 2 min read Real-time features with Socket.IO: lessons from production What actually matters when your chat, notifications and presence features meet real users — rooms, reconnects, and the bugs nobody warns you about. Socket.IO Node.js Real-time" [ref=e401] [cursor=pointer]':
+          - /url: /blog/realtime-socketio-lessons
+          - paragraph [ref=e402]: 2026-05-20 · 2 min read
+          - 'heading "Real-time features with Socket.IO: lessons from production" [level=3] [ref=e403]'
+          - paragraph [ref=e404]: What actually matters when your chat, notifications and presence features meet real users — rooms, reconnects, and the bugs nobody warns you about.
+          - generic [ref=e405]:
+            - generic [ref=e406]: Socket.IO
+            - generic [ref=e407]: Node.js
+            - generic [ref=e408]: Real-time
+        - 'link "2026-04-12 · 2 min read From e-commerce to ERP: lessons from rebuilding CASSA Turning a working e-commerce site into a full ERP without stopping the business — role-based pricing, inventory and payroll, one careful module at a time. Architecture React MongoDB" [ref=e409] [cursor=pointer]':
+          - /url: /blog/ecommerce-to-erp
+          - paragraph [ref=e410]: 2026-04-12 · 2 min read
+          - 'heading "From e-commerce to ERP: lessons from rebuilding CASSA" [level=3] [ref=e411]'
+          - paragraph [ref=e412]: Turning a working e-commerce site into a full ERP without stopping the business — role-based pricing, inventory and payroll, one careful module at a time.
+          - generic [ref=e413]:
+            - generic [ref=e414]: Architecture
+            - generic [ref=e415]: React
+            - generic [ref=e416]: MongoDB
+    - generic [ref=e417]:
+      - heading "Let's build something together" [level=2] [ref=e418]
+      - paragraph [ref=e419]: Open to full-time roles — remote or hybrid. I reply within 24 hours.
+      - link "Get in touch" [ref=e420] [cursor=pointer]:
+        - /url: /contact
+        - text: Get in touch
+        - img [ref=e421]
+  - contentinfo [ref=e423]:
+    - generic [ref=e424]:
+      - generic [ref=e425]:
+        - paragraph [ref=e426]: Kartik Bosmiya
+        - paragraph [ref=e427]: Ahmedabad, India · UTC+05:30
+      - generic [ref=e428]:
+        - link "GitHub" [ref=e429] [cursor=pointer]:
+          - /url: https://github.com/Kartik123-creator
+          - img [ref=e430]
+        - link "LinkedIn" [ref=e433] [cursor=pointer]:
+          - /url: https://linkedin.com/in/kartik-bosmiya-1277a8212
+          - img [ref=e434]
+        - link "Email" [ref=e438] [cursor=pointer]:
+          - /url: mailto:kartikbosmiya2003@gmail.com
+          - img [ref=e439]
+      - paragraph [ref=e442]: © 2026 · built with Next.js
+  - button "Ask Kartik" [ref=e443] [cursor=pointer]:
+    - img [ref=e444]
+    - text: Ask Kartik
+  - button "Open Next.js Dev Tools" [ref=e451] [cursor=pointer]:
+    - img [ref=e452]
+  - alert [ref=e455]

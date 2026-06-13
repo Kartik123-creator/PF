@@ -58,7 +58,7 @@ export default function AskKartik() {
         aria-haspopup="dialog"
         aria-expanded={false}
         onClick={() => setOpen(true)}
-        className="mono-label fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-primary-ink shadow-lg transition-transform hover:scale-105"
+        className="mono-label fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-primary-ink shadow-lg transition-transform hover:scale-105 print:hidden"
       >
         <Sparkles size={14} />
         Ask Kartik

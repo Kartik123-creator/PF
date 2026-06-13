@@ -40,7 +40,7 @@ export default function Navbar() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-paper/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-hairline bg-paper/60 backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="mono-label font-bold text-ink hover:text-primary transition-colors">
           KB<span className="text-primary">.</span>

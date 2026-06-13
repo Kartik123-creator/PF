@@ -1,0 +1,187 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "KB." [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: /about
+        - link "Projects" [ref=e8] [cursor=pointer]:
+          - /url: /projects
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: /contact
+      - button "Switch theme" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+        - generic [ref=e19]: paper
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: About
+      - heading "The story so far" [level=1] [ref=e24]
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - img "Portrait of Kartik Bosmiya" [ref=e27]
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: Location · Ahmedabad, India
+          - paragraph [ref=e30]: Timezone · UTC+05:30
+          - paragraph [ref=e31]:
+            - text: Email ·
+            - link "kartikbosmiya2003@gmail.com" [ref=e32] [cursor=pointer]:
+              - /url: mailto:kartikbosmiya2003@gmail.com
+          - paragraph [ref=e33]: Responds · ≤ 24 hours
+      - generic [ref=e34]:
+        - paragraph [ref=e35]: "I'm Kartik — a software engineer from Ahmedabad who has spent the last 5+ years building products end-to-end: web apps, mobile apps and, increasingly, AI-powered features that make software feel alive."
+        - paragraph [ref=e36]:
+          - text: I started at a digital agency, working directly with clients and learning that shipping the
+          - emphasis [ref=e37]: right
+          - text: thing matters more than shipping the clever thing. Since then I've converted an e-commerce site into a full ERP (CASSA Group), launched a UK booking SaaS with payments and native mobile apps (THAT TIME), and built AI-driven platforms with Next.js.
+        - paragraph [ref=e38]: "My sweet spot is owning a feature from first wireframe to AWS deployment — frontend, backend, database, pipeline. I've worked across B2B and B2C products, enterprise systems and platform migrations, and I handle the surrounding work too: technical SEO, marketing brochures and design assets when a project needs them. I work in agile teams, run code reviews, and communicate with clients like a partner, not a ticket-taker."
+        - paragraph [ref=e39]: "Beyond code: exploring new AI tooling, building side projects (this portfolio and its chatbot are one), and keeping up with where software is heading next."
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - paragraph [ref=e42]: Experience
+        - heading "Full history" [level=2] [ref=e43]
+      - generic [ref=e44]:
+        - paragraph [ref=e46]: Nov 2023 – Present
+        - heading "Full Stack Developer" [level=3] [ref=e47]
+        - paragraph [ref=e48]: Tec Sense Innovations Pvt. Ltd. · Ahmedabad, India · Full-time
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - generic [ref=e51]: ▸
+            - generic [ref=e52]: Developed scalable applications using React.js, Next.js and Angular.
+          - listitem [ref=e53]:
+            - generic [ref=e54]: ▸
+            - generic [ref=e55]: Built backend services with Laravel and Node.js REST APIs; real-time features with Socket.IO.
+          - listitem [ref=e56]:
+            - generic [ref=e57]: ▸
+            - generic [ref=e58]: Designed optimized MongoDB and PostgreSQL schemas for high-performance systems.
+          - listitem [ref=e59]:
+            - generic [ref=e60]: ▸
+            - generic [ref=e61]: Integrated AI capabilities (LLM APIs, AI-assisted features) into production products.
+          - listitem [ref=e62]:
+            - generic [ref=e63]: ▸
+            - generic [ref=e64]: Deployed on AWS with CI/CD pipelines; exposure to gRPC services and load balancing.
+          - listitem [ref=e65]:
+            - generic [ref=e66]: ▸
+            - generic [ref=e67]: Improved performance via lazy loading, code splitting and caching.
+          - listitem [ref=e68]:
+            - generic [ref=e69]: ▸
+            - generic [ref=e70]: Collaborated in cross-functional Agile teams; ran code reviews.
+      - generic [ref=e71]:
+        - paragraph [ref=e73]: Jul 2020 – Jan 2022
+        - heading "Software Developer" [level=3] [ref=e74]
+        - paragraph [ref=e75]: Websture Digital Agency · Ahmedabad, India · Full-time
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - generic [ref=e78]: ▸
+            - generic [ref=e79]: Built responsive SPAs using Angular and React for agency clients.
+          - listitem [ref=e80]:
+            - generic [ref=e81]: ▸
+            - generic [ref=e82]: Worked directly with clients to gather requirements and ship iterations — end-to-end ownership.
+          - listitem [ref=e83]:
+            - generic [ref=e84]: ▸
+            - generic [ref=e85]: Implemented form validation, CRUD flows and API integrations.
+          - listitem [ref=e86]:
+            - generic [ref=e87]: ▸
+            - generic [ref=e88]: Used Git for version control and team collaboration.
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - paragraph [ref=e91]: Education
+        - heading "Where I studied" [level=2] [ref=e92]
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - paragraph [ref=e95]: 2023 – Present
+          - heading "Bachelor of Computer Engineering" [level=3] [ref=e96]
+          - paragraph [ref=e97]: L.J. University, Ahmedabad
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: 2021 – 2023
+          - heading "Diploma in Computer Engineering" [level=3] [ref=e100]
+          - paragraph [ref=e101]: L.J. University, Ahmedabad
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - paragraph [ref=e104]: Skills
+        - heading "The toolkit" [level=2] [ref=e105]
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - paragraph [ref=e108]: Frontend
+          - generic [ref=e109]:
+            - generic [ref=e110]: Next.js
+            - generic [ref=e111]: React
+            - generic [ref=e112]: Angular
+            - generic [ref=e113]: Vue.js
+            - generic [ref=e114]: Fabric.js
+            - generic [ref=e115]: Tailwind CSS
+            - generic [ref=e116]: MUI
+            - generic [ref=e117]: Ant Design
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: Backend
+          - generic [ref=e120]:
+            - generic [ref=e121]: Node.js
+            - generic [ref=e122]: Laravel (PHP)
+            - generic [ref=e123]: REST APIs
+            - generic [ref=e124]: Socket.IO
+            - generic [ref=e125]: gRPC
+        - generic [ref=e126]:
+          - paragraph [ref=e127]: Mobile
+          - generic [ref=e128]:
+            - generic [ref=e129]: Ionic
+            - generic [ref=e130]: Capacitor
+            - generic [ref=e131]: React Native
+        - generic [ref=e132]:
+          - paragraph [ref=e133]: AI & Automation
+          - generic [ref=e134]:
+            - generic [ref=e135]: LLM API integration
+            - generic [ref=e136]: Claude / ChatGPT
+            - generic [ref=e137]: GitHub Copilot
+            - generic [ref=e138]: AI-assisted workflows
+            - generic [ref=e139]: Prompt engineering
+        - generic [ref=e140]:
+          - paragraph [ref=e141]: DevOps & Cloud
+          - generic [ref=e142]:
+            - generic [ref=e143]: AWS
+            - generic [ref=e144]: CI/CD pipelines
+            - generic [ref=e145]: Load balancers
+            - generic [ref=e146]: Cron jobs
+        - generic [ref=e147]:
+          - paragraph [ref=e148]: Databases
+          - generic [ref=e149]:
+            - generic [ref=e150]: MongoDB
+            - generic [ref=e151]: MySQL
+            - generic [ref=e152]: PostgreSQL
+        - generic [ref=e153]:
+          - paragraph [ref=e154]: SEO & Marketing
+          - generic [ref=e155]:
+            - generic [ref=e156]: Technical SEO
+            - generic [ref=e157]: Core Web Vitals
+            - generic [ref=e158]: Marketing brochures
+            - generic [ref=e159]: Landing pages
+        - generic [ref=e160]:
+          - paragraph [ref=e161]: Delivery & Practices
+          - generic [ref=e162]:
+            - generic [ref=e163]: B2B & B2C products
+            - generic [ref=e164]: Enterprise systems
+            - generic [ref=e165]: Platform migrations
+            - generic [ref=e166]: Agile/Scrum
+            - generic [ref=e167]: Client handling
+  - contentinfo [ref=e168]:
+    - generic [ref=e169]:
+      - generic [ref=e170]:
+        - paragraph [ref=e171]: Kartik Bosmiya
+        - paragraph [ref=e172]: Ahmedabad, India · UTC+05:30
+      - generic [ref=e173]:
+        - link "GitHub" [ref=e174] [cursor=pointer]:
+          - /url: https://github.com/Kartik123-creator
+          - img [ref=e175]
+        - link "LinkedIn" [ref=e178] [cursor=pointer]:
+          - /url: https://linkedin.com/in/kartik-bosmiya-1277a8212
+          - img [ref=e179]
+        - link "Email" [ref=e183] [cursor=pointer]:
+          - /url: mailto:kartikbosmiya2003@gmail.com
+          - img [ref=e184]
+      - paragraph [ref=e187]: © 2026 · built with Next.js
+  - button "Ask Kartik" [ref=e188] [cursor=pointer]:
+    - img [ref=e189]
+    - text: Ask Kartik

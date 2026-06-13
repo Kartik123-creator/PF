@@ -1,0 +1,276 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "KB." [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - button "Switch theme" [ref=e7] [cursor=pointer]:
+          - img [ref=e8]
+          - generic [ref=e14]: paper
+        - button "Open menu" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - paragraph [ref=e20]: Projects
+      - heading "Things I've shipped" [level=1] [ref=e21]
+    - generic [ref=e22]:
+      - button "All" [pressed] [ref=e23] [cursor=pointer]
+      - button "Web" [ref=e24] [cursor=pointer]
+      - button "Mobile" [ref=e25] [cursor=pointer]
+      - button "AI" [ref=e26] [cursor=pointer]
+    - generic [ref=e27]:
+      - article [ref=e28]:
+        - paragraph [ref=e29]: ERP · E-commerce
+        - heading "CASSA Group ERP" [level=3] [ref=e30]
+        - paragraph [ref=e31]: Full Stack Developer
+        - paragraph [ref=e32]: Transformed a basic e-commerce site into a full ERP platform with inventory, HR and payroll.
+        - list [ref=e33]:
+          - listitem [ref=e34]:
+            - generic [ref=e35]: ▸
+            - generic [ref=e36]: Converted basic e-commerce into a complete ERP system.
+          - listitem [ref=e37]:
+            - generic [ref=e38]: ▸
+            - generic [ref=e39]: Implemented role-based pricing and inventory tracking.
+          - listitem [ref=e40]:
+            - generic [ref=e41]: ▸
+            - generic [ref=e42]: Developed HRMS and payroll modules.
+        - generic [ref=e43]:
+          - generic [ref=e44]: React
+          - generic [ref=e45]: Node.js
+          - generic [ref=e46]: Express
+          - generic [ref=e47]: MongoDB
+          - generic [ref=e48]: MUI
+          - generic [ref=e49]: REST APIs
+          - generic [ref=e50]: AWS
+      - article [ref=e51]:
+        - paragraph [ref=e52]: SaaS · Booking · UK Market
+        - heading "THAT TIME" [level=3] [ref=e53]
+        - paragraph [ref=e54]: Full Stack & Mobile Developer
+        - paragraph [ref=e55]: Multi-role appointment booking SaaS for the UK market with payments and native mobile apps.
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - generic [ref=e58]: ▸
+            - generic [ref=e59]: Built a multi-role booking system (Customer, Vendor, Admin).
+          - listitem [ref=e60]:
+            - generic [ref=e61]: ▸
+            - generic [ref=e62]: Integrated Klarna, Clearpay, Visa and Mastercard payments.
+          - listitem [ref=e63]:
+            - generic [ref=e64]: ▸
+            - generic [ref=e65]: Shipped Android & iOS apps using Ionic.
+        - generic [ref=e66]:
+          - generic [ref=e67]: Angular
+          - generic [ref=e68]: Node.js
+          - generic [ref=e69]: Express
+          - generic [ref=e70]: MySQL
+          - generic [ref=e71]: Ionic
+          - generic [ref=e72]: Capacitor
+          - generic [ref=e73]: Payment APIs
+      - article [ref=e74]:
+        - paragraph [ref=e75]: AI · Image Generation
+        - heading "AI Image Gallery" [level=3] [ref=e76]
+        - paragraph [ref=e77]: Frontend Developer
+        - paragraph [ref=e78]: AI-powered image search and generation platform with multiple art styles.
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - generic [ref=e81]: ▸
+            - generic [ref=e82]: Created AI-powered image search and generation flows.
+          - listitem [ref=e83]:
+            - generic [ref=e84]: ▸
+            - generic [ref=e85]: Multiple styles (anime, 3D, realistic, cartoon) with dark/light mode.
+          - listitem [ref=e86]:
+            - generic [ref=e87]: ▸
+            - generic [ref=e88]: Image preview and multi-resolution downloads.
+        - generic [ref=e89]:
+          - generic [ref=e90]: Next.js
+          - generic [ref=e91]: TypeScript
+          - generic [ref=e92]: Tailwind CSS
+          - generic [ref=e93]: REST APIs
+      - article [ref=e94]:
+        - paragraph [ref=e95]: Marketplace · FinTech
+        - heading "Tax Natives" [level=3] [ref=e96]
+        - paragraph [ref=e97]: Full Stack Developer
+        - paragraph [ref=e98]: International tax-advice marketplace connecting clients with vetted tax advisers across jurisdictions.
+        - list [ref=e99]:
+          - listitem [ref=e100]:
+            - generic [ref=e101]: ▸
+            - generic [ref=e102]: Built adviser directory, enquiry and matching flows.
+          - listitem [ref=e103]:
+            - generic [ref=e104]: ▸
+            - generic [ref=e105]: Implemented content-driven pages with SEO-friendly rendering.
+          - listitem [ref=e106]:
+            - generic [ref=e107]: ▸
+            - generic [ref=e108]: Integrated forms, notifications and admin tooling.
+        - generic [ref=e109]:
+          - generic [ref=e110]: React
+          - generic [ref=e111]: Node.js
+          - generic [ref=e112]: Express
+          - generic [ref=e113]: MySQL
+          - generic [ref=e114]: Technical SEO
+      - article [ref=e115]:
+        - paragraph [ref=e116]: E-commerce · Product Discovery
+        - heading "Duped.au" [level=3] [ref=e117]
+        - paragraph [ref=e118]: Full Stack Developer
+        - paragraph [ref=e119]: Product-discovery platform for the Australian market that helps shoppers find affordable alternatives.
+        - list [ref=e120]:
+          - listitem [ref=e121]:
+            - generic [ref=e122]: ▸
+            - generic [ref=e123]: Built product catalogue, search and comparison views.
+          - listitem [ref=e124]:
+            - generic [ref=e125]: ▸
+            - generic [ref=e126]: Optimized listing performance with caching and pagination.
+          - listitem [ref=e127]:
+            - generic [ref=e128]: ▸
+            - generic [ref=e129]: Responsive UI across mobile and desktop.
+        - generic [ref=e130]:
+          - generic [ref=e131]: Next.js
+          - generic [ref=e132]: TypeScript
+          - generic [ref=e133]: Node.js
+          - generic [ref=e134]: MongoDB
+          - generic [ref=e135]: Tailwind CSS
+      - article [ref=e136]:
+        - paragraph [ref=e137]: Design Tool · Canvas
+        - heading "Canvas Design Editor" [level=3] [ref=e138]
+        - paragraph [ref=e139]: Frontend Developer
+        - paragraph [ref=e140]: Browser-based design editor for templates, cards and logos with layered editing and export.
+        - list [ref=e141]:
+          - listitem [ref=e142]:
+            - generic [ref=e143]: ▸
+            - generic [ref=e144]: Drag-and-drop canvas with text, image and shape layers built on Fabric.js.
+          - listitem [ref=e145]:
+            - generic [ref=e146]: ▸
+            - generic [ref=e147]: Template system with custom fonts, colors and alignment guides.
+          - listitem [ref=e148]:
+            - generic [ref=e149]: ▸
+            - generic [ref=e150]: High-resolution PNG export and project save/load.
+        - generic [ref=e151]:
+          - generic [ref=e152]: Fabric.js
+          - generic [ref=e153]: React
+          - generic [ref=e154]: TypeScript
+          - generic [ref=e155]: Node.js
+          - generic [ref=e156]: Canvas API
+      - article [ref=e157]:
+        - paragraph [ref=e158]: Real-time · SaaS
+        - heading "Real-time Chat & Notifications" [level=3] [ref=e159]
+        - paragraph [ref=e160]: Full Stack Developer
+        - paragraph [ref=e161]: Production chat system with rooms, presence and notifications serving thousands of concurrent users.
+        - list [ref=e162]:
+          - listitem [ref=e163]:
+            - generic [ref=e164]: ▸
+            - generic [ref=e165]: Rooms, presence, typing indicators and read receipts over Socket.IO.
+          - listitem [ref=e166]:
+            - generic [ref=e167]: ▸
+            - generic [ref=e168]: Delivery acknowledgements with offline push notification fallback.
+          - listitem [ref=e169]:
+            - generic [ref=e170]: ▸
+            - generic [ref=e171]: Scaled across instances with the Redis adapter behind a load balancer.
+        - generic [ref=e172]:
+          - generic [ref=e173]: Socket.IO
+          - generic [ref=e174]: Node.js
+          - generic [ref=e175]: Redis
+          - generic [ref=e176]: React
+          - generic [ref=e177]: MongoDB
+          - generic [ref=e178]: Nginx
+      - article [ref=e179]:
+        - paragraph [ref=e180]: Mobile · React Native
+        - heading "On-Demand Services App" [level=3] [ref=e181]
+        - paragraph [ref=e182]: Mobile Developer
+        - paragraph [ref=e183]: Cross-platform service-booking app for iOS and Android with live job tracking and payments.
+        - list [ref=e184]:
+          - listitem [ref=e185]:
+            - generic [ref=e186]: ▸
+            - generic [ref=e187]: Single React Native codebase shipped to both app stores.
+          - listitem [ref=e188]:
+            - generic [ref=e189]: ▸
+            - generic [ref=e190]: Booking flow with live status tracking and push notifications.
+          - listitem [ref=e191]:
+            - generic [ref=e192]: ▸
+            - generic [ref=e193]: Secure payments and provider/customer role separation.
+        - generic [ref=e194]:
+          - generic [ref=e195]: React Native
+          - generic [ref=e196]: Node.js
+          - generic [ref=e197]: PostgreSQL
+          - generic [ref=e198]: Firebase
+          - generic [ref=e199]: REST APIs
+      - article [ref=e200]:
+        - paragraph [ref=e201]: Migration · DevOps
+        - heading "Legacy Platform Migration" [level=3] [ref=e202]
+        - paragraph [ref=e203]: Full Stack Developer
+        - paragraph [ref=e204]: Incremental migration of a legacy PHP monolith to Node.js services with zero business downtime.
+        - list [ref=e205]:
+          - listitem [ref=e206]:
+            - generic [ref=e207]: ▸
+            - generic [ref=e208]: Strangler-pattern migration from a Laravel monolith to Node.js services.
+          - listitem [ref=e209]:
+            - generic [ref=e210]: ▸
+            - generic [ref=e211]: Data migration to PostgreSQL with validation and rollback plans.
+          - listitem [ref=e212]:
+            - generic [ref=e213]: ▸
+            - generic [ref=e214]: gRPC between services, Nginx load balancing and AWS CI/CD pipelines.
+        - generic [ref=e215]:
+          - generic [ref=e216]: Node.js
+          - generic [ref=e217]: gRPC
+          - generic [ref=e218]: PostgreSQL
+          - generic [ref=e219]: Nginx
+          - generic [ref=e220]: AWS
+          - generic [ref=e221]: Laravel (PHP)
+      - article [ref=e222]:
+        - paragraph [ref=e223]: AI · LLM Integration
+        - heading "AI Support Assistant" [level=3] [ref=e224]
+        - paragraph [ref=e225]: Full Stack Developer
+        - paragraph [ref=e226]: LLM-powered support assistant embedded in a product, answering from business content with human handoff.
+        - list [ref=e227]:
+          - listitem [ref=e228]:
+            - generic [ref=e229]: ▸
+            - generic [ref=e230]: Prompt pipelines grounded in the product's own help content.
+          - listitem [ref=e231]:
+            - generic [ref=e232]: ▸
+            - generic [ref=e233]: Intent routing with graceful escalation to human agents.
+          - listitem [ref=e234]:
+            - generic [ref=e235]: ▸
+            - generic [ref=e236]: Streaming responses over WebSockets with usage analytics.
+        - generic [ref=e237]:
+          - generic [ref=e238]: LLM APIs
+          - generic [ref=e239]: Node.js
+          - generic [ref=e240]: React
+          - generic [ref=e241]: WebSockets
+          - generic [ref=e242]: Prompt engineering
+      - article [ref=e243]:
+        - paragraph [ref=e244]: SEO · Design
+        - heading "Marketing Sites & Brand Collateral" [level=3] [ref=e245]
+        - paragraph [ref=e246]: Developer & Designer
+        - paragraph [ref=e247]: High-converting landing pages plus brochures, templates and logos for client launches.
+        - list [ref=e248]:
+          - listitem [ref=e249]:
+            - generic [ref=e250]: ▸
+            - generic [ref=e251]: Landing pages with technical SEO and 95+ Core Web Vitals scores.
+          - listitem [ref=e252]:
+            - generic [ref=e253]: ▸
+            - generic [ref=e254]: Marketing brochures, social templates and logo design.
+          - listitem [ref=e255]:
+            - generic [ref=e256]: ▸
+            - generic [ref=e257]: Analytics, A/B-ready sections and lead-capture integrations.
+        - generic [ref=e258]:
+          - generic [ref=e259]: Next.js
+          - generic [ref=e260]: Tailwind CSS
+          - generic [ref=e261]: Technical SEO
+          - generic [ref=e262]: Figma
+          - generic [ref=e263]: Analytics
+  - contentinfo [ref=e264]:
+    - generic [ref=e265]:
+      - generic [ref=e266]:
+        - paragraph [ref=e267]: Kartik Bosmiya
+        - paragraph [ref=e268]: Ahmedabad, India · UTC+05:30
+      - generic [ref=e269]:
+        - link "GitHub" [ref=e270] [cursor=pointer]:
+          - /url: https://github.com/Kartik123-creator
+          - img [ref=e271]
+        - link "LinkedIn" [ref=e274] [cursor=pointer]:
+          - /url: https://linkedin.com/in/kartik-bosmiya-1277a8212
+          - img [ref=e275]
+        - link "Email" [ref=e279] [cursor=pointer]:
+          - /url: mailto:kartikbosmiya2003@gmail.com
+          - img [ref=e280]
+      - paragraph [ref=e283]: © 2026 · built with Next.js
+  - button "Ask Kartik" [ref=e284] [cursor=pointer]:
+    - img [ref=e285]
+    - text: Ask Kartik

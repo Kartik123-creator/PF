@@ -1,0 +1,404 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - generic: MitulJagad
+        - generic:
+          - button:
+            - img
+          - button [expanded]:
+            - img
+    - main:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: ~ / mitul
+                  - generic:
+                    - generic:
+                      - generic: $
+                      - generic: open status
+                    - generic: Online - Available for contracts
+                    - generic: 30 hrs/wk - reply within 24h
+              - generic:
+                - generic: OPEN TO WORK
+              - generic:
+                - generic: ~30 hrs/wk
+            - heading [level=1]: Mitul Jagad
+            - paragraph: Senior Full Stack Developer. Six years shipping production for SaaS and FinTech teams. Lately building AI agents and workflow automations that have to actually run, not just demo.
+            - generic:
+              - link:
+                - /url: /resume.pdf
+                - img
+                - text: Resume
+              - button:
+                - img
+                - text: Copy Email
+            - generic:
+              - generic: FOLLOW
+              - link:
+                - /url: https://www.linkedin.com/in/jagadmitul
+                - img
+              - link:
+                - /url: https://github.com/jagadmitul
+                - img
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - text: WORK EXPERIENCE
+                - heading [level=2]: Building production since 2020
+            - generic:
+              - list:
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Omnis AI
+                      - generic: Oct 2024 - Feb 2026
+                    - paragraph: Team Lead - Senior Full Stack Developer
+                    - paragraph: United States · Remote
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Rebrandic
+                      - generic: Jun 2023 - May 2025
+                    - paragraph: Senior Full Stack Developer
+                    - paragraph: Remote
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Tpots
+                      - generic: Jun 2022 - Nov 2023
+                    - paragraph: Software Developer
+                    - paragraph: Surat, Gujarat, India · On-site
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Zodiac Techlance
+                      - generic: Feb 2020 - Aug 2022
+                    - paragraph: Full Stack Developer
+                    - paragraph: Remote
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Omnis AI
+                      - generic: Oct 2024 - Feb 2026
+                    - paragraph: Team Lead - Senior Full Stack Developer
+                    - paragraph: United States · Remote
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Rebrandic
+                      - generic: Jun 2023 - May 2025
+                    - paragraph: Senior Full Stack Developer
+                    - paragraph: Remote
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Tpots
+                      - generic: Jun 2022 - Nov 2023
+                    - paragraph: Software Developer
+                    - paragraph: Surat, Gujarat, India · On-site
+                - listitem:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Zodiac Techlance
+                      - generic: Feb 2020 - Aug 2022
+                    - paragraph: Full Stack Developer
+                    - paragraph: Remote
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - text: RECENT PROJECTS
+                - heading [level=2]: Things I've shipped recently
+              - link:
+                - /url: /portfolio
+                - text: ALL →
+            - generic:
+              - link:
+                - /url: /portfolio/ai-workflow-agent
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: "2025"
+                      - heading [level=3]: AI Workflow Automation Agent
+                  - generic:
+                    - generic:
+                      - heading [level=3]: AI Workflow Automation Agent
+                      - img
+                    - paragraph: End-to-end business process automation using LangGraph orchestration - hours of work reduced to under 5 minutes.
+                    - generic:
+                      - generic: 100+/day
+                      - generic: · 2025
+              - link:
+                - /url: /portfolio/enterprise-sso
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: "2024"
+                      - heading [level=3]: Enterprise SSO Platform
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Enterprise SSO Platform
+                      - img
+                    - paragraph: Centralized SSO across a 10+ product suite (Office 365-style) with passkeys, 2FA, magic links, and RBAC - zero auth tickets in m1.
+                    - generic:
+                      - generic: 100K+ users
+                      - generic: · 2024
+              - link:
+                - /url: /portfolio/tapuz-sql
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: "2023"
+                      - heading [level=3]: TAPUZ - SQL Optimization at Scale
+                  - generic:
+                    - generic:
+                      - heading [level=3]: TAPUZ - SQL Optimization at Scale
+                      - img
+                    - paragraph: Israel's largest shipping platform - read the EXPLAIN plan, fixed the index, dropped p99 from 50s to 4s.
+                    - generic:
+                      - generic: 50s → 4s
+                      - generic: · 2023
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - text: NOW
+                - heading [level=2]: What I'm building right now
+              - generic: LIVE
+            - list:
+              - listitem:
+                - generic:
+                  - img
+                - generic:
+                  - generic: BUILDING
+                  - generic: OnwardOS
+                  - paragraph: AI-native study-abroad suite - LangGraph pipelines, Claude orchestration, pgvector retrieval.
+              - listitem:
+                - generic:
+                  - img
+                - generic:
+                  - generic: REFINING
+                  - generic: Production agent patterns
+                  - paragraph: Checkpoint recovery, structured-output reliability, multi-product session propagation - taking what worked this year and packaging it.
+              - listitem:
+                - generic:
+                  - img
+                - generic:
+                  - generic: AVAILABLE
+                  - generic: Senior contracts · 30 hrs/wk
+                  - paragraph: Open to 3-6 month engagements in SaaS / FinTech / HealthTech, or the right FT senior role.
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - text: MY EXPERT AREA
+              - heading [level=2]: The stack I ship production with
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - paragraph: Next.js
+              - generic:
+                - generic:
+                  - img
+                - paragraph: NestJS
+              - generic:
+                - generic:
+                  - img
+                - paragraph: LangChain
+              - generic:
+                - generic:
+                  - img
+                - paragraph: PostgreSQL
+              - generic:
+                - generic:
+                  - img
+                - paragraph: AWS
+              - generic:
+                - generic:
+                  - img
+                - paragraph: Anthropic
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - text: BY THE NUMBERS
+              - heading [level=2]: Real wins, measured.
+            - generic:
+              - generic:
+                - generic: YEARS SHIPPING PROD
+                - generic:
+                  - generic: 0+
+              - generic:
+                - generic: P99 WIN · TAPUZ
+                - generic:
+                  - generic: 0%
+                - generic: 50s → 4s
+              - generic:
+                - generic: USERS · MEDCHRON SSO
+                - generic:
+                  - generic: 0K+
+              - generic:
+                - generic: MFE BOTTLENECK CUT
+                - generic:
+                  - generic: 0%
+            - generic:
+              - generic: PROD-VERIFIED · 2020-2026
+              - generic: LIVE
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - text: WHAT I OFFER
+              - heading [level=2]: Senior engineering, six modes
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: AI Agents & Automation
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: Full-Stack SaaS Applications
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: Performance Optimization
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: Auth & Security
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: Architecture & Platforms
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: Cloud & DevOps
+      - generic:
+        - generic:
+          - generic:
+            - generic: OPEN LINE
+            - heading [level=2]: Let's work together
+            - paragraph: Got a system that needs to hold up under load? I reply within 24 hours.
+            - generic:
+              - link:
+                - /url: /contact
+                - text: Start a project
+                - img
+            - generic:
+              - generic:
+                - generic: OPEN FOR SENIOR CONTRACTS●
+                - generic: SHIPPING AI AGENTS●
+                - generic: READING EXPLAIN PLANS●
+                - generic: TYPESCRIPT EVERYWHERE●
+                - generic: SAAS · FINTECH · HEALTHTECH●
+                - generic: REMOTE · ALL TIMEZONES●
+                - generic: OPEN FOR SENIOR CONTRACTS●
+                - generic: SHIPPING AI AGENTS●
+                - generic: READING EXPLAIN PLANS●
+                - generic: TYPESCRIPT EVERYWHERE●
+                - generic: SAAS · FINTECH · HEALTHTECH●
+                - generic: REMOTE · ALL TIMEZONES●
+    - contentinfo:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - text: MitulJagad
+          - paragraph: Senior Full Stack Developer & AI Agents Engineer. Building production systems for SaaS & FinTech.
+        - generic:
+          - heading [level=4]: CONTACT
+          - link:
+            - /url: mailto:jagadmitul@gmail.com
+            - text: jagadmitul@gmail.com
+          - paragraph: Surat, Gujarat, India
+          - paragraph: UTC+05:30· response < 24h
+        - generic:
+          - heading [level=4]: FOLLOW
+          - generic:
+            - link:
+              - /url: https://github.com/jagadmitul
+              - img
+            - link:
+              - /url: https://www.linkedin.com/in/jagadmitul
+              - img
+            - link:
+              - /url: mailto:jagadmitul@gmail.com
+              - img
+      - generic:
+        - generic: © 2026 - Mitul Jagad
+        - generic: All rights reserved
+  - button:
+    - img
+    - generic: Ask Mitul
+  - alert
+  - dialog [ref=e453]:
+    - generic [ref=e454]:
+      - generic [ref=e455]: MitulJagad
+      - button "Close menu" [active] [ref=e456]:
+        - img [ref=e457]
+    - navigation [ref=e460]:
+      - list [ref=e461]:
+        - listitem [ref=e462]:
+          - link "Home" [ref=e463] [cursor=pointer]:
+            - /url: /
+            - img [ref=e464]
+            - text: Home
+        - listitem [ref=e467]:
+          - link "About" [ref=e468] [cursor=pointer]:
+            - /url: /about
+            - img [ref=e469]
+            - text: About
+        - listitem [ref=e473]:
+          - link "Services" [ref=e474] [cursor=pointer]:
+            - /url: /services
+            - img [ref=e475]
+            - text: Services
+        - listitem [ref=e477]:
+          - link "Works" [ref=e478] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e479]
+            - text: Works
+        - listitem [ref=e481]:
+          - link "Blog" [ref=e482] [cursor=pointer]:
+            - /url: /blog
+            - img [ref=e483]
+            - text: Blog
+        - listitem [ref=e485]:
+          - link "Contact" [ref=e486] [cursor=pointer]:
+            - /url: /contact
+            - img [ref=e487]
+            - text: Contact
+      - link "Let's Talk" [ref=e489] [cursor=pointer]:
+        - /url: /contact
+      - link "jagadmitul@gmail.com" [ref=e491] [cursor=pointer]:
+        - /url: mailto:jagadmitul@gmail.com

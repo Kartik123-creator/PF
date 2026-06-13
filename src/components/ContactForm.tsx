@@ -15,40 +15,64 @@ const inputCls = `mt-1 ${fieldCls}`;
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
+  function mailtoFallback(data: FormData) {
+    const subject = encodeURIComponent(String(data.get("subject") || "Portfolio contact"));
+    const lines = [
+      `From: ${data.get("name")} <${data.get("email")}>`,
+      data.get("whatsapp") ? `WhatsApp: ${data.get("whatsapp")}` : null,
+      `Looking for: ${data.get("need")}`,
+      "",
+      String(data.get("message")),
+    ].filter((l) => l !== null);
+    const body = encodeURIComponent(lines.join("\n"));
+    window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
+    setStatus("mailto");
+  }
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-
-    // No Formspree configured → graceful mailto fallback
-    if (!PROFILE.formspreeId) {
-      const subject = encodeURIComponent(String(data.get("subject") || "Portfolio contact"));
-      const lines = [
-        `From: ${data.get("name")} <${data.get("email")}>`,
-        data.get("whatsapp") ? `WhatsApp: ${data.get("whatsapp")}` : null,
-        `Looking for: ${data.get("need")}`,
-        "",
-        String(data.get("message")),
-      ].filter((l) => l !== null);
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
-      setStatus("mailto");
-      return;
-    }
-
     setStatus("sending");
+
+    // 1) Try the SMTP API route (active once SMTP_* env vars are set on the server).
     try {
-      const res = await fetch(`https://formspree.io/f/${PROFILE.formspreeId}`, {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(data.entries())),
       });
-      if (!res.ok) throw new Error(String(res.status));
-      form.reset();
-      setStatus("sent");
+      if (res.ok) {
+        form.reset();
+        setStatus("sent");
+        return;
+      }
+      // 503 = SMTP not configured yet → fall through to the next option.
+      if (res.status !== 503) throw new Error(String(res.status));
     } catch {
-      setStatus("error");
+      // network/route error → fall through to mailto
     }
+
+    // 2) Formspree, if an id is configured.
+    if (PROFILE.formspreeId) {
+      try {
+        const res = await fetch(`https://formspree.io/f/${PROFILE.formspreeId}`, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: data,
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        setStatus("sent");
+        return;
+      } catch {
+        setStatus("error");
+        return;
+      }
+    }
+
+    // 3) Graceful mailto fallback.
+    mailtoFallback(data);
   }
 
   return (

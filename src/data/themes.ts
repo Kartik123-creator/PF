@@ -1,8 +1,8 @@
 export interface Palette {
   id: string;
   label: string;
-  swatch: string; // left half of the picker dot (primary)
-  swatch2: string; // right half of the picker dot (second accent)
+  bg: string; // background half of the picker dot (the theme's paper colour)
+  primary: string; // accent half of the picker dot
 }
 
 export interface Theme {
@@ -16,36 +16,36 @@ export const THEMES: Theme[] = [
     id: "paper",
     label: "Paper",
     palettes: [
-      { id: "cream", label: "Cream", swatch: "#1a7a4a", swatch2: "#0e7490" },
-      { id: "sage", label: "Sage", swatch: "#54712c", swatch2: "#7c5a2e" },
-      { id: "rose", label: "Rose", swatch: "#8d3b5f", swatch2: "#b03a52" },
+      { id: "cream", label: "Cream", bg: "#f6eee3", primary: "#1a7a4a" },
+      { id: "sage", label: "Sage", bg: "#eef1e7", primary: "#54712c" },
+      { id: "rose", label: "Rose", bg: "#f1eaee", primary: "#8d3b5f" },
     ],
   },
   {
     id: "dark",
     label: "Dark",
     palettes: [
-      { id: "teal", label: "Teal", swatch: "#5eead4", swatch2: "#38bdf8" },
-      { id: "violet", label: "Violet", swatch: "#a78bfa", swatch2: "#f0abfc" },
-      { id: "rose", label: "Rosé", swatch: "#fb7185", swatch2: "#f0abfc" },
+      { id: "teal", label: "Teal", bg: "#0f172a", primary: "#5eead4" },
+      { id: "violet", label: "Violet", bg: "#13111c", primary: "#a78bfa" },
+      { id: "rose", label: "Rosé", bg: "#1a1216", primary: "#fb7185" },
     ],
   },
   {
     id: "gradient",
     label: "Gradient",
     palettes: [
-      { id: "violetpink", label: "Violet/Pink", swatch: "#a78bfa", swatch2: "#ec4899" },
-      { id: "bluecyan", label: "Blue/Cyan", swatch: "#60a5fa", swatch2: "#22d3ee" },
-      { id: "orangerose", label: "Orange/Rose", swatch: "#fb923c", swatch2: "#f43f5e" },
+      { id: "violetpink", label: "Violet/Pink", bg: "#0c0a1d", primary: "#a78bfa" },
+      { id: "bluecyan", label: "Blue/Cyan", bg: "#0a1120", primary: "#60a5fa" },
+      { id: "orangerose", label: "Orange/Rose", bg: "#1c0f0a", primary: "#fb923c" },
     ],
   },
   {
     id: "swiss",
     label: "Swiss",
     palettes: [
-      { id: "orange", label: "Orange", swatch: "#c2410c", swatch2: "#ea580c" },
-      { id: "blue", label: "Blue", swatch: "#2563eb", swatch2: "#1d4ed8" },
-      { id: "red", label: "Red", swatch: "#dc2626", swatch2: "#b91c1c" },
+      { id: "orange", label: "Orange", bg: "#fafafa", primary: "#c2410c" },
+      { id: "blue", label: "Blue", bg: "#fafafa", primary: "#2563eb" },
+      { id: "red", label: "Red", bg: "#fafafa", primary: "#dc2626" },
     ],
   },
 ];

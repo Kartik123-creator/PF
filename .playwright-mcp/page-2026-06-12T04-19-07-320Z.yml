@@ -1,0 +1,187 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "KB." [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: /about
+        - link "Projects" [ref=e8] [cursor=pointer]:
+          - /url: /projects
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: /contact
+      - button "Switch theme" [ref=e12]:
+        - img [ref=e13]
+        - generic [ref=e19]: dark
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Projects
+      - heading "Things I've shipped" [level=1] [ref=e24]
+    - generic [ref=e25]:
+      - button "All" [pressed] [ref=e26]
+      - button "Web" [ref=e27]
+      - button "Mobile" [ref=e28]
+      - button "AI" [ref=e29]
+    - generic [ref=e30]:
+      - article [ref=e171]:
+        - paragraph [ref=e172]: ERP · E-commerce
+        - heading "CASSA Group ERP" [level=3] [ref=e173]
+        - paragraph [ref=e174]: Full Stack Developer
+        - paragraph [ref=e175]: Transformed a basic e-commerce site into a full ERP platform with inventory, HR and payroll.
+        - list [ref=e176]:
+          - listitem [ref=e177]:
+            - generic [ref=e178]: ▸
+            - generic [ref=e179]: Converted basic e-commerce into a complete ERP system.
+          - listitem [ref=e180]:
+            - generic [ref=e181]: ▸
+            - generic [ref=e182]: Implemented role-based pricing and inventory tracking.
+          - listitem [ref=e183]:
+            - generic [ref=e184]: ▸
+            - generic [ref=e185]: Developed HRMS and payroll modules.
+        - generic [ref=e186]:
+          - generic [ref=e187]: React
+          - generic [ref=e188]: Node.js
+          - generic [ref=e189]: MongoDB
+          - generic [ref=e190]: MUI
+      - article [ref=e191]:
+        - paragraph [ref=e192]: SaaS · Booking · UK Market
+        - heading "THAT TIME" [level=3] [ref=e193]
+        - paragraph [ref=e194]: Full Stack & Mobile Developer
+        - paragraph [ref=e195]: Multi-role appointment booking SaaS for the UK market with payments and native mobile apps.
+        - list [ref=e196]:
+          - listitem [ref=e197]:
+            - generic [ref=e198]: ▸
+            - generic [ref=e199]: Built a multi-role booking system (Customer, Vendor, Admin).
+          - listitem [ref=e200]:
+            - generic [ref=e201]: ▸
+            - generic [ref=e202]: Integrated Klarna, Clearpay, Visa and Mastercard payments.
+          - listitem [ref=e203]:
+            - generic [ref=e204]: ▸
+            - generic [ref=e205]: Shipped Android & iOS apps using Ionic.
+        - generic [ref=e206]:
+          - generic [ref=e207]: Angular
+          - generic [ref=e208]: Node.js
+          - generic [ref=e209]: Ionic
+          - generic [ref=e210]: MySQL
+      - article [ref=e211]:
+        - paragraph [ref=e212]: AI · Image Generation
+        - heading "AI Image Gallery" [level=3] [ref=e213]
+        - paragraph [ref=e214]: Frontend Developer
+        - paragraph [ref=e215]: AI-powered image search and generation platform with multiple art styles.
+        - list [ref=e216]:
+          - listitem [ref=e217]:
+            - generic [ref=e218]: ▸
+            - generic [ref=e219]: Created AI-powered image search and generation flows.
+          - listitem [ref=e220]:
+            - generic [ref=e221]: ▸
+            - generic [ref=e222]: Multiple styles (anime, 3D, realistic, cartoon) with dark/light mode.
+          - listitem [ref=e223]:
+            - generic [ref=e224]: ▸
+            - generic [ref=e225]: Image preview and multi-resolution downloads.
+        - generic [ref=e226]:
+          - generic [ref=e227]: Next.js
+          - generic [ref=e228]: Tailwind CSS
+          - generic [ref=e229]: REST API
+      - article [ref=e230]:
+        - paragraph [ref=e231]: Marketplace · FinTech
+        - heading "Tax Natives" [level=3] [ref=e232]
+        - paragraph [ref=e233]: Full Stack Developer
+        - paragraph [ref=e234]: International tax-advice marketplace connecting clients with vetted tax advisers across jurisdictions.
+        - list [ref=e235]:
+          - listitem [ref=e236]:
+            - generic [ref=e237]: ▸
+            - generic [ref=e238]: Built adviser directory, enquiry and matching flows.
+          - listitem [ref=e239]:
+            - generic [ref=e240]: ▸
+            - generic [ref=e241]: Implemented content-driven pages with SEO-friendly rendering.
+          - listitem [ref=e242]:
+            - generic [ref=e243]: ▸
+            - generic [ref=e244]: Integrated forms, notifications and admin tooling.
+        - generic [ref=e245]:
+          - generic [ref=e246]: React
+          - generic [ref=e247]: Node.js
+          - generic [ref=e248]: MySQL
+      - article [ref=e249]:
+        - paragraph [ref=e250]: E-commerce · Product Discovery
+        - heading "Duped.au" [level=3] [ref=e251]
+        - paragraph [ref=e252]: Full Stack Developer
+        - paragraph [ref=e253]: Product-discovery platform for the Australian market that helps shoppers find affordable alternatives.
+        - list [ref=e254]:
+          - listitem [ref=e255]:
+            - generic [ref=e256]: ▸
+            - generic [ref=e257]: Built product catalogue, search and comparison views.
+          - listitem [ref=e258]:
+            - generic [ref=e259]: ▸
+            - generic [ref=e260]: Optimized listing performance with caching and pagination.
+          - listitem [ref=e261]:
+            - generic [ref=e262]: ▸
+            - generic [ref=e263]: Responsive UI across mobile and desktop.
+        - generic [ref=e264]:
+          - generic [ref=e265]: Next.js
+          - generic [ref=e266]: Node.js
+          - generic [ref=e267]: MongoDB
+      - article [ref=e268]:
+        - paragraph [ref=e269]: Design Tool · Canvas
+        - heading "Canvas Design Editor" [level=3] [ref=e270]
+        - paragraph [ref=e271]: Frontend Developer
+        - paragraph [ref=e272]: Browser-based design editor for templates, cards and logos with layered editing and export.
+        - list [ref=e273]:
+          - listitem [ref=e274]:
+            - generic [ref=e275]: ▸
+            - generic [ref=e276]: Drag-and-drop canvas with text, image and shape layers built on Fabric.js.
+          - listitem [ref=e277]:
+            - generic [ref=e278]: ▸
+            - generic [ref=e279]: Template system with custom fonts, colors and alignment guides.
+          - listitem [ref=e280]:
+            - generic [ref=e281]: ▸
+            - generic [ref=e282]: High-resolution PNG export and project save/load.
+        - generic [ref=e283]:
+          - generic [ref=e284]: Fabric.js
+          - generic [ref=e285]: React
+          - generic [ref=e286]: Node.js
+  - contentinfo [ref=e147]:
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - paragraph [ref=e150]: Kartik Bosmiya
+        - paragraph [ref=e151]: Ahmedabad, India · UTC+05:30
+      - generic [ref=e152]:
+        - link "GitHub" [ref=e153] [cursor=pointer]:
+          - /url: https://github.com/Kartik123-creator
+          - img [ref=e154]
+        - link "LinkedIn" [ref=e157] [cursor=pointer]:
+          - /url: https://linkedin.com/in/kartik-bosmiya-1277a8212
+          - img [ref=e158]
+        - link "Email" [ref=e162] [cursor=pointer]:
+          - /url: mailto:kartikbosmiya2003@gmail.com
+          - img [ref=e163]
+      - paragraph [ref=e166]: © 2026 · built with Next.js
+  - alert [ref=e170]
+  - dialog "Ask Kartik chat" [ref=e287]:
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - img [ref=e291]
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: Ask Kartik
+          - paragraph [ref=e295]: Online · replies quickly
+      - button "Close chat" [ref=e297]:
+        - img [ref=e298]
+    - log [ref=e301]:
+      - generic [ref=e302]: Hi there 👋 I'm Kartik's assistant. Pick a question below or type your own — English, हिन्दी or ગુજરાતી all work. For anything specific, kartikbosmiya2003@gmail.com gets a personal reply within 24 hours.
+      - generic [ref=e316]: How many years of experience do you have?
+    - generic [ref=e303]:
+      - generic [ref=e304]:
+        - button "Experience?" [ref=e305]
+        - button "Tech stack?" [ref=e306]
+        - button "Projects?" [ref=e307]
+        - button "AI work?" [ref=e308]
+        - button "Available?" [ref=e309]
+        - button "Contact?" [ref=e310]
+      - generic [ref=e311]:
+        - textbox "Free-form question" [active] [ref=e312]:
+          - /placeholder: Ask anything…
+        - button "Send" [ref=e313]:
+          - img [ref=e314]

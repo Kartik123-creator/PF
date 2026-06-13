@@ -1,0 +1,361 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - link "MitulJagad" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: MitulJagad
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Home" [ref=e12] [cursor=pointer]:
+              - /url: /
+              - img [ref=e14]
+              - generic [ref=e17]: Home
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+              - img [ref=e21]
+              - generic [ref=e25]: About
+          - listitem [ref=e26]:
+            - link "Services" [ref=e27] [cursor=pointer]:
+              - /url: /services
+              - img [ref=e29]
+              - generic [ref=e31]: Services
+          - listitem [ref=e32]:
+            - link "Works" [ref=e33] [cursor=pointer]:
+              - /url: /portfolio
+              - img [ref=e35]
+              - generic [ref=e37]: Works
+          - listitem [ref=e38]:
+            - link "Blog" [ref=e39] [cursor=pointer]:
+              - /url: /blog
+              - img [ref=e41]
+              - generic [ref=e43]: Blog
+          - listitem [ref=e44]:
+            - link "Contact" [ref=e45] [cursor=pointer]:
+              - /url: /contact
+              - img [ref=e47]
+              - generic [ref=e49]: Contact
+        - generic [ref=e50]:
+          - button "Choose theme" [ref=e440]:
+            - img [ref=e441]
+          - link "Let's Talk" [ref=e58] [cursor=pointer]:
+            - /url: /contact
+            - text: Let's Talk
+            - img [ref=e59]
+    - main [ref=e61]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e68]:
+            - generic [ref=e73]: ~ / mitul
+            - generic [ref=e74]:
+              - generic [ref=e75]:
+                - generic [ref=e76]: $
+                - generic [ref=e77]: open status
+              - generic [ref=e79]: Online - Available for contracts
+              - generic [ref=e80]: 30 hrs/wk - reply within 24h
+          - generic [ref=e82]: OPEN TO WORK
+          - generic [ref=e85]: ~30 hrs/wk
+        - heading "Mitul Jagad" [level=1] [ref=e86]
+        - paragraph [ref=e87]: Senior Full Stack Developer. Six years shipping production for SaaS and FinTech teams. Lately building AI agents and workflow automations that have to actually run, not just demo.
+        - generic [ref=e88]:
+          - link "Resume" [ref=e89] [cursor=pointer]:
+            - /url: /resume.pdf
+            - img [ref=e90]
+            - text: Resume
+          - button "Copy email address" [ref=e93]:
+            - img [ref=e94]
+            - text: Copy Email
+        - generic [ref=e97]:
+          - generic [ref=e98]: FOLLOW
+          - link "LinkedIn" [ref=e99] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/jagadmitul
+            - img [ref=e100]
+          - link "GitHub" [ref=e104] [cursor=pointer]:
+            - /url: https://github.com/jagadmitul
+            - img [ref=e105]
+      - generic [ref=e110]:
+        - generic [ref=e112]:
+          - text: WORK EXPERIENCE
+          - heading "Building production since 2020" [level=2] [ref=e113]
+        - list [ref=e115]:
+          - listitem [ref=e116]:
+            - img "Omnis AI" [ref=e118]
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - heading "Omnis AI" [level=3] [ref=e121]
+                - generic [ref=e122]: Oct 2024 - Feb 2026
+              - paragraph [ref=e123]: Team Lead - Senior Full Stack Developer
+              - paragraph [ref=e124]: United States · Remote
+          - listitem [ref=e125]:
+            - img "Rebrandic" [ref=e127]
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - heading "Rebrandic" [level=3] [ref=e130]
+                - generic [ref=e131]: Jun 2023 - May 2025
+              - paragraph [ref=e132]: Senior Full Stack Developer
+              - paragraph [ref=e133]: Remote
+          - listitem [ref=e134]:
+            - img "Tpots" [ref=e136]
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - heading "Tpots" [level=3] [ref=e139]
+                - generic [ref=e140]: Jun 2022 - Nov 2023
+              - paragraph [ref=e141]: Software Developer
+              - paragraph [ref=e142]: Surat, Gujarat, India · On-site
+          - listitem [ref=e143]:
+            - img "Zodiac Techlance" [ref=e145]
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - heading "Zodiac Techlance" [level=3] [ref=e148]
+                - generic [ref=e149]: Feb 2020 - Aug 2022
+              - paragraph [ref=e150]: Full Stack Developer
+              - paragraph [ref=e151]: Remote
+          - listitem [ref=e152]:
+            - img "Omnis AI" [ref=e154]
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - heading "Omnis AI" [level=3] [ref=e157]
+                - generic [ref=e158]: Oct 2024 - Feb 2026
+              - paragraph [ref=e159]: Team Lead - Senior Full Stack Developer
+              - paragraph [ref=e160]: United States · Remote
+          - listitem [ref=e161]:
+            - img "Rebrandic" [ref=e163]
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - heading "Rebrandic" [level=3] [ref=e166]
+                - generic [ref=e167]: Jun 2023 - May 2025
+              - paragraph [ref=e168]: Senior Full Stack Developer
+              - paragraph [ref=e169]: Remote
+          - listitem [ref=e170]:
+            - img "Tpots" [ref=e172]
+            - generic [ref=e173]:
+              - generic [ref=e174]:
+                - heading "Tpots" [level=3] [ref=e175]
+                - generic [ref=e176]: Jun 2022 - Nov 2023
+              - paragraph [ref=e177]: Software Developer
+              - paragraph [ref=e178]: Surat, Gujarat, India · On-site
+          - listitem [ref=e179]:
+            - img "Zodiac Techlance" [ref=e181]
+            - generic [ref=e182]:
+              - generic [ref=e183]:
+                - heading "Zodiac Techlance" [level=3] [ref=e184]
+                - generic [ref=e185]: Feb 2020 - Aug 2022
+              - paragraph [ref=e186]: Full Stack Developer
+              - paragraph [ref=e187]: Remote
+      - generic [ref=e190]:
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - text: RECENT PROJECTS
+            - heading "Things I've shipped recently" [level=2] [ref=e193]
+          - link "ALL →" [ref=e194] [cursor=pointer]:
+            - /url: /portfolio
+        - generic [ref=e195]:
+          - link "2025 AI Workflow Automation Agent AI Workflow Automation Agent End-to-end business process automation using LangGraph orchestration - hours of work reduced to under 5 minutes. 100+/day · 2025" [ref=e196] [cursor=pointer]:
+            - /url: /portfolio/ai-workflow-agent
+            - generic [ref=e197]:
+              - generic [ref=e199]:
+                - generic [ref=e200]: "2025"
+                - heading "AI Workflow Automation Agent" [level=3] [ref=e201]
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - heading "AI Workflow Automation Agent" [level=3] [ref=e204]
+                  - img [ref=e205]
+                - paragraph [ref=e208]: End-to-end business process automation using LangGraph orchestration - hours of work reduced to under 5 minutes.
+                - generic [ref=e209]:
+                  - generic [ref=e210]: 100+/day
+                  - generic [ref=e211]: · 2025
+          - link "2024 Enterprise SSO Platform Enterprise SSO Platform Centralized SSO across a 10+ product suite (Office 365-style) with passkeys, 2FA, magic links, and RBAC - zero auth tickets in m1. 100K+ users · 2024" [ref=e212] [cursor=pointer]:
+            - /url: /portfolio/enterprise-sso
+            - generic [ref=e213]:
+              - generic [ref=e215]:
+                - generic [ref=e216]: "2024"
+                - heading "Enterprise SSO Platform" [level=3] [ref=e217]
+              - generic [ref=e218]:
+                - generic [ref=e219]:
+                  - heading "Enterprise SSO Platform" [level=3] [ref=e220]
+                  - img [ref=e221]
+                - paragraph [ref=e224]: Centralized SSO across a 10+ product suite (Office 365-style) with passkeys, 2FA, magic links, and RBAC - zero auth tickets in m1.
+                - generic [ref=e225]:
+                  - generic [ref=e226]: 100K+ users
+                  - generic [ref=e227]: · 2024
+          - link "2023 TAPUZ - SQL Optimization at Scale TAPUZ - SQL Optimization at Scale Israel's largest shipping platform - read the EXPLAIN plan, fixed the index, dropped p99 from 50s to 4s. 50s → 4s · 2023" [ref=e228] [cursor=pointer]:
+            - /url: /portfolio/tapuz-sql
+            - generic [ref=e229]:
+              - generic [ref=e231]:
+                - generic [ref=e232]: "2023"
+                - heading "TAPUZ - SQL Optimization at Scale" [level=3] [ref=e233]
+              - generic [ref=e234]:
+                - generic [ref=e235]:
+                  - heading "TAPUZ - SQL Optimization at Scale" [level=3] [ref=e236]
+                  - img [ref=e237]
+                - paragraph [ref=e240]: Israel's largest shipping platform - read the EXPLAIN plan, fixed the index, dropped p99 from 50s to 4s.
+                - generic [ref=e241]:
+                  - generic [ref=e242]: 50s → 4s
+                  - generic [ref=e243]: · 2023
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - text: NOW
+            - heading "What I'm building right now" [level=2] [ref=e249]
+          - generic [ref=e250]: LIVE
+        - list [ref=e252]:
+          - listitem [ref=e253]:
+            - img [ref=e255]
+            - generic [ref=e257]:
+              - generic [ref=e258]: BUILDING
+              - generic [ref=e259]: OnwardOS
+              - paragraph [ref=e260]: AI-native study-abroad suite - LangGraph pipelines, Claude orchestration, pgvector retrieval.
+          - listitem [ref=e261]:
+            - img [ref=e263]
+            - generic [ref=e267]:
+              - generic [ref=e268]: REFINING
+              - generic [ref=e269]: Production agent patterns
+              - paragraph [ref=e270]: Checkpoint recovery, structured-output reliability, multi-product session propagation - taking what worked this year and packaging it.
+          - listitem [ref=e271]:
+            - img [ref=e273]
+            - generic [ref=e275]:
+              - generic [ref=e276]: AVAILABLE
+              - generic [ref=e277]: Senior contracts · 30 hrs/wk
+              - paragraph [ref=e278]: Open to 3-6 month engagements in SaaS / FinTech / HealthTech, or the right FT senior role.
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - text: MY EXPERT AREA
+          - heading "The stack I ship production with" [level=2] [ref=e283]
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - img [ref=e287]
+            - paragraph [ref=e289]: Next.js
+          - generic [ref=e290]:
+            - img [ref=e292]
+            - paragraph [ref=e294]: NestJS
+          - generic [ref=e295]:
+            - img [ref=e297]
+            - paragraph [ref=e299]: LangChain
+          - generic [ref=e300]:
+            - img [ref=e302]
+            - paragraph [ref=e304]: PostgreSQL
+          - generic [ref=e305]:
+            - img [ref=e307]
+            - paragraph [ref=e309]: AWS
+          - generic [ref=e310]:
+            - img [ref=e312]
+            - paragraph [ref=e314]: Anthropic
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - text: BY THE NUMBERS
+          - heading "Real wins, measured." [level=2] [ref=e319]
+        - generic [ref=e320]:
+          - generic [ref=e321]:
+            - generic [ref=e322]: YEARS SHIPPING PROD
+            - generic [ref=e324]: 0+
+          - generic [ref=e325]:
+            - generic [ref=e326]: P99 WIN · TAPUZ
+            - generic [ref=e328]: 0%
+            - generic [ref=e329]: 50s → 4s
+          - generic [ref=e330]:
+            - generic [ref=e331]: USERS · MEDCHRON SSO
+            - generic [ref=e333]: 0K+
+          - generic [ref=e334]:
+            - generic [ref=e335]: MFE BOTTLENECK CUT
+            - generic [ref=e337]: 0%
+        - generic [ref=e338]:
+          - generic [ref=e339]: PROD-VERIFIED · 2020-2026
+          - generic [ref=e340]: LIVE
+      - generic [ref=e343]:
+        - generic [ref=e345]:
+          - text: WHAT I OFFER
+          - heading "Senior engineering, six modes" [level=2] [ref=e346]
+        - generic [ref=e347]:
+          - generic [ref=e349]:
+            - img [ref=e350]
+            - heading "AI Agents & Automation" [level=3] [ref=e352]
+          - generic [ref=e354]:
+            - img [ref=e355]
+            - heading "Full-Stack SaaS Applications" [level=3] [ref=e359]
+          - generic [ref=e361]:
+            - img [ref=e362]
+            - heading "Performance Optimization" [level=3] [ref=e365]
+          - generic [ref=e367]:
+            - img [ref=e368]
+            - heading "Auth & Security" [level=3] [ref=e370]
+          - generic [ref=e372]:
+            - img [ref=e373]
+            - heading "Architecture & Platforms" [level=3] [ref=e376]
+          - generic [ref=e378]:
+            - img [ref=e379]
+            - heading "Cloud & DevOps" [level=3] [ref=e381]
+      - generic [ref=e384]:
+        - generic [ref=e385]: OPEN LINE
+        - heading "Let's work together" [level=2] [ref=e386]
+        - paragraph [ref=e387]: Got a system that needs to hold up under load? I reply within 24 hours.
+        - link "Start a project" [ref=e389] [cursor=pointer]:
+          - /url: /contact
+          - text: Start a project
+          - img [ref=e390]
+        - generic [ref=e394]:
+          - generic [ref=e395]: OPEN FOR SENIOR CONTRACTS●
+          - generic [ref=e396]: SHIPPING AI AGENTS●
+          - generic [ref=e397]: READING EXPLAIN PLANS●
+          - generic [ref=e398]: TYPESCRIPT EVERYWHERE●
+          - generic [ref=e399]: SAAS · FINTECH · HEALTHTECH●
+          - generic [ref=e400]: REMOTE · ALL TIMEZONES●
+          - generic [ref=e401]: OPEN FOR SENIOR CONTRACTS●
+          - generic [ref=e402]: SHIPPING AI AGENTS●
+          - generic [ref=e403]: READING EXPLAIN PLANS●
+          - generic [ref=e404]: TYPESCRIPT EVERYWHERE●
+          - generic [ref=e405]: SAAS · FINTECH · HEALTHTECH●
+          - generic [ref=e406]: REMOTE · ALL TIMEZONES●
+    - contentinfo [ref=e407]:
+      - generic [ref=e408]:
+        - generic [ref=e409]:
+          - link "MitulJagad" [ref=e410] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e411]: Senior Full Stack Developer & AI Agents Engineer. Building production systems for SaaS & FinTech.
+        - generic [ref=e412]:
+          - heading "CONTACT" [level=4] [ref=e413]
+          - link "jagadmitul@gmail.com" [ref=e414] [cursor=pointer]:
+            - /url: mailto:jagadmitul@gmail.com
+          - paragraph [ref=e415]: Surat, Gujarat, India
+          - paragraph [ref=e416]: UTC+05:30· response < 24h
+        - generic [ref=e417]:
+          - heading "FOLLOW" [level=4] [ref=e418]
+          - generic [ref=e419]:
+            - link "GitHub" [ref=e420] [cursor=pointer]:
+              - /url: https://github.com/jagadmitul
+              - img [ref=e421]
+            - link "LinkedIn" [ref=e424] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/jagadmitul
+              - img [ref=e425]
+            - link "Email" [ref=e429] [cursor=pointer]:
+              - /url: mailto:jagadmitul@gmail.com
+              - img [ref=e430]
+      - generic [ref=e433]:
+        - generic [ref=e434]: © 2026 - Mitul Jagad
+        - generic [ref=e435]: All rights reserved
+  - alert [ref=e448]
+  - dialog "Ask Mitul" [ref=e449]:
+    - generic [ref=e450]:
+      - generic [ref=e451]:
+        - img [ref=e453]
+        - generic [ref=e455]:
+          - heading "Ask Mitul" [level=2] [ref=e456]
+          - generic [ref=e457]: Online · replies quickly
+      - button "Close" [active] [ref=e459]:
+        - img [ref=e460]
+    - paragraph [ref=e464]: Hi there 👋 Feel free to pick a question below, or type your own — in English, Hindi, Gujarati, French, Spanish, or German. I'll reply in whichever language you write in. For anything specific, jagadmitul@gmail.com gets you a personal reply within 24 hours.
+    - generic [ref=e465]:
+      - generic [ref=e466]: QUICK PROMPTS
+      - generic [ref=e467]:
+        - button "Pricing" [ref=e468]
+        - button "Availability" [ref=e469]
+        - button "Tech stack" [ref=e470]
+        - button "Recent work" [ref=e471]
+        - button "AI agents" [ref=e472]
+        - button "Location" [ref=e473]
+        - button "How to start" [ref=e474]
+      - generic [ref=e475]:
+        - textbox "Free-form question" [ref=e476]:
+          - /placeholder: Ask anything...
+        - button "Send" [ref=e477]:
+          - img [ref=e478]

@@ -31,15 +31,31 @@ export default function ThemeSwitcher() {
     };
   }, []);
 
-  function apply(themeId: string, paletteId: string) {
-    const d = document.documentElement;
-    d.dataset.theme = themeId;
-    d.dataset.palette = paletteId;
-    localStorage.setItem("kb-theme", themeId);
-    localStorage.setItem("kb-palette", paletteId);
-    setTheme(themeId);
-    setPalette(paletteId);
-    setOpen(false);
+  function apply(themeId: string, paletteId: string, e?: React.MouseEvent) {
+    const run = () => {
+      const d = document.documentElement;
+      d.dataset.theme = themeId;
+      d.dataset.palette = paletteId;
+      localStorage.setItem("kb-theme", themeId);
+      localStorage.setItem("kb-palette", paletteId);
+      setTheme(themeId);
+      setPalette(paletteId);
+      setOpen(false);
+    };
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const startViewTransition = (
+      document as unknown as { startViewTransition?: (cb: () => void) => void }
+    ).startViewTransition;
+
+    if (startViewTransition && !reduced) {
+      const d = document.documentElement;
+      d.style.setProperty("--vt-x", `${e ? e.clientX : window.innerWidth}px`);
+      d.style.setProperty("--vt-y", `${e ? e.clientY : 0}px`);
+      startViewTransition.call(document, run);
+    } else {
+      run();
+    }
   }
 
   return (
@@ -62,14 +78,14 @@ export default function ThemeSwitcher() {
             <div key={t.id} className="flex items-center justify-between py-1.5">
               <button
                 type="button"
-                onClick={() => apply(t.id, t.palettes[0].id)}
+                onClick={(e) => apply(t.id, t.palettes[0].id, e)}
                 className={`mono-label transition-colors ${
                   theme === t.id ? "text-primary" : "text-ink-mute hover:text-ink"
                 }`}
               >
                 {t.label}
               </button>
-              <div className="flex gap-1.5">
+              <div className="flex gap-2">
                 {t.palettes.map((p) => {
                   const active = theme === t.id && palette === p.id;
                   return (
@@ -77,13 +93,15 @@ export default function ThemeSwitcher() {
                       key={p.id}
                       type="button"
                       aria-label={`${t.label} ${p.label}`}
-                      onClick={() => apply(t.id, p.id)}
-                      className="h-4 w-4 overflow-hidden rounded-full border"
+                      onClick={(e) => apply(t.id, p.id, e)}
+                      className={`h-5 w-5 rounded-full border transition-transform duration-500 ease-out hover:scale-110 ${
+                        active ? "rotate-[135deg] scale-110" : "rotate-0"
+                      }`}
                       style={{
-                        background: `linear-gradient(90deg, ${p.swatch} 0 50%, ${p.swatch2} 50% 100%)`,
+                        background: `linear-gradient(135deg, ${p.bg} 0 50%, ${p.primary} 50% 100%)`,
                         borderColor: active ? "var(--ink)" : "var(--hairline)",
                         outline: active ? "2px solid var(--primary)" : "none",
-                        outlineOffset: "1px",
+                        outlineOffset: "2px",
                       }}
                     />
                   );
