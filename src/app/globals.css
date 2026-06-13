@@ -265,7 +265,7 @@ h1, h2, h3 {
   animation: none;
 }
 ::view-transition-new(root) {
-  animation: vt-theme-reveal 0.5s ease-out;
+  animation: vt-theme-reveal 1s ease-out;
 }
 @keyframes vt-theme-reveal {
   from {

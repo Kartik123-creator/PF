@@ -94,14 +94,13 @@ export default function ThemeSwitcher() {
                       type="button"
                       aria-label={`${t.label} ${p.label}`}
                       onClick={(e) => apply(t.id, p.id, e)}
-                      className={`h-5 w-5 rounded-full border transition-transform duration-500 ease-out hover:scale-110 ${
-                        active ? "rotate-[135deg] scale-110" : "rotate-0"
+                      className={`h-5 w-5 rounded-full border border-hairline transition-transform duration-500 ease-out hover:scale-110 ${
+                        active
+                          ? "rotate-[135deg] scale-110 ring-2 ring-primary ring-offset-2 ring-offset-paper-2"
+                          : "rotate-0"
                       }`}
                       style={{
                         background: `linear-gradient(135deg, ${p.bg} 0 50%, ${p.primary} 50% 100%)`,
-                        borderColor: active ? "var(--ink)" : "var(--hairline)",
-                        outline: active ? "2px solid var(--primary)" : "none",
-                        outlineOffset: "2px",
                       }}
                     />
                   );
