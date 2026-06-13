@@ -40,7 +40,7 @@ export default function Navbar() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-paper/80 backdrop-blur-2xl backdrop-saturate-150">
+    <header className="sticky top-0 z-40 border-b border-hairline bg-paper/50 backdrop-blur-lg backdrop-saturate-150">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="mono-label font-bold text-ink hover:text-primary transition-colors">
           KB<span className="text-primary">.</span>
@@ -50,9 +50,8 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`mono-label rounded-full px-3 py-1.5 transition-colors ${
-                isActive(l.href) ? "text-primary" : "text-ink-mute hover:text-ink"
-              }`}
+              className={`mono-label rounded-full px-3 py-1.5 transition-colors ${isActive(l.href) ? "text-primary" : "text-ink-mute hover:text-ink"
+                }`}
             >
               {l.label}
             </Link>
@@ -88,11 +87,10 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
-                    isActive(l.href)
-                      ? "bg-primary/10 text-primary"
-                      : "text-ink hover:bg-paper"
-                  }`}
+                  className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${isActive(l.href)
+                    ? "bg-primary/10 text-primary"
+                    : "text-ink hover:bg-paper"
+                    }`}
                 >
                   <Icon size={18} />
                   {l.label}
