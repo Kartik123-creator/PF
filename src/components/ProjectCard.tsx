@@ -1,3 +1,4 @@
+import { Sparkles } from "lucide-react";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -14,12 +15,18 @@ export default function ProjectCard({ project }: { project: Project }) {
           </li>
         ))}
       </ul>
-      <div className="mt-4 flex flex-wrap gap-1.5">
-        {project.highlights.map((h) => (
-          <span key={h} className="mono-label rounded-full bg-primary/10 px-2.5 py-1 text-primary">
-            {h}
-          </span>
-        ))}
+      <div className="mt-4 rounded-xl bg-primary/5 p-3.5">
+        <p className="mono-label mb-2 flex items-center gap-1.5 text-primary">
+          <Sparkles size={12} aria-hidden="true" /> Highlights
+        </p>
+        <ul className="space-y-1.5">
+          {project.highlights.map((h) => (
+            <li key={h} className="flex items-start gap-2 text-[0.8rem] font-medium leading-snug text-primary">
+              <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </article>
   );
