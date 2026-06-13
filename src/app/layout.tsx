@@ -1,0 +1,67 @@
+import type { Metadata } from "next";
+import { Inter, Lora, JetBrains_Mono } from "next/font/google";
+import "./globals.css";
+import { THEMES } from "@/data/themes";
+import { PROFILE } from "@/data/profile";
+import { SITE_URL } from "@/lib/site";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AskKartik from "@/components/AskKartik";
+import ScrollProgress from "@/components/ScrollProgress";
+import DisableRightClick from "@/components/DisableRightClick";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
+const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono" });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: "Kartik Bosmiya — Software Engineer",
+  description:
+    "Software Engineer · End-to-End Product Builder. 6+ years building web, mobile and AI products.",
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: "Kartik Bosmiya", locale: "en_US" },
+};
+
+const validMap = Object.fromEntries(THEMES.map((t) => [t.id, t.palettes.map((p) => p.id)]));
+
+const themeInit = `(function(){try{var V=${JSON.stringify(validMap)};var t=localStorage.getItem("kb-theme"),p=localStorage.getItem("kb-palette");if(!V[t]){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"paper";p=null}if(V[t].indexOf(p)<0){p=V[t][0]}var d=document.documentElement;d.dataset.theme=t;d.dataset.palette=p}catch(e){}})();`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html
+      lang="en"
+      data-theme="paper"
+      data-palette="cream"
+      suppressHydrationWarning
+      className={`${inter.variable} ${lora.variable} ${jbmono.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+      </head>
+      <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: PROFILE.name,
+              jobTitle: "Software Engineer",
+              email: PROFILE.email,
+              url: SITE_URL,
+              address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressCountry: "IN" },
+              sameAs: [PROFILE.linkedin, PROFILE.github],
+            }),
+          }}
+        />
+        <ScrollProgress />
+        <DisableRightClick />
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
+        <AskKartik />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,59 @@
+---
+title: "From e-commerce to ERP: lessons from rebuilding CASSA"
+date: "2026-04-12"
+tags: ["Architecture", "React", "MongoDB"]
+summary: "Turning a working e-commerce site into a full ERP without stopping the business — role-based pricing, inventory and payroll, one careful module at a time."
+---
+
+{/* FACT-CHECK: draft post written for Kartik's review — verify details match the real CASSA project */}
+
+CASSA Group started as a straightforward e-commerce build. Then the requirements grew:
+role-based pricing for wholesale buyers, inventory tracking across locations, then HR
+and payroll. We weren't building a shop anymore — we were building an ERP, and the shop
+had to keep selling while we did it.
+
+## Strangle, don't rewrite
+
+The tempting move was a rewrite. Instead we grew the system module by module around the
+working core. Each new domain (pricing, inventory, HR) shipped as its own module with
+its own collections and routes, integrated through well-defined seams. The store never
+went down; the ERP grew around it.
+
+## Role-based pricing is a data-model problem
+
+Wholesale vs retail pricing sounds like an `if` statement. It isn't — it's a pricing
+resolution pipeline. We modeled price rules as documents:
+
+```js
+{
+  productId,
+  audience: "wholesale",   // or "retail", "vip"
+  minQty: 50,
+  price: 410,
+  validFrom, validTo
+}
+```
+
+Resolution picks the most specific matching rule. New pricing scenarios became new
+rows, not new code — the difference between a feature and a fire drill.
+
+## Inventory taught me to love idempotency
+
+Stock updates arrive from sales, returns, manual corrections and imports — sometimes
+twice. Every mutation got an operation ID and the handlers became idempotent. The same
+discipline that saves real-time systems saves inventory counts.
+
+## Payroll: boring tech, careful code
+
+For HRMS and payroll we deliberately chose the most boring possible implementations.
+Money code should be dull, heavily validated and easy to audit. Excitement belongs in
+the UI, not the salary calculation.
+
+## What I'd tell past me
+
+- Module boundaries are cheaper on day one than day three hundred
+- Pricing, inventory and payroll are data-model problems before they're code problems
+- Keep the business running; ship the platform in slices
+
+The best part? Watching a client's daily operations move into software we grew around
+their existing store — without a single "big bang" migration weekend.

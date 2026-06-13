@@ -1,0 +1,13 @@
+# next.js
+/node_modules
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.superpowers/
+
+# local tooling / debug artifacts
+.playwright-mcp/
+.firecrawl/
+*.png

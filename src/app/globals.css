@@ -1,0 +1,389 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-mute: var(--ink-mute);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-accent-2: var(--accent-2);
+  --color-hairline: var(--hairline);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+}
+
+/* --font-heading lives on the theme selectors (outside @theme), so Tailwind
+   never generates a font-heading utility — register it explicitly. */
+@utility font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+/* ---------- PAPER: serif headings, hairlines, warm surfaces ---------- */
+:root,
+[data-theme="paper"][data-palette="cream"] {
+  --paper: #f6eee3;
+  --paper-2: #fffdf9;
+  --ink: #2a1a14;
+  --ink-mute: #6b5448;
+  --primary: #1a7a4a;
+  --primary-ink: #ffffff;
+  --accent-2: #0e7490;
+  --hairline: #2a1a141f;
+  --radius: 0.75rem;
+  --font-heading: var(--font-lora);
+}
+
+[data-theme="paper"][data-palette="sage"] {
+  --paper: #eef1e7;
+  --paper-2: #fbfcf8;
+  --ink: #1a2010;
+  --ink-mute: #4f5b3f;
+  --primary: #54712c;
+  --primary-ink: #ffffff;
+  --accent-2: #7c5a2e;
+  --hairline: #1a20101a;
+  --radius: 0.75rem;
+  --font-heading: var(--font-lora);
+}
+
+[data-theme="paper"][data-palette="rose"] {
+  --paper: #f1eaee;
+  --paper-2: #fdfafc;
+  --ink: #200815;
+  --ink-mute: #5c3d4d;
+  --primary: #8d3b5f;
+  --primary-ink: #ffffff;
+  --accent-2: #b03a52;
+  --hairline: #2008151a;
+  --radius: 0.75rem;
+  --font-heading: var(--font-lora);
+}
+
+/* ---------- DARK: slate surfaces, mono details ---------- */
+[data-theme="dark"][data-palette="teal"] {
+  --paper: #0f172a;
+  --paper-2: #1e293b;
+  --ink: #f1f5f9;
+  --ink-mute: #94a3b8;
+  --primary: #5eead4;
+  --primary-ink: #0f172a;
+  --accent-2: #38bdf8;
+  --hairline: #334155;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="dark"][data-palette="violet"] {
+  --paper: #13111c;
+  --paper-2: #201c2e;
+  --ink: #ede9fe;
+  --ink-mute: #a094c4;
+  --primary: #a78bfa;
+  --primary-ink: #13111c;
+  --accent-2: #f0abfc;
+  --hairline: #353046;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="dark"][data-palette="rose"] {
+  --paper: #1a1216;
+  --paper-2: #271920;
+  --ink: #fbe9f0;
+  --ink-mute: #c79db0;
+  --primary: #fb7185;
+  --primary-ink: #1a1216;
+  --accent-2: #f0abfc;
+  --hairline: #43303a;
+  --radius: 0.75rem;
+  --font-heading: var(--font-inter);
+}
+
+/* ---------- GRADIENT: dark canvas, glass cards, two-color accents ---------- */
+[data-theme="gradient"][data-palette="violetpink"] {
+  --paper: #0c0a1d;
+  --paper-2: #ffffff0d;
+  --ink: #ede9fe;
+  --ink-mute: #c4b5fd;
+  --primary: #a78bfa;
+  --primary-ink: #0c0a1d;
+  --accent-2: #ec4899;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="gradient"][data-palette="bluecyan"] {
+  --paper: #0a1120;
+  --paper-2: #ffffff0d;
+  --ink: #e0f2fe;
+  --ink-mute: #93c5fd;
+  --primary: #60a5fa;
+  --primary-ink: #0a1120;
+  --accent-2: #22d3ee;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="gradient"][data-palette="orangerose"] {
+  --paper: #1c0f0a;
+  --paper-2: #ffffff0d;
+  --ink: #ffedd5;
+  --ink-mute: #fdba74;
+  --primary: #fb923c;
+  --primary-ink: #1c0f0a;
+  --accent-2: #f43f5e;
+  --hairline: #ffffff21;
+  --radius: 1rem;
+  --font-heading: var(--font-inter);
+}
+
+/* ---------- SWISS: white ground, square corners, single accent ---------- */
+[data-theme="swiss"][data-palette="orange"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #c2410c;
+  --primary-ink: #ffffff;
+  --accent-2: #c2410c;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="swiss"][data-palette="blue"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #2563eb;
+  --primary-ink: #ffffff;
+  --accent-2: #2563eb;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+[data-theme="swiss"][data-palette="red"] {
+  --paper: #fafafa;
+  --paper-2: #ffffff;
+  --ink: #0a0a0a;
+  --ink-mute: #525252;
+  --primary: #dc2626;
+  --primary-ink: #ffffff;
+  --accent-2: #dc2626;
+  --hairline: #d4d4d4;
+  --radius: 0;
+  --font-heading: var(--font-inter);
+}
+
+:root,
+[data-theme="paper"],
+[data-theme="swiss"] {
+  color-scheme: light;
+  --success: #15803d;
+  --danger: #dc2626;
+}
+
+[data-theme="dark"],
+[data-theme="gradient"] {
+  color-scheme: dark;
+  --success: #4ade80;
+  --danger: #f87171;
+}
+
+/* ---------- base ---------- */
+/* Tailwind v4 preflight leaves buttons with cursor: default */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+[data-theme="swiss"] h1,
+[data-theme="swiss"] h2,
+[data-theme="swiss"] h3 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* shared card treatment — themes reshape it via the variables */
+.card {
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+
+[data-theme="gradient"] .card {
+  backdrop-filter: blur(10px);
+}
+
+/* gradient text helper (accent → accent-2) */
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mono-label {
+  font-family: var(--font-jbmono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+}
+
+/* hero entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up { animation: none; }
+}
+
+/* theme change — seamless circular colour sweep from the click point */
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: vt-theme-reveal 1s ease-out;
+}
+@keyframes vt-theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* print — neutralise the active theme to ink-on-paper for clean PDFs */
+@media print {
+  html {
+    --paper: #ffffff !important;
+    --paper-2: #ffffff !important;
+    --ink: #111111 !important;
+    --ink-mute: #444444 !important;
+    --primary: #15803d !important;
+    --accent-2: #15803d !important;
+    --hairline: #cccccc !important;
+  }
+  header,
+  footer {
+    display: none !important;
+  }
+}
+
+/* tech marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 75s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* chat typing dots */
+@keyframes bounce-dot {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--primary);
+  display: inline-block;
+  animation: bounce-dot 0.9s ease-in-out infinite;
+}
+
+/* blog article typography */
+.prose-blog {
+  line-height: 1.75;
+}
+
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+}
+
+.prose-blog p {
+  margin: 0.9rem 0;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin: 0.9rem 0;
+  padding-left: 1.4rem;
+}
+
+.prose-blog ul {
+  list-style: disc;
+}
+
+.prose-blog ol {
+  list-style: decimal;
+}
+
+.prose-blog li {
+  margin: 0.35rem 0;
+}
+
+.prose-blog code {
+  font-family: var(--font-jbmono), monospace;
+  font-size: 0.85em;
+}
+
+.prose-blog :not(pre) > code {
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.prose-blog pre {
+  background: #0d1117;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
