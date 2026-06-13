@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Bot, Building2, Cloud, Download, Globe, PenTool, Rocket, Search, Smartphone, Sparkles, Users, Zap } from "lucide-react";
-import { PROFILE } from "@/data/profile";
+import { PROFILE, STATS } from "@/data/profile";
 import { EXPERIENCE } from "@/data/experience";
 import { PROJECTS } from "@/data/projects";
 import { SKILL_GROUPS } from "@/data/skills";
@@ -90,8 +90,8 @@ export default function Home() {
 
       {/* stats */}
       <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {PROFILE.stats.map((s) => (
-          <StatCounter key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
+        {STATS.map((s) => (
+          <StatCounter key={s.label} spec={s} />
         ))}
       </section>
 

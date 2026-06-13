@@ -70,23 +70,24 @@ export default function ThemeSwitcher() {
                 {t.label}
               </button>
               <div className="flex gap-1.5">
-                {t.palettes.map((p) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    aria-label={`${t.label} ${p.label}`}
-                    onClick={() => apply(t.id, p.id)}
-                    className="h-4 w-4 rounded-full border"
-                    style={{
-                      backgroundColor: p.swatch,
-                      borderColor:
-                        theme === t.id && palette === p.id ? "var(--ink)" : "var(--hairline)",
-                      outline:
-                        theme === t.id && palette === p.id ? "2px solid var(--primary)" : "none",
-                      outlineOffset: "1px",
-                    }}
-                  />
-                ))}
+                {t.palettes.map((p) => {
+                  const active = theme === t.id && palette === p.id;
+                  return (
+                    <button
+                      key={p.id}
+                      type="button"
+                      aria-label={`${t.label} ${p.label}`}
+                      onClick={() => apply(t.id, p.id)}
+                      className="h-4 w-4 overflow-hidden rounded-full border"
+                      style={{
+                        background: `linear-gradient(90deg, ${p.swatch} 0 50%, ${p.swatch2} 50% 100%)`,
+                        borderColor: active ? "var(--ink)" : "var(--hairline)",
+                        outline: active ? "2px solid var(--primary)" : "none",
+                        outlineOffset: "1px",
+                      }}
+                    />
+                  );
+                })}
               </div>
             </div>
           ))}

@@ -29,12 +29,12 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: "thattime",
-    name: "THAT TIME",
+    id: "booksphere",
+    name: "Booksphere",
     category: "mobile",
     categoryLabel: "SaaS · Booking · UK Market",
     description:
-      "Multi-role appointment booking SaaS for the UK market with payments and native mobile apps.",
+      "Multi-role appointment booking platform for the UK market with payments and native mobile apps.",
     bullets: [
       "Built a multi-role booking system (Customer, Vendor, Admin).",
       "Integrated Klarna, Clearpay, Visa and Mastercard payments.",

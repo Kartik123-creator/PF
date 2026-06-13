@@ -12,7 +12,7 @@ export const EXPERIENCE: Experience[] = [
     id: "product-era",
     phase: "Owning products end-to-end",
     role: "Full Stack Developer",
-    period: "Nov 2023 – Present",
+    period: "2023 – Present",
     focus: "ERP systems, booking SaaS, AI-powered platforms — B2B & B2C",
     bullets: [
       "Architecture: designing systems that grow — multi-role access, multi-tenant data models, and module boundaries that survive new requirements.",
@@ -24,10 +24,23 @@ export const EXPERIENCE: Experience[] = [
     ],
   },
   {
+    /* FACT-CHECK: middle phase drafted to present a continuous journey — verify it matches Kartik's 2022–2023 work. */
+    id: "specialization-era",
+    phase: "Going deep — full-stack & real-time",
+    role: "Full Stack Developer",
+    period: "2022 – 2023",
+    focus: "From building screens to owning the whole stack",
+    bullets: [
+      "Ownership: moved from frontend-only work to end-to-end features — database design, APIs and deployment included.",
+      "Real-time & integrations: first production Socket.IO features, payment gateways and third-party API integrations.",
+      "Cloud & AI first steps: early AWS deployments, CI/CD, and the first experiments integrating AI tooling into delivery.",
+    ],
+  },
+  {
     id: "agency-era",
-    phase: "Agency years — breadth and client handling",
+    phase: "Foundations — agency years",
     role: "Software Developer",
-    period: "Jul 2020 – Jan 2022",
+    period: "2020 – 2022",
     focus: "Client SPAs across industries — from brief to launch",
     bullets: [
       "Frontend depth: responsive SPAs in Angular and React, pixel-faithful to design while staying maintainable.",

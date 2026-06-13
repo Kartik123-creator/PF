@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
-import { PROFILE } from "@/data/profile";
+import { PROFILE, STATS, statTarget } from "@/data/profile";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${PROFILE.name} — ${PROFILE.headline}`;
 
-const statsLine = PROFILE.stats
-  .map((s) => `${s.value}${s.suffix} ${s.label.toLowerCase()}`)
+const statsLine = STATS
+  .map((s) => `${statTarget(s)}${s.suffix} ${s.label.toLowerCase()}`)
   .join(" · ");
 
 export default function OgImage() {

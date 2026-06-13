@@ -29,7 +29,7 @@ describe("chatbot data", () => {
   });
 
   it("answers realistic recruiter questions", () => {
-    expect(matchPrompt("How many years of experience does he have?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("5+");
+    expect(matchPrompt("How many years of experience does he have?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("6+");
     expect(matchPrompt("Is Kartik available for hire?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("open to work");
     expect(matchPrompt("क्या आप उपलब्ध हैं?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("open to work");
   });

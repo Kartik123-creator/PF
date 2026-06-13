@@ -8,7 +8,7 @@ import SkillGrid from "@/components/SkillGrid";
 
 export const metadata: Metadata = {
   title: "About — Kartik Bosmiya",
-  description: "Software engineer with 5+ years building web, mobile and AI products end-to-end.",
+  description: "Software engineer with 6+ years building web, mobile and AI products end-to-end.",
   alternates: { canonical: "/about" },
 };
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
         <div className="space-y-5 text-[0.95rem] leading-relaxed">
           <p>
-            I&apos;m Kartik — a software engineer from Ahmedabad who has spent the last 5+ years
+            I&apos;m Kartik — a software engineer from Ahmedabad who has spent the last 6+ years
             building products end-to-end: web apps, mobile apps and, increasingly, AI-powered
             features that make software feel alive.
           </p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
             I started at a digital agency, working directly with clients and learning that
             shipping the <em>right</em> thing matters more than shipping the clever thing. Since
             then I&apos;ve converted an e-commerce site into a full ERP (CASSA Group), launched a
-            UK booking SaaS with payments and native mobile apps (THAT TIME), and built AI-driven
+            UK booking SaaS with payments and native mobile apps (Booksphere), and built AI-driven
             platforms with Next.js.
           </p>
           <p>

@@ -23,7 +23,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "experience",
     keywords: ["experience", "years", "background", "career", "anubhav", "अनुभव", "અનુભવ"],
     answer:
-      "Kartik has 5+ years of experience building web, mobile and AI-powered products. Currently a Full Stack Developer owning products end-to-end (since Nov 2023); before that he spent his agency years (2020–2022) shipping SPAs for clients across industries.",
+      "Kartik has 6+ years of experience building web, mobile and AI-powered products. Currently a Full Stack Developer owning products end-to-end (since 2023); before that he sharpened full-stack and real-time skills (2022–2023) and started in the agency years (2020–2022) shipping SPAs for clients across industries.",
   },
   {
     id: "currentrole",
@@ -41,7 +41,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "projects",
     keywords: ["projects", "portfolio", "work", "built", "showcase", "प्रोजेक्ट", "પ્રોજેક્ટ"],
     answer:
-      "Highlights: CASSA Group ERP (e-commerce → full ERP), THAT TIME (UK booking SaaS with payments + mobile apps), an AI Image Gallery, Tax Natives (tax-advice marketplace), Duped.au (product discovery), a Fabric.js canvas design editor, real-time chat at scale, a React Native services app, an AI support assistant, a legacy platform migration and more. Details on the Projects page!",
+      "Highlights: CASSA Group ERP (e-commerce → full ERP), Booksphere (UK booking SaaS with payments + mobile apps), an AI Image Gallery, Tax Natives (tax-advice marketplace), Duped.au (product discovery), a Fabric.js canvas design editor, real-time chat at scale, a React Native services app, an AI support assistant, a legacy platform migration and more. Details on the Projects page!",
   },
   {
     id: "cassa",
@@ -50,10 +50,10 @@ export const CHAT_TOPICS: ChatTopic[] = [
       "CASSA Group: Kartik converted a basic e-commerce site into a full ERP — role-based pricing, inventory tracking, HRMS and payroll modules. Stack: React, Node.js, MongoDB, MUI.",
   },
   {
-    id: "thattime",
-    keywords: ["thattime", "booking", "appointment", "klarna", "uk"],
+    id: "booksphere",
+    keywords: ["booksphere", "booking", "appointment", "klarna", "uk", "thattime"],
     answer:
-      "THAT TIME is a UK-market appointment booking SaaS: multi-role system (Customer/Vendor/Admin), Klarna/Clearpay/Visa/Mastercard payments, plus Android & iOS apps built with Ionic.",
+      "Booksphere is a UK-market appointment booking platform: multi-role system (Customer/Vendor/Admin), Klarna/Clearpay/Visa/Mastercard payments, plus Android & iOS apps built with Ionic.",
   },
   {
     id: "aigallery",
@@ -101,7 +101,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "mobile",
     keywords: ["mobile", "ionic", "capacitor", "android", "ios", "app"],
     answer:
-      "Kartik ships mobile apps with Ionic + Capacitor (THAT TIME is live on Android & iOS) and also works with React Native.",
+      "Kartik ships mobile apps with Ionic + Capacitor (Booksphere is live on Android & iOS) and also works with React Native.",
   },
   {
     id: "services",
@@ -209,7 +209,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "whyhire",
     keywords: ["why", "should", "best", "different", "unique"],
     answer:
-      "Three reasons: (1) end-to-end ownership — UI to AWS, (2) 5+ years of shipped products across web, mobile and AI, (3) direct client experience, so he communicates like a partner, not a ticket-taker.",
+      "Three reasons: (1) end-to-end ownership — UI to AWS, (2) 6+ years of shipped products across web, mobile and AI, (3) direct client experience, so he communicates like a partner, not a ticket-taker.",
   },
   {
     id: "products",

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { type StatSpec, statTarget } from "@/data/profile";
 
-export default function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+export default function StatCounter({ spec }: { spec: StatSpec }) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
@@ -11,6 +12,7 @@ export default function StatCounter({ value, suffix, label }: { value: number; s
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const value = statTarget(spec); // computed on the client → grows over real time
     if (started.current) {
       setDisplay(value);
       return;
@@ -39,15 +41,15 @@ export default function StatCounter({ value, suffix, label }: { value: number; s
       obs.disconnect();
       cancelAnimationFrame(raf.current);
     };
-  }, [value]);
+  }, [spec]);
 
   return (
     <div ref={ref} className="card p-5 text-center">
       <p className="text-3xl font-bold text-primary">
         {display}
-        {suffix}
+        {spec.suffix}
       </p>
-      <p className="mono-label mt-1 text-ink-mute">{label}</p>
+      <p className="mono-label mt-1 text-ink-mute">{spec.label}</p>
     </div>
   );
 }

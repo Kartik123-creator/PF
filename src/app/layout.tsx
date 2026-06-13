@@ -7,6 +7,8 @@ import { SITE_URL } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AskKartik from "@/components/AskKartik";
+import ScrollProgress from "@/components/ScrollProgress";
+import DisableRightClick from "@/components/DisableRightClick";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Kartik Bosmiya — Software Engineer",
   description:
-    "Software Engineer · End-to-End Product Builder. 5+ years building web, mobile and AI products.",
+    "Software Engineer · End-to-End Product Builder. 6+ years building web, mobile and AI products.",
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: "Kartik Bosmiya", locale: "en_US" },
 };
@@ -53,6 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        <ScrollProgress />
+        <DisableRightClick />
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
