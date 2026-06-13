@@ -6,3 +6,8 @@ next-env.d.ts
 *.tsbuildinfo
 .vercel
 .superpowers/
+
+# local tooling / debug artifacts
+.playwright-mcp/
+.firecrawl/
+*.png
