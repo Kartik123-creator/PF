@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { ChevronDown, Send } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 
 type Status = "idle" | "sending" | "sent" | "error" | "mailto";
 
 const NEEDS = ["Full-time hire", "Contract project", "Consultation / audit", "Something else"];
 
-const inputCls =
-  "mt-1 w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";
+const fieldCls =
+  "w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";
+const inputCls = `mt-1 ${fieldCls}`;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -69,12 +70,19 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="need" className="mono-label text-ink-mute">Looking for *</label>
-          <select id="need" name="need" required defaultValue="" className={inputCls}>
-            <option value="" disabled>Select one</option>
-            {NEEDS.map((n) => (
-              <option key={n} value={n}>{n}</option>
-            ))}
-          </select>
+          <div className="relative mt-1">
+            <select id="need" name="need" required defaultValue="" className={`${fieldCls} appearance-none pr-9`}>
+              <option value="" disabled>Select one</option>
+              {NEEDS.map((n) => (
+                <option key={n} value={n}>{n}</option>
+              ))}
+            </select>
+            <ChevronDown
+              size={16}
+              aria-hidden="true"
+              className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-mute"
+            />
+          </div>
         </div>
       </div>
       <div>
