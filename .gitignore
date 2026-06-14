@@ -7,6 +7,11 @@ next-env.d.ts
 .vercel
 .superpowers/
 
+# env files (never commit real credentials — .env.example is the only one tracked)
+.env
+.env.local
+.env*.local
+
 # local tooling / debug artifacts
 .playwright-mcp/
 .firecrawl/

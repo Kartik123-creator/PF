@@ -54,7 +54,7 @@ export const EDUCATION = [
   {
     degree: "Bachelor of Computer Engineering",
     school: "L.J. University, Ahmedabad",
-    period: "2023 – Present",
+    period: "2023 – 2025",
   },
   {
     degree: "Diploma in Computer Engineering",
