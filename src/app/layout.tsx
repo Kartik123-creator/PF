@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { THEMES } from "@/data/themes";
+import { THEMES, DEFAULT_THEME, DEFAULT_PALETTE } from "@/data/themes";
 import { PROFILE } from "@/data/profile";
 import { SITE_URL } from "@/lib/site";
 import Navbar from "@/components/Navbar";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const validMap = Object.fromEntries(THEMES.map((t) => [t.id, t.palettes.map((p) => p.id)]));
 
-const themeInit = `(function(){try{var V=${JSON.stringify(validMap)};var t=localStorage.getItem("kb-theme"),p=localStorage.getItem("kb-palette");if(!V[t]){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"paper";p=null}if(V[t].indexOf(p)<0){p=V[t][0]}var d=document.documentElement;d.dataset.theme=t;d.dataset.palette=p}catch(e){}})();`;
+const themeInit = `(function(){try{var V=${JSON.stringify(validMap)};var t=localStorage.getItem("kb-theme"),p=localStorage.getItem("kb-palette");if(!V[t]){t=${JSON.stringify(DEFAULT_THEME)};p=${JSON.stringify(DEFAULT_PALETTE)}}if(V[t].indexOf(p)<0){p=V[t][0]}var d=document.documentElement;d.dataset.theme=t;d.dataset.palette=p}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

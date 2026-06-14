@@ -92,7 +92,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="absolute inset-0 bg-black/40"
           />
-          <div className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto bg-paper-2 p-4 shadow-2xl">
+          <div className="absolute right-0 top-0 flex h-full w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto border-l border-hairline bg-paper p-4 shadow-2xl">
             {NAV_LINKS.map((l) => {
               const Icon = NAV_ICONS[l.href] ?? Home;
               return (
@@ -102,7 +102,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${isActive(l.href)
                     ? "bg-primary/10 text-primary"
-                    : "text-ink hover:bg-paper"
+                    : "text-ink hover:bg-paper-2"
                     }`}
                 >
                   <Icon size={18} />

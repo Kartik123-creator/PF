@@ -88,7 +88,12 @@ export default function ThemeSwitcher({
       </button>
 
       {open && (
-        <div className="card absolute right-0 top-full z-50 mt-2 w-56 p-3 shadow-xl">
+        <div
+          className="card absolute right-0 top-full z-50 mt-2 w-56 p-3 shadow-xl"
+          // opaque surface so page content never bleeds through the overlay
+          // (the .card glass background is meant for cards on the solid page)
+          style={{ background: "var(--paper)" }}
+        >
           {THEMES.map((t) => (
             <div key={t.id} className="flex items-center justify-between py-1.5">
               <button
