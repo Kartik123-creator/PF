@@ -19,9 +19,22 @@ const NAV_ICONS: Record<string, typeof Home> = {
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [themeOpen, setThemeOpen] = useState(false);
+
+  // Keep the mobile menu and the theme palette mutually exclusive so they
+  // never overlap on small screens (open one → the other closes).
+  const openMenu = (next: boolean) => {
+    setMenuOpen(next);
+    if (next) setThemeOpen(false);
+  };
+  const openTheme = (next: boolean) => {
+    setThemeOpen(next);
+    if (next) setMenuOpen(false);
+  };
 
   useEffect(() => {
     setMenuOpen(false);
+    setThemeOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -58,12 +71,12 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <ThemeSwitcher />
+          <ThemeSwitcher open={themeOpen} onOpenChange={openTheme} />
           <button
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((o) => !o)}
+            onClick={() => openMenu(!menuOpen)}
             className="rounded-lg border border-hairline p-2 text-ink sm:hidden"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}

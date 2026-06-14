@@ -1,11 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Palette as PaletteIcon } from "lucide-react";
 import { THEMES, DEFAULT_THEME, DEFAULT_PALETTE } from "@/data/themes";
 
-export default function ThemeSwitcher() {
-  const [open, setOpen] = useState(false);
+export default function ThemeSwitcher({
+  open: controlledOpen,
+  onOpenChange,
+}: {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+} = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = useCallback(
+    (value: boolean | ((prev: boolean) => boolean)) => {
+      const next = typeof value === "function" ? value(open) : value;
+      if (onOpenChange) onOpenChange(next);
+      else setInternalOpen(next);
+    },
+    [open, onOpenChange],
+  );
   const [theme, setTheme] = useState(DEFAULT_THEME);
   const [palette, setPalette] = useState(DEFAULT_PALETTE);
   const ref = useRef<HTMLDivElement>(null);
@@ -94,13 +109,16 @@ export default function ThemeSwitcher() {
                       type="button"
                       aria-label={`${t.label} ${p.label}`}
                       onClick={(e) => apply(t.id, p.id, e)}
-                      className={`h-5 w-5 rounded-full border border-hairline transition-transform duration-500 ease-out hover:scale-110 ${
+                      className={`h-5 w-5 rounded-full border bg-clip-padding transition-transform duration-500 ease-out hover:scale-110 ${
                         active
-                          ? "rotate-[135deg] scale-110 ring-2 ring-primary ring-offset-2 ring-offset-paper-2"
-                          : "rotate-0"
+                          ? "border-ink/25 rotate-[135deg] scale-110 ring-2 ring-primary ring-offset-2 ring-offset-paper-2"
+                          : "border-ink/25 rotate-0"
                       }`}
                       style={{
-                        background: `linear-gradient(135deg, ${p.bg} 0 50%, ${p.primary} 50% 100%)`,
+                        // backgroundImage (not the `background` shorthand) so it doesn't
+                        // reset background-clip — keeps `bg-clip-padding` working, giving
+                        // every swatch a uniform ring that defines a proper circle.
+                        backgroundImage: `linear-gradient(135deg, ${p.bg} 0 50%, ${p.primary} 50% 100%)`,
                       }}
                     />
                   );
