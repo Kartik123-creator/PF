@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import SectionHeading from "@/components/SectionHeading";
 import BlogCard from "@/components/BlogCard";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Blog — Kartik Bosmiya",
@@ -18,8 +19,10 @@ export default function BlogPage() {
         <p className="text-ink-mute">Posts coming soon.</p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
-          {posts.map((p) => (
-            <BlogCard key={p.slug} post={p} />
+          {posts.map((p, i) => (
+            <Reveal key={p.slug} delay={(i % 2) * 80} className="h-full">
+              <BlogCard post={p} />
+            </Reveal>
           ))}
         </div>
       )}

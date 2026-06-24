@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { SERVICES, ENGAGEMENT_MODES } from "@/data/services";
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Services — Kartik Bosmiya",
@@ -42,41 +43,47 @@ export default function ServicesPage() {
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {SERVICES.map((s) => {
+        {SERVICES.map((s, i) => {
           const Icon = ICONS[s.id as keyof typeof ICONS] ?? Layers;
           return (
-            <div key={s.id} className="card p-6">
-              <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <Icon size={20} />
+            <Reveal key={s.id} delay={(i % 2) * 90} className="h-full">
+              <div className="group card h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={20} />
+                  </div>
+                  <h2 className="text-base font-semibold">{s.title}</h2>
                 </div>
-                <h2 className="text-base font-semibold">{s.title}</h2>
+                <p className="mt-3 text-sm text-ink-mute">{s.intro}</p>
+                <ul className="mt-3 space-y-1.5 text-sm">
+                  {s.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span aria-hidden="true" className="text-primary">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="mt-3 text-sm text-ink-mute">{s.intro}</p>
-              <ul className="mt-3 space-y-1.5 text-sm">
-                {s.items.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden="true" className="text-primary">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </Reveal>
           );
         })}
       </div>
 
       <section className="mt-20">
-        <SectionHeading label="How we work together" title="Three engagement modes" />
+        <Reveal>
+          <SectionHeading label="How we work together" title="Three engagement modes" />
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-3">
-          {ENGAGEMENT_MODES.map((m) => (
-            <div key={m.id} className="card flex flex-col p-6">
-              <span className="mono-label self-start rounded-full bg-primary/10 px-2.5 py-1 text-primary">
-                {m.tag}
-              </span>
-              <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
-              <p className="mt-2 flex-1 text-sm text-ink-mute">{m.desc}</p>
-            </div>
+          {ENGAGEMENT_MODES.map((m, i) => (
+            <Reveal key={m.id} delay={i * 80} className="h-full">
+              <div className="card flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                <span className="mono-label self-start rounded-full bg-primary/10 px-2.5 py-1 text-primary">
+                  {m.tag}
+                </span>
+                <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
+                <p className="mt-2 flex-1 text-sm text-ink-mute">{m.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
         <div className="card mt-10 p-10 text-center">
@@ -86,7 +93,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="mono-label mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-primary-ink transition-transform hover:scale-105"
+            className="btn-press btn-shine mono-label mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-primary-ink"
           >
             Start the conversation <ArrowRight size={14} />
           </Link>

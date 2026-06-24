@@ -207,6 +207,9 @@ body {
   color: var(--ink);
   font-family: var(--font-inter), system-ui, sans-serif;
   transition: background-color 200ms ease, color 200ms ease;
+  /* clip (not hidden — keeps the sticky navbar working) so off-screen entrance
+     transforms and the hero glow never spawn a horizontal scrollbar on mobile */
+  overflow-x: clip;
 }
 
 h1, h2, h3 {
@@ -246,18 +249,204 @@ h1, h2, h3 {
   font-size: 0.7rem;
 }
 
-/* hero entrance */
+/* smooth in-page anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* hero entrance — blur-in lift with a touch of scale */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(26px) scale(0.97); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 
 .animate-fade-up {
-  animation: fade-up 0.55s ease-out both;
+  animation: fade-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- scroll reveal (driven by the <Reveal> component) ----------
+   Default rises + scales up from a soft blur; variants slide in or pop. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(44px) scale(0.94);
+  filter: blur(8px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+[data-reveal="left"] { transform: translateX(-56px) scale(0.97); }
+[data-reveal="right"] { transform: translateX(56px) scale(0.97); }
+[data-reveal="scale"] { transform: scale(0.85); }
+
+[data-reveal][data-visible] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+/* ---------- micro-interactions ----------
+   .btn-press: tactile push on click. .btn-shine: a light sweep on hover. */
+.btn-press {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-press:hover { transform: translateY(-2px) scale(1.04); }
+.btn-press:active { transform: translateY(0) scale(0.95); }
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.4) 50%, transparent 65%);
+  transform: translateX(-130%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-shine:hover::after { transform: translateX(130%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-press { transition: none; }
+  .btn-press:hover, .btn-press:active { transform: none; }
+  .btn-shine::after { display: none; }
+}
+
+/* ---------- 3D tilt card (driven by <TiltCard>) ---------- */
+.tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.28),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  z-index: 2;
+}
+.tilt:hover .tilt-glare { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt { transition: none; }
+  .tilt-glare { display: none; }
+}
+
+/* ---------- shimmering gradient headline ---------- */
+.shimmer {
+  background: linear-gradient(90deg, var(--primary), var(--accent-2), var(--primary));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 5s linear infinite;
+}
+@keyframes text-shimmer {
+  to { background-position: 200% center; }
+}
+
+/* ---------- count-up landing pop ---------- */
+@keyframes count-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+.animate-count-pop {
+  animation: count-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer { animation: none; }
+  .animate-count-pop { animation: none; }
+}
+
+/* ---------- route transition (app/template.tsx remounts per navigation) ---------- */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.page-transition {
+  animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition { animation: none; }
+}
+
+/* ---------- hero depth field — layered blurred light, parallaxed by <HeroFx> ----------
+   .hero-fx is the parallax layer (JS sets its transform). The two glows float on
+   their own timelines so the field feels alive even when the pointer is still. */
+.hero-fx {
+  position: absolute;
+  inset: -10% -5% 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: min(620px, 90vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--primary) 26%, transparent),
+    transparent 62%
+  );
+  filter: blur(30px);
+  animation: hero-float 11s ease-in-out infinite;
+}
+.hero-glow--accent {
+  left: 64%;
+  top: 24%;
+  width: min(420px, 64vw);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent-2) 24%, transparent),
+    transparent 62%
+  );
+  animation: hero-float 9s ease-in-out infinite reverse;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.75; }
+  50% { transform: translateY(-22px) scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow { animation: none; }
 }
 
 /* theme change — seamless circular colour sweep from the click point */

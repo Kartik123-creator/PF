@@ -5,6 +5,7 @@ import { EXPERIENCE, EDUCATION } from "@/data/experience";
 import SectionHeading from "@/components/SectionHeading";
 import TimelineItem from "@/components/TimelineItem";
 import SkillGrid from "@/components/SkillGrid";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About — Kartik Bosmiya",
@@ -18,7 +19,7 @@ export default function AboutPage() {
       <SectionHeading as="h1" label="About" title="The story so far" />
 
       <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
-        <div>
+        <Reveal variant="left">
           <Image
             src="/img/profile.jpg"
             alt={`Portrait of ${PROFILE.name}`}
@@ -48,9 +49,9 @@ export default function AboutPage() {
               <dd className="mt-0.5">{PROFILE.responseSla}</dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
 
-        <div className="space-y-5 text-[0.95rem] leading-relaxed">
+        <Reveal variant="right" className="space-y-5 text-[0.95rem] leading-relaxed">
           <p>
             I&apos;m Kartik — a software engineer from Ahmedabad who has spent the last 6+ years
             building products end-to-end: web apps, mobile apps and, increasingly, AI-powered
@@ -74,32 +75,44 @@ export default function AboutPage() {
             Beyond code: exploring new AI tooling, building side projects (this portfolio and its
             chatbot are one), and keeping up with where software is heading next.
           </p>
-        </div>
+        </Reveal>
       </div>
 
       <section className="mt-20">
-        <SectionHeading label="Experience" title="The journey in depth" />
-        {EXPERIENCE.map((e) => (
-          <TimelineItem key={e.id} exp={e} detailed />
+        <Reveal>
+          <SectionHeading label="Experience" title="The journey in depth" />
+        </Reveal>
+        {EXPERIENCE.map((e, i) => (
+          <Reveal key={e.id} delay={i * 90}>
+            <TimelineItem exp={e} detailed />
+          </Reveal>
         ))}
       </section>
 
       <section className="mt-20">
-        <SectionHeading label="Education" title="Where I studied" />
+        <Reveal>
+          <SectionHeading label="Education" title="Where I studied" />
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-2">
-          {EDUCATION.map((ed) => (
-            <div key={ed.degree} className="card p-5">
-              <p className="mono-label text-primary">{ed.period}</p>
-              <h3 className="mt-1 text-base font-semibold">{ed.degree}</h3>
-              <p className="text-sm text-ink-mute">{ed.school}</p>
-            </div>
+          {EDUCATION.map((ed, i) => (
+            <Reveal key={ed.degree} delay={i * 80} className="h-full">
+              <div className="card h-full p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                <p className="mono-label text-primary">{ed.period}</p>
+                <h3 className="mt-1 text-base font-semibold">{ed.degree}</h3>
+                <p className="text-sm text-ink-mute">{ed.school}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mt-20">
-        <SectionHeading label="Skills" title="The toolkit" />
-        <SkillGrid />
+        <Reveal>
+          <SectionHeading label="Skills" title="The toolkit" />
+        </Reveal>
+        <Reveal>
+          <SkillGrid />
+        </Reveal>
       </section>
     </main>
   );

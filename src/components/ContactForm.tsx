@@ -147,7 +147,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mono-label inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-primary-ink transition-transform hover:scale-105 disabled:opacity-60"
+        className="btn-press btn-shine mono-label inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-primary-ink disabled:opacity-60"
       >
         <Send size={14} />
         {status === "sending" ? "Sending…" : "Send brief"}

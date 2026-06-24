@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { PROJECTS, type ProjectCategory } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
+import Reveal from "@/components/Reveal";
+import TiltCard from "@/components/TiltCard";
 
 const FILTERS: { id: "all" | ProjectCategory; label: string }[] = [
   { id: "all", label: "All" },
@@ -24,7 +26,7 @@ export default function ProjectsGrid() {
             type="button"
             aria-pressed={filter === f.id}
             onClick={() => setFilter(f.id)}
-            className={`mono-label rounded-full border px-4 py-2 transition-colors ${
+            className={`btn-press mono-label rounded-full border px-4 py-2 ${
               filter === f.id
                 ? "border-primary bg-primary text-primary-ink"
                 : "border-hairline text-ink-mute hover:border-primary hover:text-primary"
@@ -34,9 +36,14 @@ export default function ProjectsGrid() {
           </button>
         ))}
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((p) => (
-          <ProjectCard key={p.id} project={p} />
+      {/* keyed by filter so the cards re-stagger in on every filter switch */}
+      <div key={filter} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {visible.map((p, i) => (
+          <Reveal key={p.id} delay={(i % 3) * 80} className="h-full">
+            <TiltCard className="h-full">
+              <ProjectCard project={p} />
+            </TiltCard>
+          </Reveal>
         ))}
       </div>
     </>

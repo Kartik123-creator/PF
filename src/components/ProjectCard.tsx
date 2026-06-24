@@ -3,7 +3,7 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card flex h-full flex-col p-5 transition hover:-translate-y-1 hover:shadow-lg">
+    <article className="card flex h-full flex-col p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
       <p className="mono-label text-primary">{project.categoryLabel}</p>
       <h3 className="mt-1.5 text-lg font-semibold">{project.name}</h3>
       <p className="mt-2 text-sm text-ink-mute">{project.description}</p>

@@ -3,7 +3,7 @@ import type { PostMeta } from "@/lib/blog";
 
 export default function BlogCard({ post }: { post: PostMeta }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="card block p-5 transition hover:-translate-y-1 hover:shadow-lg">
+    <Link href={`/blog/${post.slug}`} className="card block h-full p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
       <p className="mono-label text-ink-mute">
         {post.date} · {post.readingTime} min read
       </p>
