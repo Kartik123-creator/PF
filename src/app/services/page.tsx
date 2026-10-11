@@ -1,42 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Bot,
-  Building2,
-  Cloud,
-  Layers,
-  Search,
-  ShoppingCart,
-  Smartphone,
-  Zap,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SERVICES, ENGAGEMENT_MODES } from "@/data/services";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import HowIWork from "@/components/HowIWork";
+import { serviceIcon } from "@/components/serviceIcons";
 
 export const metadata: Metadata = {
   title: "Services — Kartik Bosmiya",
   description:
-    "Eight areas owned end-to-end: full-stack apps, ERP, e-commerce, mobile, real-time, AI integration, DevOps and SEO.",
+    "Five areas owned end-to-end: SaaS & e-commerce web products, ERP, mobile, real-time features and AI features.",
   alternates: { canonical: "/services" },
 };
-
-const ICONS = {
-  fullstack: Layers,
-  erp: Building2,
-  ecommerce: ShoppingCart,
-  mobile: Smartphone,
-  realtime: Zap,
-  ai: Bot,
-  devops: Cloud,
-  "seo-design": Search,
-} as const;
 
 export default function ServicesPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-16">
-      <SectionHeading as="h1" label="Services" title="Eight areas I own. All production-grade." />
+      <SectionHeading as="h1" label="Services" title="Five areas I own. All production-grade." />
       <p className="-mt-4 mb-10 max-w-2xl text-ink-mute">
         Everything below has shipped to real users — with hand-offs your team can run with
         and a reply within 24 hours. No demos that never leave the demo.
@@ -44,7 +25,7 @@ export default function ServicesPage() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         {SERVICES.map((s, i) => {
-          const Icon = ICONS[s.id as keyof typeof ICONS] ?? Layers;
+          const Icon = serviceIcon(s.id);
           return (
             <Reveal key={s.id} delay={(i % 2) * 90} className="h-full">
               <div className="group card h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
@@ -69,9 +50,11 @@ export default function ServicesPage() {
         })}
       </div>
 
+      <HowIWork />
+
       <section className="mt-20">
         <Reveal>
-          <SectionHeading label="How we work together" title="Three engagement modes" />
+          <SectionHeading label="Ways to engage" title="Three engagement modes" />
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-3">
           {ENGAGEMENT_MODES.map((m, i) => (

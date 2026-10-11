@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { matchPrompt } from "@/lib/matchPrompt";
 import { CHAT_TOPICS, CHAT_FALLBACK, CHATBOT_PROMPTS } from "@/data/chatbot";
+import { AVAILABILITY } from "@/data/profile";
 
 describe("chatbot data", () => {
   it("has 30+ topics", () => {
@@ -29,9 +30,9 @@ describe("chatbot data", () => {
   });
 
   it("answers realistic recruiter questions", () => {
-    expect(matchPrompt("How many years of experience does he have?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("6+");
-    expect(matchPrompt("Is Kartik available for hire?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("open to work");
-    expect(matchPrompt("क्या आप उपलब्ध हैं?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("open to work");
+    expect(matchPrompt("How many years of experience does he have?", CHAT_TOPICS, CHAT_FALLBACK)).toContain("since 2020");
+    expect(matchPrompt("Is Kartik available for hire?", CHAT_TOPICS, CHAT_FALLBACK)).toBe(AVAILABILITY.chat);
+    expect(matchPrompt("क्या आप उपलब्ध हैं?", CHAT_TOPICS, CHAT_FALLBACK)).toBe(AVAILABILITY.chat);
   });
 
   it("unmatched input falls back", () => {

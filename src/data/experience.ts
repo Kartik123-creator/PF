@@ -1,5 +1,7 @@
 export interface Experience {
   id: string;
+  company: string;
+  employmentType: "Full-time" | "Contract" | "Freelance";
   phase: string;
   role: string;
   period: string;
@@ -7,45 +9,48 @@ export interface Experience {
   bullets: string[];
 }
 
+/** Employer names are under NDA — shown as a generic description. */
+const CONFIDENTIAL_AGENCY = "Confidential (NDA) — software agency";
+
 export const EXPERIENCE: Experience[] = [
   {
     id: "product-era",
+    company: CONFIDENTIAL_AGENCY,
+    employmentType: "Full-time",
     phase: "Owning products end-to-end",
     role: "Full Stack Developer",
     period: "2023 – Present",
     focus: "ERP systems, booking SaaS, AI-powered platforms — B2B & B2C",
     bullets: [
-      "Architecture: designing systems that grow — multi-role access, multi-tenant data models, and module boundaries that survive new requirements.",
-      "Data: optimized MongoDB, MySQL and PostgreSQL schemas; indexing, caching and pagination strategies for high-traffic listings.", // FACT-CHECK: PostgreSQL added per Kartik's request
-      "Real-time: Socket.IO rooms, presence and delivery guarantees at production scale, with Redis when one server stops being enough.",
-      "AI: integrating LLM APIs into real features — prompt pipelines, streaming responses and graceful fallbacks, not just demos.", // FACT-CHECK
-      "Infrastructure: AWS deployments with CI/CD pipelines; exposure to gRPC services and Nginx load balancing.", // FACT-CHECK: gRPC / load balancers added per Kartik's request
-      "Performance: lazy loading, code splitting, Core Web Vitals and technical SEO baked in from the start.",
+      "ERP: built CASSA Group's ERP — inventory, role-based pricing, HRMS and payroll — on top of a live e-commerce site.",
+      "SaaS: built Booksphere, a UK booking SaaS with Klarna, Clearpay and card payments, plus React Native apps.",
+      "Real-time: shipped real-time features with Socket.IO and Redis.",
     ],
   },
   {
-    /* FACT-CHECK: middle phase drafted to present a continuous journey — verify it matches Kartik's 2022–2023 work. */
     id: "specialization-era",
+    company: CONFIDENTIAL_AGENCY,
+    employmentType: "Full-time",
     phase: "Going deep — full-stack & real-time",
     role: "Full Stack Developer",
     period: "2022 – 2023",
     focus: "From building screens to owning the whole stack",
     bullets: [
-      "Ownership: moved from frontend-only work to end-to-end features — database design, APIs and deployment included.",
-      "Real-time & integrations: first production Socket.IO features, payment gateways and third-party API integrations.",
-      "Cloud & AI first steps: early AWS deployments, CI/CD, and the first experiments integrating AI tooling into delivery.",
+      "Full-stack: moved from front-end to full-stack — database design, REST APIs and payment gateways.",
+      "Real-time & cloud: first production Socket.IO features, cloud deployments and CI/CD.",
     ],
   },
   {
     id: "agency-era",
+    company: CONFIDENTIAL_AGENCY,
+    employmentType: "Full-time",
     phase: "Foundations — agency years",
     role: "Software Developer",
     period: "2020 – 2022",
     focus: "Client SPAs across industries — from brief to launch",
     bullets: [
-      "Frontend depth: responsive SPAs in Angular and React, pixel-faithful to design while staying maintainable.",
-      "Client skills: gathering requirements directly, demoing iterations weekly, and learning that shipping the right thing beats shipping the clever thing.",
-      "Fundamentals: form validation, CRUD flows, API integrations and Git collaboration — the muscle memory everything since is built on.",
+      "Frontend: responsive React and Angular SPAs for agency clients.",
+      "Client work: gathered requirements directly and demoed progress weekly.",
     ],
   },
 ];
@@ -55,10 +60,12 @@ export const EDUCATION = [
     degree: "Bachelor of Computer Engineering",
     school: "L.J. University, Ahmedabad",
     period: "2023 – 2025",
+    note: "Completed while working full-time",
   },
   {
     degree: "Diploma in Computer Engineering",
     school: "L.J. University, Ahmedabad",
     period: "2021 – 2023",
+    note: "Completed while working full-time",
   },
 ] as const;

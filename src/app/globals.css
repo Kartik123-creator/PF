@@ -234,6 +234,28 @@ h1, h2, h3 {
   backdrop-filter: blur(10px);
 }
 
+/* generated project cover — a per-project hue pair derived from the theme's primary.
+   Relative colour syntax keeps primary's lightness + chroma, so --primary-ink text stays
+   readable in every theme; browsers without it keep the plain theme gradient above. */
+.project-cover {
+  background: linear-gradient(135deg, var(--primary), var(--accent-2));
+  background: linear-gradient(
+    135deg,
+    oklch(from var(--primary) l c calc(h + var(--cover-hue, 0))),
+    oklch(from var(--primary) l c calc(h + var(--cover-hue, 0) + 45))
+  );
+}
+
+/* Swiss primaries sit at a higher lightness, so some rotated hues (greens, teals) fall
+   under 4.5:1 against white text — cap lightness there to keep the cover label readable. */
+[data-theme="swiss"] .project-cover {
+  background: linear-gradient(
+    135deg,
+    oklch(from var(--primary) min(l, 0.5) c calc(h + var(--cover-hue, 0))),
+    oklch(from var(--primary) min(l, 0.5) c calc(h + var(--cover-hue, 0) + 45))
+  );
+}
+
 /* gradient text helper (accent → accent-2) */
 .text-gradient {
   background: linear-gradient(90deg, var(--primary), var(--accent-2));

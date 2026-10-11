@@ -1,8 +1,8 @@
 export const PROFILE = {
   name: "Kartik Bosmiya",
-  headline: "Software Engineer · End-to-End Product Builder",
+  headline: "Full-Stack SaaS & ERP Developer",
   tagline:
-    "6+ years building web, mobile and AI-powered products for clients worldwide — from first wireframe to AWS deployment.",
+    "Building production software since 2020 — web, mobile and AI-powered products, from first wireframe to AWS deployment.",
   location: "Ahmedabad, India",
   timezone: "UTC+05:30",
   email: "kartikbosmiya2003@gmail.com",
@@ -10,37 +10,77 @@ export const PROFILE = {
   phoneHref: "+919328717164",
   linkedin: "https://linkedin.com/in/kartik-bosmiya-1277a8212",
   github: "https://github.com/Kartik123-creator",
+  /** Upwork profile URL. Empty string = the link is hidden everywhere. */
+  upwork: "" as string,
   resumeUrl: "/resume",
-  status: "OPEN_TO_WORK",
   responseSla: "≤ 24 hours",
   /** Formspree form id, e.g. "mqkrbyzw". Empty string = form falls back to mailto. */
   formspreeId: "",
 } as const;
 
+/** Countries Kartik's clients are in. */
+export const COUNTRIES = ["UK", "US", "UAE", "Australia", "India"] as const;
+
 /**
- * Live stats. Each value = base + whole years elapsed since `since` × perYear,
- * so the counters grow over real time without a redeploy.
- * FACT-CHECK: base numbers chosen by Kartik (aggressive set); growth rates are estimates.
+ * Availability — switch this ONE value to change the hero pill, CTAs, resume,
+ * contact card, OG image, meta description and chatbot answer together.
  */
-export interface StatSpec {
-  base: number;
-  perYear: number;
-  since: string; // ISO date the base value was true
-  suffix: string;
+export type AvailabilityMode = "freelance" | "fulltime";
+export const AVAILABILITY_MODE: AvailabilityMode = "freelance";
+
+interface AvailabilityCopy {
+  /** Status text (resume, contact, OG image, meta description). */
   label: string;
+  /** Short version for the hero pill — fits one line on a 360px phone. */
+  pill: string;
+  /** One-liner under the closing CTA. */
+  cta: string;
+  /** "Now" card on the home page. */
+  nowTitle: string;
+  nowDesc: string;
+  /** Chatbot answer to "are you available?". */
+  chat: string;
 }
 
-export const STATS: StatSpec[] = [
-  { base: 30, perYear: 8, since: "2026-06-01", suffix: "+", label: "Happy clients" },
-  { base: 6, perYear: 1, since: "2026-06-01", suffix: "+", label: "Years experience" },
-  { base: 80, perYear: 12, since: "2026-06-01", suffix: "+", label: "Projects shipped" },
-  { base: 20, perYear: 2, since: "2026-06-01", suffix: "+", label: "Technologies" },
+const AVAILABILITY_COPY = {
+  freelance: {
+    label: "Available for freelance & contract projects",
+    pill: "Available for freelance work",
+    cta: "Available for freelance & contract projects. I reply within 24 hours.",
+    nowTitle: "Freelance & contract projects",
+    nowDesc: "Taking on fixed-scope builds and ongoing contract work — replies within 24 hours.",
+    chat: "Yes — Kartik is available for freelance & contract projects. Email kartikbosmiya2003@gmail.com with a short brief and you'll hear back within 24 hours.",
+  },
+  fulltime: {
+    label: "Open to full-time remote or hybrid roles",
+    pill: "Open to full-time roles",
+    cta: "Open to full-time roles — remote or hybrid. I reply within 24 hours.",
+    nowTitle: "Full-time roles",
+    nowDesc: "Open to remote or hybrid software engineering roles — replies within 24 hours.",
+    chat: "Yes — Kartik is open to full-time roles, remote or hybrid. Email kartikbosmiya2003@gmail.com and you'll hear back within 24 hours.",
+  },
+} satisfies Record<AvailabilityMode, AvailabilityCopy>;
+
+export const AVAILABILITY: AvailabilityCopy = AVAILABILITY_COPY[AVAILABILITY_MODE];
+
+/**
+ * Stats row. Static values only — every number here must be one Kartik can back up.
+ * Numeric values get a client-side count-up; the final value is always in the server HTML.
+ */
+export interface Stat {
+  value: number | string;
+  suffix?: string;
+  label: string;
+  /** Long text values (e.g. a tech list) render smaller and never wrap. */
+  compact?: boolean;
+}
+
+export const STATS: Stat[] = [
+  { value: "2020", label: "In production since" },
+  { value: "React · Node · RN", label: "Core stack", compact: true },
+  { value: COUNTRIES.length, label: "Countries served" },
+  { value: "< 24h", label: "Reply time" },
 ];
-
-export function statTarget(s: StatSpec, now: Date = new Date()): number {
-  const years = (now.getTime() - new Date(s.since).getTime()) / (365.25 * 24 * 60 * 60 * 1000);
-  return s.base + Math.max(0, Math.floor(years * s.perYear));
-}
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },

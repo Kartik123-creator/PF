@@ -11,6 +11,11 @@ export interface PostMeta {
   readingTime: number;
 }
 
+/** Posts with `draft: true` in their frontmatter are unpublished: not listed, not routable. */
+function isDraft(data: Record<string, unknown>): boolean {
+  return data.draft === true;
+}
+
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 function readingTimeMinutes(text: string): number {
@@ -28,6 +33,7 @@ export function getAllPosts(): PostMeta[] {
       try {
         const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf8");
         const { data, content } = matter(raw);
+        if (isDraft(data)) return [];
         return [
           {
             slug,
@@ -51,6 +57,7 @@ export function getPost(slug: string): { meta: PostMeta; content: string } | nul
   if (!fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
+  if (isDraft(data)) return null;
   return {
     meta: {
       slug,

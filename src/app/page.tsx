@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Bot, Building2, Cloud, Download, Globe, PenTool, Rocket, Search, Smartphone, Sparkles, Users, Zap } from "lucide-react";
-import { PROFILE, STATS } from "@/data/profile";
+import { ArrowRight, BadgeCheck, Download } from "lucide-react";
+import { AVAILABILITY, PROFILE, STATS } from "@/data/profile";
+import { SERVICES } from "@/data/services";
 import { EXPERIENCE } from "@/data/experience";
 import { PROJECTS } from "@/data/projects";
 import { SKILL_GROUPS } from "@/data/skills";
@@ -14,43 +15,13 @@ import BlogCard from "@/components/BlogCard";
 import Reveal from "@/components/Reveal";
 import HeroFx from "@/components/HeroFx";
 import TiltCard from "@/components/TiltCard";
+import Testimonials from "@/components/Testimonials";
+import HowIWork from "@/components/HowIWork";
+import { serviceIcon } from "@/components/serviceIcons";
 
-const CAPABILITIES = [
-  { icon: Globe, title: "B2B & B2C Products", desc: "SaaS platforms, e-commerce and consumer apps — from marketplace flows to checkout." },
-  { icon: Building2, title: "Enterprise & ERP", desc: "Large-scale systems: ERP, HRMS, payroll, role-based access and multi-tenant architectures." },
-  { icon: Smartphone, title: "Mobile Applications", desc: "Android & iOS apps with Ionic, Capacitor and React Native." },
-  { icon: Bot, title: "AI Integrations", desc: "LLM APIs, AI-powered features and automation woven into real products." },
-  { icon: Cloud, title: "DevOps, AWS & Migrations", desc: "CI/CD pipelines, cloud deployments, load balancing, and platform/data migrations." },
-  { icon: Zap, title: "Real-time Systems", desc: "Live chat, notifications and presence with Socket.IO at scale." },
-  { icon: Search, title: "SEO & Performance", desc: "Technical SEO, Core Web Vitals, lazy loading and code splitting that move rankings." },
-  { icon: PenTool, title: "Design & Branding", desc: "Marketing brochures, templates, logos and canvas design tools built on Fabric.js." },
-  { icon: Users, title: "Client Consulting", desc: "Direct client collaboration — requirements to demos to delivery." },
-];
-
-/* FACT-CHECK: "Now" items drafted from Kartik's AI claims — verify tools and current work */
-const NOW_ITEMS = [
-  {
-    icon: Sparkles,
-    tag: "USING",
-    title: "AI-first development workflow",
-    desc: "Claude, ChatGPT and Copilot in the daily loop — faster delivery without losing code quality.",
-  },
-  {
-    icon: Rocket,
-    tag: "BUILDING",
-    title: "LLM features in client products",
-    desc: "Chat assistants, prompt pipelines and AI-powered automation shipped into production apps.",
-  },
-  {
-    icon: BadgeCheck,
-    tag: "AVAILABLE",
-    title: "Full-time roles",
-    desc: "Open to remote or hybrid software engineering roles — replies within 24 hours.",
-  },
-];
 
 export default function Home() {
-  const featured = PROJECTS.filter((p) => p.featured);
+  const featured = PROJECTS.filter((p) => p.onHome);
   const posts = getAllPosts().slice(0, 2);
   const marqueeItems = SKILL_GROUPS.flatMap((g) => g.items);
 
@@ -59,9 +30,9 @@ export default function Home() {
       {/* hero */}
       <section className="relative py-20 text-center sm:py-28">
         <HeroFx />
-        <p className="mono-label animate-fade-up inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-hairline px-3 py-1.5 text-ink-mute">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-          Open to work
+        <p className="mono-label animate-fade-up inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1.5 text-ink-mute">
+          <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-green-500" />
+          {AVAILABILITY.pill}
           <span className="hidden sm:inline">· {PROFILE.location} · {PROFILE.timezone}</span>
         </p>
         <p className="mono-label animate-fade-up mt-2 text-ink-mute sm:hidden">
@@ -96,7 +67,7 @@ export default function Home() {
       <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 80} className="h-full">
-            <StatCounter spec={s} />
+            <StatCounter stat={s} />
           </Reveal>
         ))}
       </section>
@@ -107,19 +78,23 @@ export default function Home() {
           <SectionHeading label="What I do" title="End-to-end product engineering" />
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CAPABILITIES.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 3) * 80} className="h-full">
-              <div className="group card h-full p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                <c.icon className="text-primary transition-transform duration-300 group-hover:scale-110" size={22} />
-                <h3 className="mt-3 text-base font-semibold">{c.title}</h3>
-                <p className="mt-1.5 text-sm text-ink-mute">{c.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+          {SERVICES.map((svc, i) => {
+            const Icon = serviceIcon(svc.id);
+            return (
+              <Reveal key={svc.id} delay={(i % 3) * 80} className="h-full">
+                <div className="group card h-full p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                  <Icon className="text-primary transition-transform duration-300 group-hover:scale-110" size={22} />
+                  <h3 className="mt-3 text-base font-semibold">{svc.title}</h3>
+                  <p className="mt-1.5 text-sm text-ink-mute">{svc.summary}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
         <Link href="/services" className="mono-label mt-6 inline-flex items-center gap-2 text-primary hover:underline">
           All services in detail <ArrowRight size={14} />
         </Link>
+        <HowIWork className="mt-16" />
       </section>
 
       {/* featured projects */}
@@ -127,9 +102,9 @@ export default function Home() {
         <Reveal>
           <SectionHeading label="Selected work" title="Featured projects" />
         </Reveal>
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {featured.map((p, i) => (
-            <Reveal key={p.id} delay={(i % 3) * 80} className="h-full">
+            <Reveal key={p.id} delay={(i % 2) * 80} className="h-full">
               <TiltCard className="h-full">
                 <ProjectCard project={p} />
               </TiltCard>
@@ -140,6 +115,8 @@ export default function Home() {
           All projects <ArrowRight size={14} />
         </Link>
       </section>
+
+      <Testimonials />
 
       {/* experience */}
       <section className="pb-20">
@@ -155,25 +132,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* now / AI focus */}
+      {/* now / availability */}
       <section className="pb-20">
         <Reveal>
-          <SectionHeading label="Now" title="What I'm working with right now" />
+          <SectionHeading label="Now" title="Current availability" />
         </Reveal>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {NOW_ITEMS.map((n, i) => (
-            <Reveal key={n.tag} delay={i * 80} className="h-full">
-              <div className="group card h-full p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                <div className="flex items-center justify-between">
-                  <n.icon className="text-primary transition-transform duration-300 group-hover:scale-110" size={22} />
-                  <span className="mono-label rounded-full border border-hairline px-2 py-0.5 text-ink-mute">{n.tag}</span>
-                </div>
-                <h3 className="mt-3 text-base font-semibold">{n.title}</h3>
-                <p className="mt-1.5 text-sm text-ink-mute">{n.desc}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="group card flex items-start gap-4 p-5 transition duration-300 hover:border-primary/40 hover:shadow-lg">
+            <BadgeCheck className="mt-0.5 shrink-0 text-primary" size={22} />
+            <div>
+              <h3 className="text-base font-semibold">{AVAILABILITY.nowTitle}</h3>
+              <p className="mt-1.5 text-sm text-ink-mute">{AVAILABILITY.nowDesc}</p>
+            </div>
+            <Link
+              href="/contact"
+              className="mono-label ml-auto hidden shrink-0 items-center gap-2 self-center text-primary hover:underline sm:inline-flex"
+            >
+              Get in touch <ArrowRight size={14} />
+            </Link>
+          </div>
+        </Reveal>
       </section>
 
       {/* tech marquee */}
@@ -209,7 +187,7 @@ export default function Home() {
         <section className="card mb-4 p-10 text-center">
           <h2 className="text-2xl font-bold">Let&apos;s build something together</h2>
           <p className="mx-auto mt-2 max-w-md text-ink-mute">
-            Open to full-time roles — remote or hybrid. I reply within 24 hours.
+            {AVAILABILITY.cta}
           </p>
           <Link
             href="/contact"

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Briefcase, Github, Linkedin, Mail } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 
 export default function Footer() {
@@ -33,6 +33,11 @@ export default function Footer() {
             <a aria-label="LinkedIn" href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-hairline p-2.5 transition-colors hover:border-primary hover:text-primary">
               <Linkedin size={16} />
             </a>
+            {PROFILE.upwork && (
+              <a aria-label="Upwork" href={PROFILE.upwork} target="_blank" rel="noreferrer" className="rounded-full border border-hairline p-2.5 transition-colors hover:border-primary hover:text-primary">
+                <Briefcase size={16} />
+              </a>
+            )}
             <a aria-label="Email" href={`mailto:${PROFILE.email}`} className="rounded-full border border-hairline p-2.5 transition-colors hover:border-primary hover:text-primary">
               <Mail size={16} />
             </a>
