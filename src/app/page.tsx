@@ -32,7 +32,7 @@ export default function Home() {
         <HeroFx />
         <p className="mono-label animate-fade-up inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1.5 text-ink-mute">
           <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-green-500" />
-          {AVAILABILITY.label}
+          {AVAILABILITY.pill}
           <span className="hidden sm:inline">· {PROFILE.location} · {PROFILE.timezone}</span>
         </p>
         <p className="mono-label animate-fade-up mt-2 text-ink-mute sm:hidden">

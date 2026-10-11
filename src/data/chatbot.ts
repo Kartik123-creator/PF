@@ -221,7 +221,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "seo",
     keywords: ["seo", "ranking", "google", "vitals", "lighthouse", "search"],
     answer:
-      "Kartik handles performance and technical SEO as part of web builds: Core Web Vitals, code-splitting and semantic markup.",
+      "SEO isn't one of the services Kartik lists. His web work is Next.js and React frontends with Node.js backends — email kartikbosmiya2003@gmail.com to talk through what your project needs.",
   },
   {
     id: "migrations",

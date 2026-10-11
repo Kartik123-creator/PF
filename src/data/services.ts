@@ -114,6 +114,6 @@ export const ENGAGEMENT_MODES = [
     id: "consult",
     tag: "ADVICE",
     title: "Consult & audit",
-    desc: "Performance, SEO or architecture review with a prioritized, actionable report — not a slide deck.",
+    desc: "Architecture or code review with a prioritized, actionable report — not a slide deck.",
   },
 ] as const;

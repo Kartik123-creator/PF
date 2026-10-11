@@ -29,8 +29,10 @@ export type AvailabilityMode = "freelance" | "fulltime";
 export const AVAILABILITY_MODE: AvailabilityMode = "freelance";
 
 interface AvailabilityCopy {
-  /** Status pill text (hero, resume, contact, OG image, meta description). */
+  /** Status text (resume, contact, OG image, meta description). */
   label: string;
+  /** Short version for the hero pill — fits one line on a 360px phone. */
+  pill: string;
   /** One-liner under the closing CTA. */
   cta: string;
   /** "Now" card on the home page. */
@@ -43,6 +45,7 @@ interface AvailabilityCopy {
 const AVAILABILITY_COPY = {
   freelance: {
     label: "Available for freelance & contract projects",
+    pill: "Available for freelance work",
     cta: "Available for freelance & contract projects. I reply within 24 hours.",
     nowTitle: "Freelance & contract projects",
     nowDesc: "Taking on fixed-scope builds and ongoing contract work — replies within 24 hours.",
@@ -50,6 +53,7 @@ const AVAILABILITY_COPY = {
   },
   fulltime: {
     label: "Open to full-time remote or hybrid roles",
+    pill: "Open to full-time roles",
     cta: "Open to full-time roles — remote or hybrid. I reply within 24 hours.",
     nowTitle: "Full-time roles",
     nowDesc: "Open to remote or hybrid software engineering roles — replies within 24 hours.",
@@ -72,7 +76,7 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "2020", label: "Shipping production software since" },
+  { value: "2020", label: "In production since" },
   { value: "React · Node · RN", label: "Core stack", compact: true },
   { value: COUNTRIES.length, label: "Countries served" },
   { value: "< 24h", label: "Reply time" },

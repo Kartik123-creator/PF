@@ -68,7 +68,7 @@ export default function AboutPage() {
           <p>
             My sweet spot is owning a feature from first wireframe to AWS deployment — frontend,
             backend, database, pipeline. I&apos;ve worked across B2B and B2C products and enterprise
-            systems, with performance and technical SEO built in rather than bolted on. I work in
+            systems. I work in
             agile teams, run code reviews, and communicate with clients like a partner, not a ticket-taker.
           </p>
           <p>
