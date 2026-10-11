@@ -10,30 +10,26 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     label: "Backend",
-    items: ["Node.js", "Laravel (PHP)", "REST APIs", "Socket.IO", "gRPC"], // FACT-CHECK: gRPC added per Kartik's request
+    items: ["TypeScript", "Node.js", "NestJS", "Laravel (PHP)", "REST APIs", "Socket.IO"],
   },
   {
     label: "Mobile",
-    items: ["Ionic", "Capacitor", "React Native"], // FACT-CHECK: React Native added per Kartik's request
-  },
-  {
-    label: "AI & Automation",
-    items: ["LLM API integration", "Claude / ChatGPT", "GitHub Copilot", "AI-assisted workflows", "Prompt engineering"], // FACT-CHECK: tools added — confirm which Kartik actually uses
-  },
-  {
-    label: "DevOps & Cloud",
-    items: ["AWS", "CI/CD pipelines", "Load balancers", "Cron jobs"], // FACT-CHECK: load balancers added per Kartik's request
+    items: ["React Native"],
   },
   {
     label: "Databases",
-    items: ["MongoDB", "MySQL", "PostgreSQL"], // FACT-CHECK: PostgreSQL added per Kartik's request
+    items: ["MongoDB", "MySQL", "PostgreSQL", "Redis"],
   },
   {
-    label: "SEO & Marketing",
-    items: ["Technical SEO", "Core Web Vitals", "Marketing brochures", "Landing pages"], // FACT-CHECK: per Kartik's request
+    label: "DevOps & Cloud",
+    items: ["AWS", "CI/CD pipelines"],
   },
   {
-    label: "Delivery & Practices",
-    items: ["B2B & B2C products", "Enterprise systems", "Platform migrations", "Agile/Scrum", "Client handling"], // FACT-CHECK: per Kartik's request
+    label: "AI",
+    items: ["LLM API integration"],
+  },
+  {
+    label: "Ways of working",
+    items: ["Agile/Scrum", "Client handling"],
   },
 ];

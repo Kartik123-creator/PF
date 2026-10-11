@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Clock, Download, Github, Linkedin, MapPin, Phone } from "lucide-react";
-import { PROFILE } from "@/data/profile";
+import { Briefcase, Clock, Download, Github, Linkedin, MapPin, Phone } from "lucide-react";
+import { AVAILABILITY, PROFILE } from "@/data/profile";
 import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
 import CopyEmailButton from "@/components/CopyEmailButton";
@@ -34,8 +34,8 @@ export default function ContactPage() {
             <div>
               <p className="text-lg font-semibold leading-tight">{PROFILE.name}</p>
               <p className="mono-label mt-1 flex items-center gap-1.5 text-ink-mute">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-                Open to work
+                <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-green-500" />
+                {AVAILABILITY.label}
               </p>
             </div>
           </div>
@@ -73,6 +73,11 @@ export default function ContactPage() {
             <a aria-label="LinkedIn" href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-hairline p-2 text-ink-mute transition-colors hover:border-primary hover:text-primary">
               <Linkedin size={15} />
             </a>
+            {PROFILE.upwork && (
+              <a aria-label="Upwork" href={PROFILE.upwork} target="_blank" rel="noreferrer" className="rounded-full border border-hairline p-2 text-ink-mute transition-colors hover:border-primary hover:text-primary">
+                <Briefcase size={15} />
+              </a>
+            )}
           </div>
         </div>
         <ContactForm />

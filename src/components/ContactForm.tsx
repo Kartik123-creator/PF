@@ -6,7 +6,7 @@ import { PROFILE } from "@/data/profile";
 
 type Status = "idle" | "sending" | "sent" | "error" | "mailto";
 
-const NEEDS = ["Full-time hire", "Contract project", "Consultation / audit", "Something else"];
+const NEEDS = ["Freelance project", "Ongoing contract work", "Consultation / audit", "Something else"];
 
 const fieldCls =
   "w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary";

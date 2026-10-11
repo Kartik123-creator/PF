@@ -6,8 +6,11 @@ export default function TimelineItem({ exp, detailed = false }: { exp: Experienc
       <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-paper bg-primary" />
       <p className="mono-label text-primary">{exp.period}</p>
       <h3 className="mt-1 text-lg font-semibold">{exp.phase}</h3>
+      <p className="text-sm font-medium">
+        {exp.role} · {exp.company}
+      </p>
       <p className="text-sm text-ink-mute">
-        {exp.role} · {exp.focus}
+        {exp.employmentType} · {exp.focus}
       </p>
       <ul className="mt-2 space-y-1.5 text-sm">
         {(detailed ? exp.bullets : exp.bullets.slice(0, 3)).map((b) => (

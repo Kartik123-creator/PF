@@ -5,11 +5,9 @@ tags: ["Socket.IO", "Node.js", "Real-time"]
 summary: "What actually matters when your chat, notifications and presence features meet real users — rooms, reconnects, and the bugs nobody warns you about."
 ---
 
-{/* FACT-CHECK: draft post written for Kartik's review — verify anecdotes match his real experience */}
-
 Real-time features look easy in the demo and humbling in production. I've shipped
-Socket.IO-powered chat, notifications and live updates in production apps, and the
-gap between "works on my machine" and "works for users on hotel Wi-Fi" taught me more
+Socket.IO-powered chat rooms, presence, live notifications and a real-time multiplayer
+poker game — with Redis alongside Socket.IO — and the gap between "works on my machine" and "works for users on hotel Wi-Fi" taught me more
 than any tutorial.
 
 ## Rooms are your unit of scale
@@ -53,5 +51,5 @@ debounce aggressively, and measure payload sizes like you measure bundle sizes.
 - Heartbeat/presence timeouts tuned for mobile (generous, not aggressive)
 - A REST fallback for anything that must not be lost
 
-Real-time is a feature multiplier — chat, live dashboards, presence all feel magical
-when they work. The magic is in the failure handling.
+Real-time is a feature multiplier — chat, presence and multiplayer game state all feel
+magical when they work. The magic is in the failure handling.

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PROFILE } from "@/data/profile";
+import { COUNTRIES, PROFILE } from "@/data/profile";
 import { EXPERIENCE, EDUCATION } from "@/data/experience";
 import SectionHeading from "@/components/SectionHeading";
 import TimelineItem from "@/components/TimelineItem";
@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About — Kartik Bosmiya",
-  description: "Software engineer with 6+ years building web, mobile and AI products end-to-end.",
+  description: "Full-stack developer building production software since 2020 — web, mobile and AI products, end-to-end.",
   alternates: { canonical: "/about" },
 };
 
@@ -53,23 +53,23 @@ export default function AboutPage() {
 
         <Reveal variant="right" className="space-y-5 text-[0.95rem] leading-relaxed">
           <p>
-            I&apos;m Kartik — a software engineer from Ahmedabad who has spent the last 6+ years
-            building products end-to-end: web apps, mobile apps and, increasingly, AI-powered
-            features that make software feel alive.
+            I&apos;m Kartik — a software engineer from Ahmedabad who has been building production
+            software since 2020, end-to-end: web apps, mobile apps and, increasingly, AI-powered
+            features that make software feel alive. I worked full-time through both my diploma
+            and my engineering degree. Clients in the {COUNTRIES.slice(0, -1).join(", ")} and{" "}
+            {COUNTRIES.at(-1)}.
           </p>
           <p>
             I started at a digital agency, working directly with clients and learning that
             shipping the <em>right</em> thing matters more than shipping the clever thing. Since
-            then I&apos;ve converted an e-commerce site into a full ERP (CASSA Group), launched a
-            UK booking SaaS with payments and native mobile apps (Booksphere), and built AI-driven
-            platforms with Next.js.
+            then I&apos;ve converted an e-commerce site into a full ERP (CASSA Group) and launched a
+            UK booking SaaS with payments and React Native mobile apps (Booksphere).
           </p>
           <p>
             My sweet spot is owning a feature from first wireframe to AWS deployment — frontend,
-            backend, database, pipeline. I&apos;ve worked across B2B and B2C products, enterprise
-            systems and platform migrations, and I handle the surrounding work too: technical SEO,
-            marketing brochures and design assets when a project needs them. I work in agile teams,
-            run code reviews, and communicate with clients like a partner, not a ticket-taker.
+            backend, database, pipeline. I&apos;ve worked across B2B and B2C products and enterprise
+            systems, with performance and technical SEO built in rather than bolted on. I work in
+            agile teams, run code reviews, and communicate with clients like a partner, not a ticket-taker.
           </p>
           <p>
             Beyond code: exploring new AI tooling, building side projects (this portfolio and its
@@ -100,6 +100,7 @@ export default function AboutPage() {
                 <p className="mono-label text-primary">{ed.period}</p>
                 <h3 className="mt-1 text-base font-semibold">{ed.degree}</h3>
                 <p className="text-sm text-ink-mute">{ed.school}</p>
+                <p className="mt-2 text-sm font-medium text-primary">{ed.note}</p>
               </div>
             </Reveal>
           ))}

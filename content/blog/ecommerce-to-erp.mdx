@@ -5,12 +5,12 @@ tags: ["Architecture", "React", "MongoDB"]
 summary: "Turning a working e-commerce site into a full ERP without stopping the business — role-based pricing, inventory and payroll, one careful module at a time."
 ---
 
-{/* FACT-CHECK: draft post written for Kartik's review — verify details match the real CASSA project */}
-
 CASSA Group started as a straightforward e-commerce build. Then the requirements grew:
-role-based pricing for wholesale buyers, inventory tracking across locations, then HR
-and payroll. We weren't building a shop anymore — we were building an ERP, and the shop
-had to keep selling while we did it.
+role-based pricing, inventory tracking, then HR and payroll. We weren't building a shop
+anymore — we were building an ERP, and the shop had to keep selling while we did it.
+
+The stack stayed the same throughout: React and MUI on the front end, Node.js and
+MongoDB underneath.
 
 ## Strangle, don't rewrite
 
@@ -21,15 +21,15 @@ went down; the ERP grew around it.
 
 ## Role-based pricing is a data-model problem
 
-Wholesale vs retail pricing sounds like an `if` statement. It isn't — it's a pricing
+Pricing by customer role sounds like an `if` statement. It isn't — it's a pricing
 resolution pipeline. We modeled price rules as documents:
 
 ```js
 {
   productId,
-  audience: "wholesale",   // or "retail", "vip"
-  minQty: 50,
-  price: 410,
+  audience,          // which customer role this price applies to
+  minQty,            // quantity threshold for the rule
+  price,
   validFrom, validTo
 }
 ```

@@ -3,12 +3,11 @@ import { Inter, Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { THEMES, DEFAULT_THEME, DEFAULT_PALETTE } from "@/data/themes";
 import { PROFILE } from "@/data/profile";
-import { SITE_URL } from "@/lib/site";
+import { SITE_DESCRIPTION, SITE_ROLE, SITE_TITLE, SITE_URL } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AskKartik from "@/components/AskKartik";
 import ScrollProgress from "@/components/ScrollProgress";
-import DisableRightClick from "@/components/DisableRightClick";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
@@ -16,11 +15,18 @@ const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono" })
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Kartik Bosmiya — Software Engineer",
-  description:
-    "Software Engineer · End-to-End Product Builder. 6+ years building web, mobile and AI products.",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
-  openGraph: { type: "website", siteName: "Kartik Bosmiya", locale: "en_US" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Kartik Bosmiya",
+    locale: "en_US",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION },
 };
 
 const validMap = Object.fromEntries(THEMES.map((t) => [t.id, t.palettes.map((p) => p.id)]));
@@ -47,16 +53,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Person",
               name: PROFILE.name,
-              jobTitle: "Software Engineer",
+              jobTitle: SITE_ROLE,
               email: PROFILE.email,
               url: SITE_URL,
               address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressCountry: "IN" },
-              sameAs: [PROFILE.linkedin, PROFILE.github],
+              sameAs: [PROFILE.linkedin, PROFILE.github, PROFILE.upwork].filter(Boolean),
             }),
           }}
         />
         <ScrollProgress />
-        <DisableRightClick />
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />

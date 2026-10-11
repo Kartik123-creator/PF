@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Briefcase,
+  BriefcaseBusiness,
   Code2,
   FolderGit2,
   GraduationCap,
@@ -11,27 +12,24 @@ import {
   Phone,
   type LucideIcon,
 } from "lucide-react";
-import { PROFILE } from "@/data/profile";
+import { AVAILABILITY, PROFILE } from "@/data/profile";
 import { EXPERIENCE, EDUCATION } from "@/data/experience";
 import { SKILL_GROUPS } from "@/data/skills";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, projectTitle } from "@/data/projects";
 import PrintButton from "@/components/PrintButton";
+import { SITE_ROLE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Resume — Kartik Bosmiya",
-  description: "Resume of Kartik Bosmiya — Software Engineer & End-to-End Product Builder.",
+  description: "Resume of Kartik Bosmiya — Full-Stack SaaS & ERP Developer (React, Next.js, Node.js).",
   alternates: { canonical: "/resume" },
 };
 
-// Resume-specific summary — leads with impact. (Truthful rephrase of existing
-// profile facts: 6+ yrs, web/mobile/AI, end-to-end, AWS, real-time, LLM, CI/CD.)
 const SUMMARY =
-  "Software engineer with 6+ years shipping web, mobile and AI-powered products end-to-end — from first wireframe to AWS deployment. I own the full stack: scalable architecture, real-time systems, LLM integrations, CI/CD and performance. Trusted by clients worldwide to turn ambiguous briefs into reliable production software.";
+  "Full-stack developer building production software since 2020 — web, mobile and AI-powered products, end-to-end from first wireframe to AWS deployment. I own the full stack: ERP systems, booking SaaS, payments, real-time features with Socket.IO, and AWS deployments with CI/CD. Clients in the UK, US, UAE, Australia and India. Worked full-time throughout my diploma and engineering degree.";
 
-const SELECTED = [
-  ...PROJECTS.filter((p) => p.featured),
-  ...PROJECTS.filter((p) => !p.featured).slice(0, 3),
-];
+// Featured projects first.
+const SELECTED = [...PROJECTS.filter((p) => p.featured), ...PROJECTS.filter((p) => !p.featured)];
 
 function SectionTitle({ icon: Icon, children }: { icon: LucideIcon; children: React.ReactNode }) {
   return (
@@ -65,11 +63,11 @@ export default function ResumePage() {
           <div className="flex flex-wrap items-center gap-3">
             <h1 className="text-3xl font-bold">{PROFILE.name}</h1>
             <span className="mono-label inline-flex items-center gap-1.5 rounded-full border border-hairline px-2.5 py-1 text-ink-mute">
-              <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-              Open to work
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-500" />
+              {AVAILABILITY.label}
             </span>
           </div>
-          <p className="mt-1 font-semibold text-primary">{PROFILE.headline}</p>
+          <p className="mt-1 font-semibold text-primary">{SITE_ROLE}</p>
           <div className="mono-label mt-3 flex flex-wrap gap-x-4 gap-y-1 text-ink-mute">
             <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-1.5 hover:text-primary">
               <Mail size={12} /> {PROFILE.email}
@@ -86,6 +84,11 @@ export default function ResumePage() {
             <a href={PROFILE.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-primary">
               <Github size={12} /> GitHub
             </a>
+            {PROFILE.upwork && (
+              <a href={PROFILE.upwork} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-primary">
+                <BriefcaseBusiness size={12} /> Upwork
+              </a>
+            )}
           </div>
         </div>
         <PrintButton />
@@ -103,11 +106,13 @@ export default function ResumePage() {
           {EXPERIENCE.map((e) => (
             <div key={e.id} className="break-inside-avoid">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="font-semibold">{e.phase}</h3>
+                <h3 className="font-semibold">
+                  {e.role} — {e.company}
+                </h3>
                 <span className="mono-label text-ink-mute">{e.period}</span>
               </div>
               <p className="text-sm text-ink-mute">
-                {e.role} · {e.focus}
+                {e.employmentType} · {e.focus}
               </p>
               <ul className="mt-2 space-y-1 text-sm">
                 {e.bullets.map((b) => (
@@ -132,6 +137,7 @@ export default function ResumePage() {
                 <h3 className="font-semibold leading-snug">{ed.degree}</h3>
                 <p className="text-sm text-ink-mute">{ed.school}</p>
                 <p className="mono-label mt-1.5 text-primary">{ed.period}</p>
+                <p className="mt-1 text-sm font-medium">{ed.note}</p>
               </div>
             </div>
           ))}
@@ -158,10 +164,20 @@ export default function ResumePage() {
           {SELECTED.map((p) => (
             <div key={p.id} className="break-inside-avoid">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="font-semibold">{p.name}</h3>
+                <h3 className="font-semibold">{projectTitle(p)}</h3>
                 <span className="mono-label text-ink-mute">{p.categoryLabel}</span>
               </div>
               <p className="text-sm text-ink-mute">{p.description}</p>
+              <p className="mt-1 text-sm">
+                <span className="font-semibold">Role:</span> {p.role}
+                {p.stack && p.stack.length > 0 && (
+                  <>
+                    {" · "}
+                    <span className="font-semibold">Stack:</span> {p.stack.join(", ")}
+                  </>
+                )}
+              </p>
+              {p.outcome && <p className="mt-1 text-sm font-semibold">Outcome: {p.outcome}</p>}
               <p className="mt-1 text-sm text-primary">{p.highlights.join(" · ")}</p>
             </div>
           ))}
