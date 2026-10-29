@@ -154,7 +154,8 @@ export const PROJECTS: Project[] = [
     featured: true,
     onHome: true,
     role: ROLE,
-    // TODO: stack, outcome, links
+    stack: ["FLUX"], // TODO: rest of the stack
+    // TODO: outcome, links
     cover: { glyph: "sparkle", hue: 280 },
     images: [], // TODO: add screenshots
     clientNamed: true,

@@ -114,7 +114,7 @@ export const CHAT_TOPICS: ChatTopic[] = [
     id: "ai",
     keywords: ["ai", "llm", "ml", "intelligence", "gpt", "automation", "flux"],
     answer:
-      "Kartik does LLM API integration, works with the FLUX image-generation model, and builds AI-powered features inside real products — e.g. the AI Image Gallery: AI image generation in four art styles, search by prompt or image, and multi-resolution downloads.",
+      "Kartik does LLM API integration and builds AI-powered features inside real products — e.g. the AI Image Gallery, which uses the FLUX image-generation model: AI image generation in four art styles, search by prompt or image, and multi-resolution downloads.",
   },
   {
     id: "devops",
