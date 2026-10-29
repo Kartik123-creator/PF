@@ -5,6 +5,12 @@ export interface ProjectLink {
   href: string;
 }
 
+export interface ProjectImage {
+  /** Path under /public, e.g. "/projects/cassa-erp/architecture.png". */
+  src: string;
+  alt: string;
+}
+
 /** Glyph drawn faintly on the generated cover (see ProjectCard). */
 export type CoverGlyph = "grid" | "calendar" | "cards" | "chat" | "sparkle";
 
@@ -36,8 +42,8 @@ export interface Project {
   outcome?: string;
   /** Live site / store links. Omitted/empty = no links row. */
   links?: ProjectLink[];
-  /** Screenshot paths under /public, e.g. "/img/projects/cassa-1.png". Empty = generated gradient cover. */
-  images: string[];
+  /** Card images; the first replaces the generated cover. Empty = generated gradient cover. */
+  images: ProjectImage[];
   cover: ProjectCover;
   /** May the client be named publicly? If false, `genericName` is shown instead of `name`. */
   clientNamed: boolean;
@@ -72,7 +78,10 @@ export const PROJECTS: Project[] = [
     // TODO: outcome — one real, measurable number
     // TODO: links — live link, if any
     cover: { glyph: "grid", hue: 0 },
-    images: [], // TODO: add screenshots
+    images: [
+      { src: "/projects/cassa-erp/architecture.png", alt: "CASSA Group ERP architecture overview" },
+      // TODO: add screenshots
+    ],
     clientNamed: true,
   },
   {
@@ -95,7 +104,10 @@ export const PROJECTS: Project[] = [
     // TODO: outcome — one real, measurable number
     // TODO: links — App Store / Google Play / live site, if any
     cover: { glyph: "calendar", hue: 70 },
-    images: [], // TODO: add screenshots
+    images: [
+      { src: "/projects/booksphere/architecture.png", alt: "Booksphere architecture overview" },
+      // TODO: add screenshots
+    ],
     clientNamed: true,
   },
   {
@@ -117,7 +129,10 @@ export const PROJECTS: Project[] = [
     stack: ["Socket.IO"], // TODO: rest of the stack
     // TODO: outcome, links
     cover: { glyph: "cards", hue: 140 },
-    images: [], // TODO: add screenshots
+    images: [
+      { src: "/projects/realtime-poker/architecture.png", alt: "Real-time Multiplayer Poker architecture overview" },
+      // TODO: add screenshots
+    ],
     clientNamed: true,
   },
   {
@@ -136,7 +151,10 @@ export const PROJECTS: Project[] = [
     stack: ["Socket.IO"], // TODO: rest of the stack
     // TODO: outcome, links
     cover: { glyph: "chat", hue: 210 },
-    images: [], // TODO: add screenshots
+    images: [
+      { src: "/projects/realtime-chat/architecture.png", alt: "Real-time Chat & Notifications architecture overview" },
+      // TODO: add screenshots
+    ],
     clientNamed: true,
   },
   {
@@ -157,7 +175,10 @@ export const PROJECTS: Project[] = [
     stack: ["FLUX"], // TODO: rest of the stack
     // TODO: outcome, links
     cover: { glyph: "sparkle", hue: 280 },
-    images: [], // TODO: add screenshots
+    images: [
+      { src: "/projects/ai-image-gallery/architecture.png", alt: "AI Image Gallery architecture overview" },
+      // TODO: add screenshots
+    ],
     clientNamed: true,
   },
 ];

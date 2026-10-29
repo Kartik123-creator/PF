@@ -20,7 +20,7 @@ const GLYPHS: Record<CoverGlyph, LucideIcon> = {
 };
 
 /**
- * Generated cover used until real screenshots are added to `images`.
+ * Generated cover used when a project has no `images`.
  * Colours come from the active theme (see `.project-cover` in globals.css);
  * each project shifts the hue by `cover.hue` so the covers are distinct.
  */
@@ -44,28 +44,29 @@ function ProjectCover({ project, title }: { project: Project; title: string }) {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const title = projectTitle(project);
-  const screenshot = project.images[0];
+  const image = project.images[0];
   const stack = project.stack ?? [];
   const links = project.links ?? [];
 
   return (
     <article className="card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-      {screenshot ? (
+      {image ? (
+        // 4:3 diagrams sit inside the 16:9 cover uncropped; the backdrop matches the diagrams' own background
         <Image
-          src={screenshot}
-          alt={`${title} screenshot`}
-          width={1200}
-          height={675}
+          src={image.src}
+          alt={image.alt}
+          width={1600}
+          height={1200}
           sizes="(min-width: 640px) 50vw, 100vw"
-          className="aspect-video w-full border-b border-hairline object-cover"
+          className="aspect-video w-full border-b border-hairline bg-[#0d0b1a] object-contain"
         />
       ) : (
         <ProjectCover project={project} title={title} />
       )}
 
       <div className="flex flex-1 flex-col p-5">
-        {/* with a real screenshot the cover carries no text, so the body names the project */}
-        {screenshot && (
+        {/* with an image the cover carries no text, so the body names the project */}
+        {image && (
           <>
             <p className="mono-label text-primary">{project.categoryLabel}</p>
             <h3 className="mt-1.5 mb-2 text-lg font-semibold">{title}</h3>

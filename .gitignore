@@ -16,3 +16,5 @@ next-env.d.ts
 .playwright-mcp/
 .firecrawl/
 *.png
+# …but project images shipped with the site are tracked
+!public/projects/**/*.png
