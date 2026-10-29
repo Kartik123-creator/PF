@@ -10,6 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { type CoverGlyph, type Project, projectTitle } from "@/data/projects";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const GLYPHS: Record<CoverGlyph, LucideIcon> = {
   grid: LayoutGrid,
@@ -52,14 +53,16 @@ export default function ProjectCard({ project }: { project: Project }) {
     <article className="card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
       {image ? (
         // 4:3 diagrams sit inside the 16:9 cover uncropped; the backdrop matches the diagrams' own background
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={1600}
-          height={1200}
-          sizes="(min-width: 640px) 50vw, 100vw"
-          className="aspect-video w-full border-b border-hairline bg-[#0d0b1a] object-contain"
-        />
+        <ImageLightbox src={image.src} alt={image.alt}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={1600}
+            height={1200}
+            sizes="(min-width: 640px) 50vw, 100vw"
+            className="aspect-video w-full border-b border-hairline bg-[#0d0b1a] object-contain"
+          />
+        </ImageLightbox>
       ) : (
         <ProjectCover project={project} title={title} />
       )}
