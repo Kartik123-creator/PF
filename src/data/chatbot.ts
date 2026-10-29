@@ -92,12 +92,12 @@ export const CHAT_TOPICS: ChatTopic[] = [
   },
   {
     id: "frontend",
-    keywords: ["frontend", "react", "nextjs", "angular", "vue", "tailwind", "ui"],
+    keywords: ["frontend", "react", "nextjs", "nuxt", "angular", "vue", "tailwind", "ui"],
     answer: `Kartik's frontend toolkit: ${skills("Frontend")}.`,
   },
   {
     id: "backend",
-    keywords: ["backend", "node", "nestjs", "api", "socket", "typescript", "laravel", "php", "rest", "server"],
+    keywords: ["backend", "node", "nestjs", "api", "socket", "typescript", "laravel", "php", "rest", "server", "express", "firebase", "stripe"],
     answer: `On the backend Kartik works with ${skills("Backend")} — including payment gateways and real-time features with Socket.IO and Redis.`,
   },
   {
@@ -112,14 +112,19 @@ export const CHAT_TOPICS: ChatTopic[] = [
   },
   {
     id: "ai",
-    keywords: ["ai", "llm", "ml", "intelligence", "gpt", "automation"],
+    keywords: ["ai", "llm", "ml", "intelligence", "gpt", "automation", "flux"],
     answer:
-      "Kartik does LLM API integration and builds AI-powered features inside real products — e.g. the AI Image Gallery: AI image generation in four art styles, search by prompt or image, and multi-resolution downloads.",
+      "Kartik does LLM API integration, works with the FLUX image-generation model, and builds AI-powered features inside real products — e.g. the AI Image Gallery: AI image generation in four art styles, search by prompt or image, and multi-resolution downloads.",
   },
   {
     id: "devops",
-    keywords: ["devops", "aws", "deploy", "cicd", "cloud", "infrastructure"],
+    keywords: ["devops", "aws", "docker", "deploy", "cicd", "cloud", "infrastructure"],
     answer: `DevOps & cloud: ${skills("DevOps & Cloud")}. Kartik deploys web products on AWS with CI/CD pipelines, owning features from code to production.`,
+  },
+  {
+    id: "blockchain",
+    keywords: ["blockchain", "web3", "solidity", "ethereum", "crypto", "dapp"],
+    answer: `Blockchain: ${skills("Blockchain")}.`,
   },
   {
     id: "databases",
